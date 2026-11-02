@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+
+<html lang="uz"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com/3.4.17"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-secondary-fixed-variant":"#005236","on-background":"#131b2e","inverse-on-surface":"#eef0ff","tertiary-container":"#744800","surface-bright":"#faf8ff","surface-container-lowest":"#ffffff","on-secondary-fixed":"#002113","primary-fixed-dim":"#c3c0ff","tertiary":"#553300","on-tertiary":"#ffffff","on-surface-variant":"#464554","primary-container":"#4338ca","error":"#ba1a1a","surface-container-high":"#e2e7ff","surface-container":"#eaedff","tertiary-fixed-dim":"#ffb95f","on-tertiary-fixed-variant":"#653e00","outline-variant":"#c7c4d7","on-error":"#ffffff","on-tertiary-container":"#ffb759","secondary-container":"#6cf8bb","on-secondary-container":"#00714d","background":"#faf8ff","secondary-fixed-dim":"#4edea3","surface":"#faf8ff","surface-dim":"#d2d9f4","on-surface":"#131b2e","primary-fixed":"#e3dfff","on-primary":"#ffffff","on-secondary":"#ffffff","on-error-container":"#93000a","primary":"#2a14b4","surface-container-low":"#f2f3ff","inverse-surface":"#283044","outline":"#777586","on-tertiary-fixed":"#2a1700","secondary":"#006c49","on-primary-container":"#c1beff","secondary-fixed":"#6ffbbe","surface-container-highest":"#dae2fd","on-primary-fixed":"#100069","inverse-primary":"#c3c0ff","surface-tint":"#5148d7","error-container":"#ffdad6","surface-variant":"#dae2fd","tertiary-fixed":"#ffddb8","on-primary-fixed-variant":"#372abf"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-md":"1rem","space-lg":"1.5rem","gutter-sm":"1rem","gutter":"1.5rem","margin-sm":"1rem","space-xs":"0.25rem","margin":"2rem","space-xl":"2rem","space-sm":"0.5rem"},fontFamily:{"body-lg":["Plus Jakarta Sans"],"title-md":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"title-sm":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"]},fontSize:{"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}],"title-md":["16px",{lineHeight:"24px",fontWeight:"600"}],"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.03em",fontWeight:"500"}],"headline-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.015em",fontWeight:"600"}],"headline-xl":["40px",{lineHeight:"48px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-md":["24px",{lineHeight:"32px",letterSpacing:"-0.01em",fontWeight:"600"}],"title-sm":["14px",{lineHeight:"20px",fontWeight:"600"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"600"}],"headline-sm":["20px",{lineHeight:"28px",fontWeight:"600"}],"body-sm":["12px",{lineHeight:"16px",fontWeight:"400"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"headline-xl-mobile":["30px",{lineHeight:"38px",letterSpacing:"-0.015em",fontWeight:"700"}],"headline-lg-mobile":["24px",{lineHeight:"32px",letterSpacing:"-0.01em",fontWeight:"600"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low flex flex-col justify-between p-space-md z-50 shadow-[0_1px_8px_rgba(0,0,0,0.04)] overflow-y-auto"><div class="flex flex-col gap-space-lg"><div class="flex items-center justify-between px-space-xs"><div class="flex items-center gap-space-sm"><img alt="OZAQ Logo" class="h-8 w-auto object-contain" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCA2NCA2NCc+PHJlY3Qgd2lkdGg9JzY0JyBoZWlnaHQ9JzY0JyBmaWxsPScjMEI2QjRGJy8+PGNpcmNsZSBjeD0nMzInIGN5PScyNScgcj0nMTEnIGZpbGw9JyM1Q0ZGQjAnLz48cGF0aCBkPSdNMTAgNjRjMi0xNiAxMi0yNCAyMi0yNHMyMCA4IDIyIDI0eicgZmlsbD0nIzVDRkZCMCcvPjwvc3ZnPg=="/><span class="font-headline-sm text-headline-sm text-primary font-bold tracking-tight">OZAQ</span></div><span class="font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface-variant font-medium">Start Tier</span></div><nav class="flex flex-col gap-1.5" data-active-classes="bg-primary-container text-on-primary font-semibold"><a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant font-title-sm text-title-sm hover:bg-surface-container hover:text-on-surface transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span>Umumiy panel</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant font-title-sm text-title-sm hover:bg-surface-container hover:text-on-surface transition-colors" data-path="groups" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span>Guruhlarim</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant font-title-sm text-title-sm hover:bg-surface-container hover:text-on-surface transition-colors" data-path="mock-tests" href="#"><span class="material-symbols-outlined text-[20px]">quiz</span><span>Mock testlar</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant font-title-sm text-title-sm hover:bg-surface-container hover:text-on-surface transition-colors" data-path="results" href="#"><span class="material-symbols-outlined text-[20px]">bar_chart</span><span>Natijalar</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant font-title-sm text-title-sm hover:bg-surface-container hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Sozlamalar</span></a></nav></div><div class="flex flex-col gap-space-md pt-space-lg"><div class="bg-surface-container-lowest p-space-md rounded-xl shadow-[0_1px_4px_rgba(0,0,0,0.02)] flex flex-col gap-space-sm"><div class="flex items-center justify-between text-on-surface-variant font-label-md text-label-md"><span>Tarif limiti</span><span class="font-semibold text-on-surface">50%</span></div><div class="w-full bg-surface-container h-2 rounded-full overflow-hidden"><div class="bg-primary h-full rounded-full" style="width: 50%"></div></div><p class="font-label-sm text-label-sm text-on-surface-variant">2 dan 1 guruh ishlatildi</p></div><div class="bg-surface-container-high/60 p-space-md rounded-xl flex flex-col gap-space-sm"><div class="flex items-center justify-between"><span class="font-title-sm text-title-sm text-on-surface">Start (Bepul) tarif</span><span class="material-symbols-outlined text-tertiary-fixed-dim text-[18px]">verified</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">Cheksiz analitika va AI hisobotlar uchun Premium'ga o'ting</p><button class="mt-1 w-full py-2 px-3 bg-primary text-on-primary rounded-lg font-title-sm text-title-sm flex items-center justify-center gap-2 shadow-[0_2px_6px_rgba(42,20,180,0.2)] hover:bg-primary-container transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">auto_awesome</span><span>Premium'ga o'tish</span></button></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.03)] z-40 px-gutter flex items-center justify-between"><div class="flex items-center gap-space-md"><div class="flex items-center gap-2 bg-surface-container-lowest px-3 py-1.5 rounded-lg text-on-surface font-title-sm text-title-sm shadow-[0_1px_2px_rgba(0,0,0,0.03)] cursor-pointer"><span class="material-symbols-outlined text-primary text-[20px]">school</span><span>Guruh: Matematika 9-A</span><span class="material-symbols-outlined text-on-surface-variant text-[18px]">expand_more</span></div></div><div class="flex items-center gap-space-md"><button class="bg-primary text-on-primary font-title-sm text-title-sm px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-primary-container transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">add</span><span>Yangi test yaratish</span></button><div class="relative flex items-center"><button class="p-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded-lg transition-colors relative" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full"></span></button></div><span class="font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-medium">Start Tier</span><div class="flex items-center gap-3 pl-2"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCA2NCA2NCc+PHJlY3Qgd2lkdGg9JzY0JyBoZWlnaHQ9JzY0JyBmaWxsPScjMEI2QjRGJy8+PGNpcmNsZSBjeD0nMzInIGN5PScyNScgcj0nMTEnIGZpbGw9JyM1Q0ZGQjAnLz48cGF0aCBkPSdNMTAgNjRjMi0xNiAxMi0yNCAyMi0yNHMyMCA4IDIyIDI0eicgZmlsbD0nIzVDRkZCMCcvPjwvc3ZnPg=="/><div class="hidden sm:flex flex-col text-left leading-none"><span class="font-title-sm text-title-sm text-on-surface">Sardor Aliyev</span><span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Matematika o'qituvchisi</span></div></div></div></header><main class="w-full pt-16 bg-surface px-gutter py-space-lg min-h-screen"><div class="flex flex-col w-full gap-space-lg">
+<!-- 1. HEADER & LIVE MONITORING BAR -->
+<div class="flex flex-col gap-space-md">
+<!-- Breadcrumb & Top Actions -->
+<div class="flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex flex-col gap-1">
+<nav class="flex items-center gap-2 font-label-md text-label-md text-on-surface-variant">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[16px]">quiz</span>
+<span>Mock testlar</span>
+</a>
+<span class="material-symbols-outlined text-[14px] text-outline-variant">chevron_right</span>
+<span class="hover:text-primary transition-colors cursor-pointer">Matematika Mini-Mock #3</span>
+<span class="material-symbols-outlined text-[14px] text-outline-variant">chevron_right</span>
+<span class="text-on-surface font-semibold">O'quvchilar va kirish</span>
+</nav>
+<div class="flex items-center gap-3">
+<h1 class="font-headline-md text-headline-md text-on-surface tracking-tight">Matematika Mini-Mock #3</h1>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
+</span>
+<span>Faol (Jonli topshirilmoqda)</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="px-3.5 py-2 rounded-lg bg-surface-container-lowest text-on-surface font-title-sm text-title-sm shadow-sm hover:bg-surface-container flex items-center gap-2 transition-all" type="button">
+<span class="material-symbols-outlined text-primary text-[20px]">monitor</span>
+<span>Jonli ekran monitoringi</span>
+</button>
+<button class="px-3.5 py-2 rounded-lg bg-error-container text-on-error-container font-title-sm text-title-sm hover:opacity-90 flex items-center gap-2 transition-all" type="button">
+<span class="material-symbols-outlined text-[20px]">stop_circle</span>
+<span>Testni to'xtatish / Yakunlash</span>
+</button>
+</div>
+</div>
+<!-- Live Proctoring Tracker Card -->
+<div class="bg-surface-container-lowest p- space-md p-5 rounded-xl shadow-sm flex flex-col gap-4">
+<div class="flex flex-wrap items-center justify-between gap-3">
+<div class="flex flex-wrap items-center gap-6">
+<div class="flex items-center gap-2 font-title-sm text-title-sm text-on-surface">
+<span class="font-bold text-headline-sm text-on-surface">24</span>
+<span class="text-on-surface-variant font-medium">Jami o'quvchi</span>
+</div>
+<div class="h-6 w-px bg-surface-container-high hidden sm:block"></div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-primary-container"></span>
+<span class="font-title-sm text-title-sm text-on-surface">18 ta</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">yechmoqda (Faol)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-secondary"></span>
+<span class="font-title-sm text-title-sm text-on-surface">3 ta</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">topshirdi</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-outline-variant"></span>
+<span class="font-title-sm text-title-sm text-on-surface">3 ta</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">kirmagan</span>
+</div>
+</div>
+<!-- Start Tier Quota Indicator -->
+<div class="flex items-center gap-3 px-3 py-1.5 rounded-lg bg-tertiary-fixed/30 text-on-tertiary-fixed-variant">
+<span class="material-symbols-outlined text-tertiary text-[20px]">warning</span>
+<div class="flex flex-col leading-tight">
+<span class="font-label-sm text-label-sm font-semibold">Start Tarif: 24 / 25 o'quvchi (96% limit)</span>
+<span class="font-body-sm text-body-sm opacity-80">Limit tugashiga 1 ta o'rin qoldi</span>
+</div>
+<a class="ml-2 font-label-md text-label-md underline text-tertiary font-bold hover:text-on-tertiary-fixed" href="#">Pro'ga o'tish</a>
+</div>
+</div>
+<!-- Segmented Multi-Color Progress Bar -->
+<div class="w-full bg-surface-container h-2.5 rounded-full overflow-hidden flex gap-0.5 p-0.5">
+<div class="bg-primary-container h-full rounded-full transition-all duration-500" style="width: 75%;" title="18 ta faol yechmoqda"></div>
+<div class="bg-secondary h-full rounded-full transition-all duration-500" style="width: 12.5%;" title="3 ta topshirdi"></div>
+<div class="bg-outline-variant h-full rounded-full transition-all duration-500" style="width: 12.5%;" title="3 ta kirmagan"></div>
+</div>
+</div>
+</div>
+<!-- 2. SUB-TABS -->
+<div class="flex items-center gap-2 overflow-x-auto">
+<button class="px-4 py-2.5 rounded-lg font-title-sm text-title-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+<span>Savollar va Tahrir</span>
+</button>
+<button class="px-4 py-2.5 rounded-lg font-title-sm text-title-sm bg-primary text-on-primary shadow-sm flex items-center gap-2 font-semibold" type="button">
+<span class="material-symbols-outlined text-[18px]">badge</span>
+<span>O'quvchilar va kirish</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm">24</span>
+</button>
+<button class="px-4 py-2.5 rounded-lg font-title-sm text-title-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">analytics</span>
+<span>Jonli natijalar va tahlil</span>
+</button>
+<button class="px-4 py-2.5 rounded-lg font-title-sm text-title-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+<span>Sozlamalar</span>
+</button>
+</div>
+<!-- 3. DISTRIBUTION TOOLBAR -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-md">
+<!-- Test URL Box -->
+<div class="flex flex-1 items-center gap-2 bg-surface-container-low px-3 py-2 rounded-lg">
+<span class="material-symbols-outlined text-primary text-[20px]">link</span>
+<div class="flex flex-col min-w-0 flex-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Kirish havolasi:</span>
+<span class="font-title-sm text-title-sm text-on-surface truncate font-mono select-all">ozaq.uz/exam/matematika-mock-3</span>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm hover:bg-surface-container flex items-center gap-1.5 transition-all" onclick="navigator.clipboard.writeText('https://ozaq.uz/exam/matematika-mock-3'); this.innerHTML='&lt;span class=\'material-symbols-outlined text-[18px] text-secondary\'&gt;check&lt;/span&gt; Copied!';" type="button">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+<span>Nusxalash</span>
+</button>
+<!-- QR code preview button with hover popup -->
+<div class="relative group">
+<button class="p-1.5 rounded-lg bg-surface-container-lowest text-on-surface shadow-sm hover:bg-surface-container flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[20px]">qr_code_2</span>
+</button>
+<div class="absolute right-0 top-full mt-2 hidden group-hover:flex flex-col items-center bg-surface-container-lowest p-4 rounded-xl shadow-xl z-30 w-48 text-center pointer-events-none group-hover:pointer-events-auto">
+<!-- Minimal Inline SVG QR Code -->
+<svg class="w-32 h-32 text-on-surface" fill="currentColor" viewbox="0 0 100 100">
+<path d="M0,0 h30 v30 h-30 z M10,10 h10 v10 h-10 z M70,0 h30 v30 h-30 z M80,10 h10 v10 h-10 z M0,70 h30 v30 h-30 z M10,80 h10 v10 h-10 z M40,10 h10 v10 h-10 z M40,40 h20 v20 h-20 z M70,50 h10 v20 h-10 z M80,70 h20 v10 h-20 z M50,70 h20 v30 h-10 v-10 h-10 z M10,40 h10 v20 h-10 z M30,60 h10 v10 h-10 z"></path>
+</svg>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-2 font-medium">Skanerlab kirish</span>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<button class="px-3.5 py-2 rounded-lg bg-surface-container-high/70 text-on-surface font-title-sm text-title-sm hover:bg-surface-container-highest flex items-center gap-2 transition-colors" type="button">
+<span class="material-symbols-outlined text-primary text-[18px]">print</span>
+<span>A4 PDF kartalar</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-bold">8 ta/varaq</span>
+</button>
+<button class="px-3 py-2 rounded-lg bg-surface-container-high/70 text-on-surface font-title-sm text-title-sm hover:bg-surface-container-highest flex items-center gap-2 transition-colors" type="button">
+<span class="material-symbols-outlined text-secondary text-[18px]">table_view</span>
+<span>Excel (.xlsx)</span>
+</button>
+<button class="px-3 py-2 rounded-lg bg-surface-container-high/70 text-on-surface font-title-sm text-title-sm hover:bg-surface-container-highest flex items-center gap-2 transition-colors" type="button">
+<span class="material-symbols-outlined text-primary-container text-[18px]">send</span>
+<span>SMS / Telegram (21)</span>
+</button>
+<button class="px-4 py-2 rounded-lg bg-primary-container text-on-primary font-title-sm text-title-sm hover:opacity-95 flex items-center gap-2 shadow-sm transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">restart_alt</span>
+<span>Barchaga yangi login/parol</span>
+</button>
+</div>
+</div>
+<!-- 4. MAIN 2-COLUMN LAYOUT -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT COLUMN: 8 of 12 cols (≈ 67-70%) -->
+<div class="lg:col-span-8 flex flex-col gap-space-md">
+<!-- Filter, Search & Batch Bar -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<!-- Search Field -->
+<div class="relative flex-1 min-w-[220px]">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full bg-surface-container-low pl-10 pr-4 py-2 rounded-lg font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:ring-2 focus:ring-primary/20" placeholder="O'quvchi ismi, ID yoki login..." type="text"/>
+</div>
+<!-- Status Filters -->
+<div class="flex items-center gap-1 bg-surface-container-low p-1 rounded-lg">
+<button class="px-3 py-1 rounded-md bg-surface-container-lowest text-on-surface font-label-md text-label-md font-semibold shadow-xs" type="button">Barchasi (24)</button>
+<button class="px-3 py-1 rounded-md text-on-surface-variant hover:text-on-surface font-label-md text-label-md" type="button">Yechmoqda (18)</button>
+<button class="px-3 py-1 rounded-md text-on-surface-variant hover:text-on-surface font-label-md text-label-md" type="button">Topshirdi (3)</button>
+<button class="px-3 py-1 rounded-md text-on-surface-variant hover:text-on-surface font-label-md text-label-md" type="button">Kirmagan (3)</button>
+</div>
+<!-- Cohort dropdown -->
+<div class="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container-low text-on-surface font-title-sm text-title-sm cursor-pointer hover:bg-surface-container">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">group</span>
+<span>Matematika 9-A</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">expand_more</span>
+</div>
+</div>
+<!-- BATCH ACTIONS TOOLBAR (Appears when items are selected) -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm bg-primary-fixed/40 px-3 py-2 rounded-lg">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span class="font-title-sm text-title-sm text-on-primary-fixed font-semibold">Tanlangan 4 ta o'quvchiga:</span>
+</div>
+<div class="flex flex-wrap items-center gap-1.5">
+<button class="px-2.5 py-1 rounded-md bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-xs hover:bg-surface-container flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-primary text-[14px]">more_time</span>
+<span>+10 daq vaqt</span>
+</button>
+<button class="px-2.5 py-1 rounded-md bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-xs hover:bg-surface-container flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-primary text-[14px]">key</span>
+<span>Parolni yangilash</span>
+</button>
+<button class="px-2.5 py-1 rounded-md bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-xs hover:bg-surface-container flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-primary text-[14px]">replay</span>
+<span>Qayta ochish</span>
+</button>
+<button class="px-2.5 py-1 rounded-md bg-error-container text-on-error-container font-label-md text-label-md hover:opacity-90 flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[14px]">delete</span>
+<span>O'chirish</span>
+</button>
+</div>
+</div>
+</div>
+<!-- STUDENTS TABLE -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-md text-body-md">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-3.5 px-4 w-10">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary/20 accent-primary cursor-pointer" type="checkbox"/>
+</th>
+<th class="py-3.5 px-4 font-semibold">O'quvchi</th>
+<th class="py-3.5 px-4 font-semibold">Noyob Login</th>
+<th class="py-3.5 px-4 font-semibold">Bir martalik Parol</th>
+<th class="py-3.5 px-4 font-semibold">Holat</th>
+<th class="py-3.5 px-4 font-semibold">Kirish / Qurilma</th>
+<th class="py-3.5 px-4 font-semibold text-right">Amallar</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container">
+<!-- Row 1: Selected & In Progress -->
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3.5 px-4">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary/20 accent-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-primary-fixed text-primary font-bold flex items-center justify-center font-title-sm text-title-sm shrink-0">
+                      JT
+                    </div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold truncate">Jasur Temirov</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Matematika 9-A</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-1.5 font-mono text-body-sm text-on-surface font-medium bg-surface-container-low px-2 py-1 rounded inline-flex">
+<span>ozaq-4821</span>
+<button class="text-on-surface-variant hover:text-primary" title="Nusxalash" type="button">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-1.5">
+<span class="font-mono text-body-sm text-on-surface bg-surface-container px-2 py-0.5 rounded font-semibold tracking-wide">k8#mP2x</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold" title="Yangi yaratilgan">Yangi</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col gap-0.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-label-md text-label-md font-semibold w-max">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<span>Yechmoqda (18-savol)</span>
+</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant pl-1">14 daq qoldi</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col text-body-sm">
+<span class="text-on-surface font-medium">Bugun 14:05</span>
+<span class="text-on-surface-variant text-[11px]">Chrome, Windows</span>
+</div>
+</td>
+<td class="py-3.5 px-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded-md text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" title="Vaqt qo'shish (+15 min)" type="button">
+<span class="material-symbols-outlined text-[18px]">more_time</span>
+</button>
+<button class="p-1 rounded-md text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" title="Qayta tiklash" type="button">
+<span class="material-symbols-outlined text-[18px]">restart_alt</span>
+</button>
+<button class="p-1 rounded-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" title="Amallar menyusi" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Selected & Finished -->
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3.5 px-4">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary/20 accent-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-secondary-fixed text-on-secondary-fixed font-bold flex items-center justify-center font-title-sm text-title-sm shrink-0">
+                      MS
+                    </div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold truncate">Madina Saidova</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Matematika 9-A</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-1.5 font-mono text-body-sm text-on-surface font-medium bg-surface-container-low px-2 py-1 rounded inline-flex">
+<span>ozaq-4822</span>
+<button class="text-on-surface-variant hover:text-primary" title="Nusxalash" type="button">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-1.5">
+<span class="font-mono text-body-sm text-on-surface-variant tracking-widest">••••••••</span>
+<button class="text-on-surface-variant hover:text-on-surface" title="Parolni ko'rish" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</button>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[14px]">check</span>
+<span>Topshirdi (Natija: 85%)</span>
+</span>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col text-body-sm">
+<span class="text-on-surface font-medium">Bugun 14:00</span>
+<span class="text-on-surface-variant text-[11px]">Safari, macOS</span>
+</div>
+</td>
+<td class="py-3.5 px-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded-md text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" title="Karta PDF yuklash" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+<button class="p-1 rounded-md text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" title="Qayta ochish" type="button">
+<span class="material-symbols-outlined text-[18px]">replay</span>
+</button>
+<button class="p-1 rounded-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Selected & Disconnected -->
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3.5 px-4">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary/20 accent-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-surface-container-highest text-on-surface font-bold flex items-center justify-center font-title-sm text-title-sm shrink-0">
+                      BK
+                    </div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold truncate">Bekzod Karimov</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Matematika 9-A</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-1.5 font-mono text-body-sm text-on-surface font-medium bg-surface-container-low px-2 py-1 rounded inline-flex">
+<span>ozaq-4823</span>
+<button class="text-on-surface-variant hover:text-primary" type="button">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-1.5">
+<span class="font-mono text-body-sm text-on-surface-variant tracking-widest">••••••••</span>
+<button class="text-on-surface-variant hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</button>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col gap-0.5">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-md text-label-md font-semibold w-max">
+<span class="material-symbols-outlined text-[14px]">wifi_off</span>
+<span>Ulanish uzildi</span>
+</span>
+<span class="font-label-sm text-label-sm text-error font-medium pl-1">3 daq oldin chiqib ketdi</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col text-body-sm">
+<span class="text-on-surface font-medium">Bugun 14:02</span>
+<span class="text-on-surface-variant text-[11px]">Edge, Windows</span>
+</div>
+</td>
+<td class="py-3.5 px-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded-md text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" title="Vaqt qo'shish" type="button">
+<span class="material-symbols-outlined text-[18px]">more_time</span>
+</button>
+<button class="p-1 rounded-md text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" title="Qayta ochish" type="button">
+<span class="material-symbols-outlined text-[18px]">lock_reset</span>
+</button>
+<button class="p-1 rounded-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Not Joined -->
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3.5 px-4">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary/20 accent-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-surface-container text-on-surface-variant font-bold flex items-center justify-center font-title-sm text-title-sm shrink-0">
+                      NO
+                    </div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold truncate">Nilufar Orifova</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Matematika 9-A</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-1.5 font-mono text-body-sm text-on-surface font-medium bg-surface-container-low px-2 py-1 rounded inline-flex">
+<span>ozaq-4824</span>
+<button class="text-on-surface-variant hover:text-primary" type="button">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-1.5">
+<span class="font-mono text-body-sm text-on-surface-variant tracking-widest">••••••••</span>
+<button class="text-on-surface-variant hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</button>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span>Kirmagan</span>
+</span>
+</td>
+<td class="py-3.5 px-4">
+<span class="text-on-surface-variant font-body-sm text-body-sm italic">Hali ulanmagan</span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded-md text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" title="Telegram orqali eslatish" type="button">
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+<button class="p-1 rounded-md text-on-surface-variant hover:bg-surface-container hover:text-error transition-colors" title="O'chirish" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+<button class="p-1 rounded-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5: Another In-progress Student -->
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3.5 px-4">
+<input class="w-4 h-4 rounded text-primary focus:ring-primary/20 accent-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-primary-fixed-dim text-primary font-bold flex items-center justify-center font-title-sm text-title-sm shrink-0">
+                      AZ
+                    </div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold truncate">Anvar Zokirov</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Matematika 9-A</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-1.5 font-mono text-body-sm text-on-surface font-medium bg-surface-container-low px-2 py-1 rounded inline-flex">
+<span>ozaq-4825</span>
+<button class="text-on-surface-variant hover:text-primary" type="button">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-1.5">
+<span class="font-mono text-body-sm text-on-surface-variant tracking-widest">••••••••</span>
+<button class="text-on-surface-variant hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</button>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col gap-0.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-label-md text-label-md font-semibold w-max">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<span>Yechmoqda (22-savol)</span>
+</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant pl-1">08 daq qoldi</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col text-body-sm">
+<span class="text-on-surface font-medium">Bugun 14:03</span>
+<span class="text-on-surface-variant text-[11px]">Firefox, Linux</span>
+</div>
+</td>
+<td class="py-3.5 px-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded-md text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_time</span>
+</button>
+<button class="p-1 rounded-md text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">restart_alt</span>
+</button>
+<button class="p-1 rounded-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination Footer -->
+<div class="flex items-center justify-between px-4 py-3 bg-surface-container-low text-on-surface-variant font-body-sm text-body-sm">
+<span>24 tadan 1–5 ko'rsatilmoqda</span>
+<div class="flex items-center gap-2">
+<button class="px-2 py-1 rounded bg-surface-container opacity-50 cursor-not-allowed" disabled="" type="button">Oldingi</button>
+<span class="px-2 py-0.5 font-bold text-on-surface">1</span>
+<button class="px-2 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface" type="button">2</button>
+<button class="px-2 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface" type="button">3</button>
+<button class="px-2 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface" type="button">Keyingi</button>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: 4 of 12 cols (≈ 30-33%) -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg">
+<!-- WIDGET A: O'QUVCHI QO'SHISH VIDJETI (Add Student Widget with 3 tabs) -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">person_add</span>
+<h2 class="font-title-md text-title-md text-on-surface">O'quvchi qo'shish</h2>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">3 usul</span>
+</div>
+<!-- Tab Nav -->
+<div class="flex items-center bg-surface-container-low p-1 rounded-lg gap-1">
+<button class="flex-1 py-1.5 rounded-md bg-surface-container-lowest text-on-surface font-label-md text-label-md font-semibold shadow-xs text-center" type="button">Guruhdan</button>
+<button class="flex-1 py-1.5 rounded-md text-on-surface-variant hover:text-on-surface font-label-md text-label-md text-center" type="button">Qo'lda</button>
+<button class="flex-1 py-1.5 rounded-md text-on-surface-variant hover:text-on-surface font-label-md text-label-md text-center" type="button">Excel / CSV</button>
+</div>
+<!-- TAB 1 CONTENT: Guruhdan tanlash (Active) -->
+<div class="flex flex-col gap-3">
+<label class="font-label-md text-label-md text-on-surface-variant font-medium">Guruhni tanlang</label>
+<div class="flex items-center justify-between bg-surface-container-low px-3 py-2.5 rounded-lg text-on-surface font-title-sm text-title-sm cursor-pointer hover:bg-surface-container transition-colors">
+<span class="truncate">Matematika 9-A — 28 ta o'quvchi</span>
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">expand_more</span>
+</div>
+<!-- Students checklist from group -->
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Guruh a'zolari:</span>
+<button class="font-label-sm text-label-sm text-primary font-semibold hover:underline" type="button">Barchasini tanlash</button>
+</div>
+<div class="flex flex-col gap-1 max-h-48 overflow-y-auto pr-1">
+<label class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors">
+<div class="flex items-center gap-2">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary/20 accent-primary" type="checkbox"/>
+<span class="font-title-sm text-title-sm text-on-surface">Shahzod Umarov</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">#4829</span>
+</label>
+<label class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors">
+<div class="flex items-center gap-2">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary/20 accent-primary" type="checkbox"/>
+<span class="font-title-sm text-title-sm text-on-surface">Ziyoda Alimova</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">#4830</span>
+</label>
+<label class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors">
+<div class="flex items-center gap-2">
+<input class="w-4 h-4 rounded text-primary focus:ring-primary/20 accent-primary" type="checkbox"/>
+<span class="font-title-sm text-title-sm text-on-surface">Doniyor Raximov</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Boshqa testda</span>
+</label>
+<label class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors">
+<div class="flex items-center gap-2">
+<input class="w-4 h-4 rounded text-primary focus:ring-primary/20 accent-primary" type="checkbox"/>
+<span class="font-title-sm text-title-sm text-on-surface">Malika Rustamova</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">#4832</span>
+</label>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="font-label-md text-label-md text-on-surface-variant">Tanlandi: <strong class="text-on-surface">2 ta o'quvchi</strong></span>
+<button class="px-4 py-2 rounded-lg bg-primary text-on-primary font-title-sm text-title-sm hover:bg-primary-container transition-colors shadow-sm flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>Testga qo'shish</span>
+</button>
+</div>
+</div>
+<!-- Excel / CSV Upload Preview subcard (Collapsible demonstration) -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-2 mt-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 font-label-md text-label-md text-on-surface font-semibold">
+<span class="material-symbols-outlined text-secondary text-[18px]">file_upload</span>
+<span>CSV Fayl tekshirish prevyusi</span>
+</div>
+<a class="font-label-sm text-label-sm text-primary underline" href="#">template.xlsx</a>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">14 ta o'quvchi aniqlandi, <span class="text-error font-medium">1 ta xato</span> (Ism kiritilmagan).</p>
+</div>
+</div>
+<!-- WIDGET B: KIRISH VA XAVFSIZLIK QOIDALARI (Security Rules) -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">security</span>
+<h2 class="font-title-md text-title-md text-on-surface">Kirish &amp; Xavfsizlik qoidalari</h2>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px] cursor-pointer hover:text-on-surface">tune</span>
+</div>
+<div class="flex flex-col gap-4">
+<!-- Rule 1: Time Window -->
+<div class="flex items-start justify-between gap-3">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">Kirish vaqt oynasi</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Faqat belgilangan oraliqda topshirish</span>
+<div class="mt-2 flex items-center gap-2">
+<span class="px-2 py-1 rounded bg-surface-container font-mono text-body-sm text-on-surface">14:00</span>
+<span class="text-on-surface-variant font-bold">—</span>
+<span class="px-2 py-1 rounded bg-surface-container font-mono text-body-sm text-on-surface">15:30</span>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0 mt-1">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="h-px bg-surface-container"></div>
+<!-- Rule 2: Password Type Radio -->
+<div class="flex flex-col gap-2">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">Parol turi</span>
+<label class="flex items-center gap-2.5 p-2 rounded-lg bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors">
+<input checked="" class="text-primary accent-primary" name="pwd_mode" type="radio"/>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface">Bir martalik (Topshirgach yopiladi)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Yuqori xavfsizlik, qayta topshirish taqiqlanadi</span>
+</div>
+</label>
+<label class="flex items-center gap-2.5 p-2 rounded-lg bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors">
+<input class="text-primary accent-primary" name="pwd_mode" type="radio"/>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface">Qayta kirish mumkin</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Ulanish uzilganda sessiyani davom ettirish</span>
+</div>
+</label>
+</div>
+<div class="h-px bg-surface-container"></div>
+<!-- Rule 3: Single Device Toggle -->
+<div class="flex items-center justify-between gap-3">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">Bitta qurilma cheklovi</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Bir vaqtda faqat 1 ta brauzerdan ruxsat</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="h-px bg-surface-container"></div>
+<!-- Rule 4: Incorrect Attempts Dropdown -->
+<div class="flex items-center justify-between gap-3">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">Noto'g'ri urinishlar</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Limitdan so'ng hisob bloklanadi</span>
+</div>
+<div class="px-3 py-1 rounded-lg bg-surface-container text-on-surface font-title-sm text-title-sm font-semibold flex items-center gap-1 cursor-pointer">
+<span>3 marta</span>
+<span class="material-symbols-outlined text-[16px]">expand_more</span>
+</div>
+</div>
+<div class="h-px bg-surface-container"></div>
+<!-- Rule 5: Auto-start Toggle -->
+<div class="flex items-center justify-between gap-3">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">Avto-start</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">O'quvchi kirishi bilan taymer boshlansin</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+<button class="w-full py-2 bg-surface-container hover:bg-surface-container-high text-on-surface font-title-sm text-title-sm rounded-lg transition-colors flex items-center justify-center gap-2 mt-1" type="button">
+<span class="material-symbols-outlined text-[18px]">save</span>
+<span>Qoidalarni saqlash</span>
+</button>
+</div>
+</div>
+</div>
+<!-- 5. FREEMIUM TIER LIMIT NOTIFICATION BANNER -->
+<div class="bg-gradient-to-r from-surface-container-highest via-surface-container to-surface-container-high p-4 rounded-xl shadow-sm flex flex-col md:flex-row items-center justify-between gap-4 mt-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">workspace_premium</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface font-bold">Start Tier limitiga yetdingiz (24 / 25 o'quvchi)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Keyingi o'quvchini qo'shish uchun Pro tarifiga o'ting yoki ro'yxatdan o'quvchilarni olib tashlang.</span>
+</div>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<button class="px-4 py-2 rounded-lg bg-surface-container-lowest text-on-surface font-title-sm text-title-sm shadow-sm hover:bg-surface transition-colors" type="button">
+        O'quvchini boshqarish
+      </button>
+<button class="px-4 py-2 rounded-lg bg-primary text-on-primary font-title-sm text-title-sm shadow-md hover:bg-primary-container transition-all flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">auto_awesome</span>
+<span>Pro'ga o'tish</span>
+</button>
+</div>
+</div>
+</div></main></div><script>document.addEventListener('click',function(e){var el=e.target.closest&&e.target.closest('a,button,[role=button]');if(!el)return;try{parent.postMessage({ozaq:1,label:(el.textContent||'').replace(/\s+/g,' ').trim()},'*')}catch(_){}},true);</script></body></html>

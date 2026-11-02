@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+
+<html lang="uz"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com/3.4.17"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-tertiary": "#ffffff",
+          "error": "#ba1a1a",
+          "secondary": "#0c6b4f",
+          "surface-tint": "#5148d7",
+          "primary": "#2a14b4",
+          "surface-container-lowest": "#ffffff",
+          "outline": "#777586",
+          "inverse-primary": "#c3c0ff",
+          "on-tertiary-fixed-variant": "#7d2d00",
+          "on-tertiary-fixed": "#360f00",
+          "surface-container-low": "#f2f3ff",
+          "on-tertiary-container": "#ffb393",
+          "surface-container-highest": "#dae2fd",
+          "on-secondary": "#ffffff",
+          "on-error-container": "#93000a",
+          "surface-bright": "#faf8ff",
+          "on-secondary-fixed": "#002116",
+          "tertiary-fixed": "#ffdbcd",
+          "inverse-surface": "#283044",
+          "secondary-fixed-dim": "#85d7b4",
+          "primary-fixed": "#e3dfff",
+          "on-primary-fixed-variant": "#372abf",
+          "on-surface-variant": "#464554",
+          "secondary-fixed": "#a0f3cf",
+          "inverse-on-surface": "#eef0ff",
+          "primary-container": "#4338ca",
+          "on-primary-container": "#c1beff",
+          "tertiary": "#692400",
+          "primary-fixed-dim": "#c3c0ff",
+          "on-secondary-fixed-variant": "#00513b",
+          "surface-container-high": "#e2e7ff",
+          "background": "#faf8ff",
+          "on-primary": "#ffffff",
+          "surface-variant": "#dae2fd",
+          "surface": "#faf8ff",
+          "on-surface": "#131b2e",
+          "surface-dim": "#d2d9f4",
+          "on-secondary-container": "#187255",
+          "outline-variant": "#c7c4d7",
+          "on-primary-fixed": "#100069",
+          "surface-container": "#eaedff",
+          "on-error": "#ffffff",
+          "tertiary-container": "#8f3400",
+          "secondary-container": "#a0f3cf",
+          "on-background": "#131b2e",
+          "tertiary-fixed-dim": "#ffb597",
+          "error-container": "#ffdad6"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-xs": "0.25rem",
+          "space-lg": "1.5rem",
+          "gutter": "1.5rem",
+          "margin-mobile": "1rem",
+          "gutter-mobile": "0.75rem",
+          "space-md": "1rem",
+          "margin": "2rem",
+          "space-sm": "0.5rem",
+          "space-xl": "2.5rem"
+        },
+        "fontFamily": {
+          "label-lg": [
+            "Inter"
+          ],
+          "body-xl": [
+            "Inter"
+          ],
+          "label-md": [
+            "Inter"
+          ],
+          "headline-lg": [
+            "Plus Jakarta Sans"
+          ],
+          "label-sm": [
+            "Inter"
+          ],
+          "body-sm": [
+            "Inter"
+          ],
+          "body-lg": [
+            "Inter"
+          ],
+          "headline-sm": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-xl": [
+            "Plus Jakarta Sans"
+          ],
+          "timer-display": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-xl-mobile": [
+            "Plus Jakarta Sans"
+          ],
+          "body-md": [
+            "Inter"
+          ],
+          "headline-md": [
+            "Plus Jakarta Sans"
+          ]
+        },
+        "fontSize": {
+          "label-lg": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "600"
+            }
+          ],
+          "body-xl": [
+            "20px",
+            {
+              "lineHeight": "32px",
+              "fontWeight": "400"
+            }
+          ],
+          "label-md": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-lg": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "fontWeight": "700"
+            }
+          ],
+          "label-sm": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "letterSpacing": "0.025em",
+              "fontWeight": "500"
+            }
+          ],
+          "body-sm": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "400"
+            }
+          ],
+          "body-lg": [
+            "18px",
+            {
+              "lineHeight": "28px",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-sm": [
+            "18px",
+            {
+              "lineHeight": "26px",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-xl": [
+            "36px",
+            {
+              "lineHeight": "44px",
+              "fontWeight": "700"
+            }
+          ],
+          "timer-display": [
+            "24px",
+            {
+              "lineHeight": "28px",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-xl-mobile": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "fontWeight": "700"
+            }
+          ],
+          "body-md": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-md": [
+            "22px",
+            {
+              "lineHeight": "30px",
+              "fontWeight": "600"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-surface font-body-md text-body-md text-on-surface select-none"><header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-gutter flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md min-w-0"><div class="flex items-center gap-space-sm shrink-0"><div class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center text-on-primary font-headline-sm text-headline-sm tracking-wider font-bold shadow-sm">O</div><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface hidden sm:inline">OZAQ</span></div><div class="h-5 w-px bg-outline-variant shrink-0"></div><div class="min-w-0"><h1 class="font-label-md text-label-md text-on-surface truncate">Respublika Fan Olimpiadasi — Bosqich II</h1><p class="font-label-sm text-label-sm text-on-surface-variant truncate">Matematika va mantiqiy fikrlash</p></div></div><div class="flex items-center gap-space-md shrink-0"><div class="hidden md:flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-low text-secondary"><span class="material-symbols-outlined text-[18px]">cloud_done</span><span class="font-label-sm text-label-sm font-medium">Barcha javoblar saqlandi</span></div><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-secondary-container text-on-secondary-container"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-sm text-label-sm font-semibold">Onlayn</span></div><nav class="flex items-center bg-surface-container-low p-1 rounded-lg" data-active-classes="bg-primary-container text-on-primary rounded-lg"><a class="px-2 py-0.5 font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="language-uz" href="#">UZ</a><a class="px-2 py-0.5 font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="language-ru" href="#">RU</a><a class="px-2 py-0.5 font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="language-en" href="#">EN</a></nav><div class="h-5 w-px bg-outline-variant shrink-0"></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="hidden lg:flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface leading-tight">Azizbek Rahimov</span><span class="font-label-sm text-label-sm text-on-surface-variant font-mono">ID: 2024-9841</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Offline Warning Banner (Dismissable & reactive) -->
+<div class="hidden w-full bg-error text-on-error px-gutter py-2 flex items-center justify-between text-label-sm font-label-sm shadow-md transition-all" id="offline-alert">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[18px]">wifi_off</span>
+<span>Internet aloqasi uzildi! Javoblaringiz mahalliy xotirada saqlanmoqda.</span>
+</div>
+<button class="hover:opacity-80 transition-opacity" onclick="document.getElementById('offline-alert').classList.add('hidden')">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Primary Sub-Header Bar (Exam Context & Dynamic Timer) -->
+<section class="w-full bg-surface-container-lowest shadow-sm">
+<div class="max-w-[1536px] mx-auto px-gutter py-space-sm flex flex-wrap items-center justify-between gap-space-md">
+<!-- Title & Student Metadata -->
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]">menu_book</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-space-sm flex-wrap">
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate">Matematika Mini-Mock #3</h2>
+<span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm">Akademik Blok B</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1.5 mt-0.5">
+<span class="material-symbols-outlined text-[16px] text-outline">account_circle</span>
+<span class="font-medium text-on-surface">Jasur Temirov</span>
+<span class="text-outline-variant">•</span>
+<span class="font-mono text-outline">Kanditat: #OZ-9821</span>
+</p>
+</div>
+</div>
+<!-- Sync Status + Timer Center/Right -->
+<div class="flex items-center gap-space-md ml-auto">
+<!-- Live Save Heartbeat -->
+<div class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[18px] text-secondary">cloud_done</span>
+<span id="save-timestamp">Javob saqlandi (14:32:05)</span>
+</div>
+<!-- Network Health Indicator -->
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-secondary-container text-on-secondary-container font-label-sm text-label-sm cursor-pointer" id="net-indicator" onclick="toggleNetworkSimulation()">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-medium">Aloqa barqaror</span>
+</div>
+<!-- High-Visibility Countdown Timer -->
+<div class="flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-container text-on-surface shadow-sm transition-colors duration-500" id="exam-timer-card">
+<span class="material-symbols-outlined text-[20px] text-primary" id="timer-icon">timer</span>
+<div class="flex flex-col text-right">
+<span class="font-timer-display text-timer-display font-bold tracking-tight text-on-surface tabular-nums" id="timer-display">44:18</span>
+<span class="font-label-sm text-[10px] uppercase tracking-wider text-on-surface-variant leading-none" id="timer-sublabel">qolgan vaqt</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Split Layout (Desktop 8 / 4 Grid) -->
+<div class="max-w-[1536px] w-full mx-auto px-gutter py-space-lg flex-1">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT: Active Question & Reading Stage (8 Columns) -->
+<div class="lg:col-span-8 flex flex-col gap-space-md">
+<!-- Question Meta Card -->
+<div class="bg-surface-container-lowest p-space-md sm:p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between flex-wrap gap-space-sm">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="px-3 py-1 rounded-full bg-primary text-on-primary font-label-md text-label-md">14-savol / 40 tadan</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                Qiyinlik: O'rtacha (Band 7.0)
+              </span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Mavzu: Shahar Ekologiyasi</span>
+</div>
+<!-- Passage Pane Toggle -->
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-primary font-label-sm text-label-sm flex items-center gap-1.5 transition-colors" id="toggle-passage-btn" onclick="togglePassageView()">
+<span class="material-symbols-outlined text-[18px]">chrome_reader_mode</span>
+<span id="toggle-passage-text">Matnni yig'ish</span>
+</button>
+</div>
+<!-- Reading Passage Excerpt (Collapsible / Split View) -->
+<div class="bg-surface-container-low p-space-md rounded-xl text-body-md font-body-md text-on-surface-variant leading-relaxed transition-all" id="passage-container">
+<div class="flex items-center justify-between pb-space-sm mb-space-sm bg-surface-container/60 -mx-space-md -mt-space-md px-space-md pt-space-sm rounded-t-xl">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">auto_stories</span>
+<span class="font-label-md text-label-md text-on-surface">Matnli savol: Shahar mikroiqlimi</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Xatboshi C va D</span>
+</div>
+<p class="mb-2">
+<strong class="text-on-surface">[Paragraph C]</strong> Historical meteorological reconstructions from 18th-century municipal logbooks illuminate the stark thermal disparity between open squares and dense residential alleys. Contrary to earlier assumptions that narrow cobblestone arteries trapped convective breezes, radiometric field simulations demonstrated that <mark class="bg-primary-fixed/60 text-on-primary-fixed-variant px-1 rounded">narrow cobblestone streets concentrated radiant heat during midday hours</mark>, absorbing upwards of 68% of ambient solar radiation without adequate dissipation paths.
+            </p>
+<p>
+<strong class="text-on-surface">[Paragraph D]</strong> Hydraulic interfaces additionally reshaped nocturnal thermal balances. In riverside precincts, micro-turbulences combined with high ambient riverbed saturation, whereby <mark class="bg-primary-fixed/60 text-on-primary-fixed-variant px-1 rounded">proximity to the river intensified localized humidity pockets in lower districts</mark>, markedly suppressing evaporative cooling while elevating apparent dew point indices.
+            </p>
+</div>
+<!-- Question Prompt -->
+<div class="pt-2">
+<div class="flex items-start gap-space-sm">
+<span class="w-7 h-7 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-headline-sm text-label-md shrink-0">14</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-snug">
+                  Which TWO of the following statements correspond to the author's findings regarding urban microclimates?
+                </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                  Matndan kelib chiqib, to'g'ri bo'lgan <strong>ikkita (2)</strong> bandni tanlang. Klaviatura tugmalari: <kbd class="px-1.5 py-0.5 rounded bg-surface-container font-mono text-xs">1</kbd>, <kbd class="px-1.5 py-0.5 rounded bg-surface-container font-mono text-xs">2</kbd>, <kbd class="px-1.5 py-0.5 rounded bg-surface-container font-mono text-xs">3</kbd>, <kbd class="px-1.5 py-0.5 rounded bg-surface-container font-mono text-xs">4</kbd>
+</p>
+</div>
+</div>
+</div>
+<!-- Interactive Answer Options (Touch & Keyboard safe) -->
+<div class="flex flex-col gap-space-md pt-2" id="options-group">
+<!-- Option A (Selected) -->
+<label class="group relative flex items-start gap-space-md p-space-md rounded-xl cursor-pointer transition-all duration-200 bg-surface-container-high/60 shadow-sm" id="opt-container-1">
+<input checked="" class="sr-only" name="reading-q14" onchange="toggleOption(this, 'opt-container-1')" type="checkbox" value="A"/>
+<div class="w-6 h-6 rounded-md flex items-center justify-center shrink-0 mt-0.5 transition-colors bg-primary text-on-primary" id="box-1">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div class="flex-1 flex items-baseline justify-between gap-space-sm">
+<div class="font-body-lg text-body-lg text-on-surface font-medium leading-relaxed">
+<span class="font-label-lg font-bold mr-2 text-primary">A.</span>
+                  Narrow cobblestone streets concentrated radiant heat during midday hours
+                </div>
+<span class="font-label-sm text-label-sm text-on-surface-variant/70 px-2 py-0.5 rounded bg-surface-container shrink-0">Tugma: 1</span>
+</div>
+</label>
+<!-- Option B -->
+<label class="group relative flex items-start gap-space-md p-space-md rounded-xl cursor-pointer transition-all duration-200 bg-surface hover:bg-surface-container-low shadow-sm" id="opt-container-2">
+<input class="sr-only" name="reading-q14" onchange="toggleOption(this, 'opt-container-2')" type="checkbox" value="B"/>
+<div class="w-6 h-6 rounded-md flex items-center justify-center shrink-0 mt-0.5 transition-colors bg-surface-container text-on-surface-variant group-hover:bg-surface-container-high" id="box-2">
+<span class="material-symbols-outlined text-[18px] opacity-0">check</span>
+</div>
+<div class="flex-1 flex items-baseline justify-between gap-space-sm">
+<div class="font-body-lg text-body-lg text-on-surface leading-relaxed">
+<span class="font-label-lg font-bold mr-2 text-outline">B.</span>
+                  Industrial soot completely blocked atmospheric ozone regeneration
+                </div>
+<span class="font-label-sm text-label-sm text-on-surface-variant/70 px-2 py-0.5 rounded bg-surface-container shrink-0">Tugma: 2</span>
+</div>
+</label>
+<!-- Option C (Selected) -->
+<label class="group relative flex items-start gap-space-md p-space-md rounded-xl cursor-pointer transition-all duration-200 bg-surface-container-high/60 shadow-sm" id="opt-container-3">
+<input checked="" class="sr-only" name="reading-q14" onchange="toggleOption(this, 'opt-container-3')" type="checkbox" value="C"/>
+<div class="w-6 h-6 rounded-md flex items-center justify-center shrink-0 mt-0.5 transition-colors bg-primary text-on-primary" id="box-3">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div class="flex-1 flex items-baseline justify-between gap-space-sm">
+<div class="font-body-lg text-body-lg text-on-surface font-medium leading-relaxed">
+<span class="font-label-lg font-bold mr-2 text-primary">C.</span>
+                  Proximity to the river intensified localized humidity pockets in lower districts
+                </div>
+<span class="font-label-sm text-label-sm text-on-surface-variant/70 px-2 py-0.5 rounded bg-surface-container shrink-0">Tugma: 3</span>
+</div>
+</label>
+<!-- Option D -->
+<label class="group relative flex items-start gap-space-md p-space-md rounded-xl cursor-pointer transition-all duration-200 bg-surface hover:bg-surface-container-low shadow-sm" id="opt-container-4">
+<input class="sr-only" name="reading-q14" onchange="toggleOption(this, 'opt-container-4')" type="checkbox" value="D"/>
+<div class="w-6 h-6 rounded-md flex items-center justify-center shrink-0 mt-0.5 transition-colors bg-surface-container text-on-surface-variant group-hover:bg-surface-container-high" id="box-4">
+<span class="material-symbols-outlined text-[18px] opacity-0">check</span>
+</div>
+<div class="flex-1 flex items-baseline justify-between gap-space-sm">
+<div class="font-body-lg text-body-lg text-on-surface leading-relaxed">
+<span class="font-label-lg font-bold mr-2 text-outline">D.</span>
+                  Rooftop cisterns diminished overall rainfall evaporation by half
+                </div>
+<span class="font-label-sm text-label-sm text-on-surface-variant/70 px-2 py-0.5 rounded bg-surface-container shrink-0">Tugma: 4</span>
+</div>
+</label>
+</div>
+<!-- Bottom Micro-hint and live status -->
+<div class="flex items-center justify-between pt-space-sm text-label-sm text-outline">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">info</span>
+              Ushbu savol uchun 2 ta variant belgilandi (To'liq javob)
+            </span>
+<span class="font-mono text-label-sm">Savolga sarflangan vaqt: 01:42</span>
+</div>
+</div>
+<!-- Sticky Interaction & Action Navigation Bar -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<!-- Prev Button -->
+<button class="px-space-md py-3 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span class="hidden sm:inline">Oldingi savol</span>
+</button>
+<!-- Flag / Review Button -->
+<button class="px-space-md py-3 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed hover:bg-tertiary-fixed-dim font-label-md text-label-md flex items-center gap-1.5 transition-colors" id="flag-toggle-btn" onclick="toggleFlag()">
+<span class="material-symbols-outlined text-[20px]" id="flag-icon">bookmark_border</span>
+<span id="flag-btn-text">Keyin qaytaman (Belgilash)</span>
+</button>
+</div>
+<div class="flex items-center gap-space-sm">
+<!-- Next Button -->
+<button class="px-space-md py-3 rounded-lg bg-primary text-on-primary hover:bg-primary-container font-label-lg text-label-lg flex items-center gap-1.5 shadow-sm transition-colors">
+<span>Keyingi savol</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<!-- Finish Assessment Button -->
+<button class="px-space-md py-3 rounded-lg bg-error text-on-error hover:opacity-90 font-label-md text-label-md flex items-center gap-1.5 shadow-sm transition-opacity" onclick="openSubmitModal()">
+<span class="material-symbols-outlined text-[20px]">assignment_turned_in</span>
+<span>Testni topshirish</span>
+</button>
+</div>
+</div>
+</div>
+<!-- RIGHT: Test Navigator Matrix & Telemetry (4 Columns) -->
+<aside class="lg:col-span-4 flex flex-col gap-space-md">
+<!-- Progress Overview Widget -->
+<div class="bg-surface-container-lowest p-space-md sm:p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Savollar xaritasi</h4>
+<span class="font-label-md text-label-md text-primary font-bold">18 / 40 (45%)</span>
+</div>
+<!-- Progress Bar Meter -->
+<div class="w-full bg-surface-container h-2.5 rounded-full overflow-hidden flex">
+<div class="bg-secondary h-full" style="width: 45%;" title="Javob berilgan (45%)"></div>
+<div class="bg-tertiary h-full" style="width: 7.5%;" title="Belgilangan (7.5%)"></div>
+</div>
+<!-- Question Counts Summary Badges -->
+<div class="grid grid-cols-3 gap-2 text-center">
+<div class="p-2 rounded-lg bg-secondary-container text-on-secondary-container">
+<div class="font-headline-sm text-headline-sm font-bold">18</div>
+<div class="font-label-sm text-label-sm">Yechildi</div>
+</div>
+<div class="p-2 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed">
+<div class="font-headline-sm text-headline-sm font-bold">3</div>
+<div class="font-label-sm text-label-sm">Belgilangan</div>
+</div>
+<div class="p-2 rounded-lg bg-surface-container text-on-surface-variant">
+<div class="font-headline-sm text-headline-sm font-bold">19</div>
+<div class="font-label-sm text-label-sm">Qoldi</div>
+</div>
+</div>
+<!-- Interactive Question Matrix Grid (1 to 40) -->
+<div class="mt-2">
+<div class="text-label-sm font-label-sm text-on-surface-variant mb-2">Savol raqamiga o'tish:</div>
+<div class="grid grid-cols-5 sm:grid-cols-8 lg:grid-cols-5 gap-2" id="question-matrix">
+<!-- Q 1-4 (Answered) -->
+<button class="h-9 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md flex items-center justify-center font-bold">1</button>
+<button class="h-9 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md flex items-center justify-center font-bold">2</button>
+<button class="h-9 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md flex items-center justify-center font-bold">3</button>
+<button class="h-9 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md flex items-center justify-center font-bold">4</button>
+<!-- Q 5 (Flagged Review) -->
+<button class="h-9 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed font-label-md text-label-md flex items-center justify-center font-bold relative">
+                5
+                <span class="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+</button>
+<!-- Q 6-11 (Answered) -->
+<button class="h-9 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md flex items-center justify-center font-bold">6</button>
+<button class="h-9 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md flex items-center justify-center font-bold">7</button>
+<button class="h-9 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md flex items-center justify-center font-bold">8</button>
+<button class="h-9 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md flex items-center justify-center font-bold">9</button>
+<button class="h-9 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md flex items-center justify-center font-bold">10</button>
+<button class="h-9 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md flex items-center justify-center font-bold">11</button>
+<!-- Q 12 (Flagged) -->
+<button class="h-9 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed font-label-md text-label-md flex items-center justify-center font-bold relative">
+                12
+                <span class="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+</button>
+<!-- Q 13 (Answered) -->
+<button class="h-9 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md flex items-center justify-center font-bold">13</button>
+<!-- Q 14 (CURRENT ACTIVE - Double ring style without border utility) -->
+<button class="h-9 rounded-lg bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center font-bold shadow-md shadow-primary/30 scale-105">
+                14
+              </button>
+<!-- Q 15-21 (Unanswered) -->
+<button class="h-9 rounded-lg bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center justify-center hover:bg-surface-container-high transition-colors">15</button>
+<button class="h-9 rounded-lg bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center justify-center hover:bg-surface-container-high transition-colors">16</button>
+<button class="h-9 rounded-lg bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center justify-center hover:bg-surface-container-high transition-colors">17</button>
+<button class="h-9 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md flex items-center justify-center font-bold">18</button>
+<button class="h-9 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md flex items-center justify-center font-bold">19</button>
+<button class="h-9 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md flex items-center justify-center font-bold">20</button>
+<button class="h-9 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md flex items-center justify-center font-bold">21</button>
+<!-- Q 22 (Flagged) -->
+<button class="h-9 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed font-label-md text-label-md flex items-center justify-center font-bold relative">
+                22
+                <span class="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+</button>
+<!-- Q 23-40 (Unanswered / Rest of Assessment) -->
+<button class="h-9 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md flex items-center justify-center font-bold">23</button>
+<button class="h-9 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md flex items-center justify-center font-bold">24</button>
+<button class="h-9 rounded-lg bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center justify-center hover:bg-surface-container-high transition-colors">25</button>
+<button class="h-9 rounded-lg bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center justify-center hover:bg-surface-container-high transition-colors">26</button>
+<button class="h-9 rounded-lg bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center justify-center hover:bg-surface-container-high transition-colors">27</button>
+<button class="h-9 rounded-lg bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center justify-center hover:bg-surface-container-high transition-colors">28</button>
+<button class="h-9 rounded-lg bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center justify-center hover:bg-surface-container-high transition-colors">29</button>
+<button class="h-9 rounded-lg bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center justify-center hover:bg-surface-container-high transition-colors">30</button>
+<button class="h-9 rounded-lg bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center justify-center hover:bg-surface-container-high transition-colors">31</button>
+<button class="h-9 rounded-lg bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center justify-center hover:bg-surface-container-high transition-colors">32</button>
+<button class="h-9 rounded-lg bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center justify-center hover:bg-surface-container-high transition-colors">33</button>
+<button class="h-9 rounded-lg bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center justify-center hover:bg-surface-container-high transition-colors">34</button>
+<button class="h-9 rounded-lg bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center justify-center hover:bg-surface-container-high transition-colors">35</button>
+<button class="h-9 rounded-lg bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center justify-center hover:bg-surface-container-high transition-colors">36</button>
+<button class="h-9 rounded-lg bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center justify-center hover:bg-surface-container-high transition-colors">37</button>
+<button class="h-9 rounded-lg bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center justify-center hover:bg-surface-container-high transition-colors">38</button>
+<button class="h-9 rounded-lg bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center justify-center hover:bg-surface-container-high transition-colors">39</button>
+<button class="h-9 rounded-lg bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center justify-center hover:bg-surface-container-high transition-colors">40</button>
+</div>
+</div>
+<!-- Color Coding Legend -->
+<div class="pt-space-sm flex flex-col gap-1.5 text-label-sm font-label-sm text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="w-3.5 h-3.5 rounded bg-secondary shrink-0"></span>
+<span>Yashil: Javob berilgan (18 ta)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3.5 h-3.5 rounded bg-tertiary-fixed shrink-0"></span>
+<span>Sariq: Belgilangan / Qaytiladigan (3 ta)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3.5 h-3.5 rounded bg-surface-container shrink-0"></span>
+<span>Kulrang: Hali ochilmagan (19 ta)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3.5 h-3.5 rounded bg-primary shrink-0"></span>
+<span>Binafsha: Faol savol (14-savol)</span>
+</div>
+</div>
+</div>
+<!-- Security & Proctored Examination Telemetry -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm text-body-sm text-on-surface-variant">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified_user</span>
+              Proktoring nazorati
+            </span>
+<span class="text-secondary font-semibold">FAOL</span>
+</div>
+<div class="flex items-center justify-between">
+<span>Oynani almashtirish:</span>
+<span class="font-mono text-on-surface font-medium">0 marta</span>
+</div>
+<div class="flex items-center justify-between">
+<span>Klaviaturadan foydalanish:</span>
+<span class="font-mono text-on-surface font-medium">Oddiy</span>
+</div>
+<div class="flex items-center justify-between">
+<span>Oxirgi server sinxroni:</span>
+<span class="font-mono text-on-surface font-medium">14:32:05</span>
+</div>
+</div>
+</aside>
+</div>
+</div>
+<!-- Interactive Submission Confirmation Modal -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm hidden flex items-center justify-center p-4" id="submission-modal">
+<div class="bg-surface-container-lowest max-w-lg w-full rounded-2xl shadow-xl p-space-lg flex flex-col gap-space-md animate-in fade-in zoom-in duration-150">
+<!-- Modal Header -->
+<div class="flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-error-container text-on-error-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[28px]">warning</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold">
+            Testni topshirishni tasdiqlaysizmi?
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+            Imtihonni muddatidan oldin yakunlash qaytarib bo'lmaydigan amal hisoblanadi.
+          </p>
+</div>
+</div>
+<!-- Section Stats Alert Card -->
+<div class="bg-surface-container p-space-md rounded-xl flex flex-col gap-2">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="text-on-surface-variant">Javob berilgan savollar:</span>
+<span class="text-secondary font-bold">18 ta</span>
+</div>
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="text-on-surface-variant">Javobsiz qolgan savollar:</span>
+<span class="text-error font-bold">22 ta</span>
+</div>
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="text-on-surface-variant">Ko'rib chiqishga belgilangan:</span>
+<span class="text-tertiary-container font-bold">3 ta</span>
+</div>
+<div class="flex items-center justify-between font-label-md text-label-md pt-2 mt-1 bg-surface-container-high/40 -mx-space-md px-space-md rounded-b-lg">
+<span class="text-on-surface">Qolgan imtihon vaqti:</span>
+<span class="font-mono font-bold text-on-surface text-label-lg" id="modal-timer-mirror">44:18</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-error">
+        Diqqat: Siz 22 ta savolga javob bermadingiz. Testni topshirganingizdan so'ng javoblarni o'zgartirib bo'lmaydi.
+      </p>
+<!-- Action Buttons -->
+<div class="flex items-center justify-end gap-space-sm pt-2">
+<button class="px-space-md py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors" onclick="closeSubmitModal()">
+          Davom ettirish
+        </button>
+<button class="px-space-lg py-2.5 rounded-lg bg-error text-on-error hover:opacity-90 font-label-lg text-label-lg shadow-sm transition-opacity" onclick="finalizeExam()">
+          Ha, topshirish
+        </button>
+</div>
+</div>
+</div>
+<!-- Inline Micro-interactions Script -->
+<script>
+    // Live countdown timer state (starts at 44m 18s)
+    let totalSeconds = 44 * 60 + 18;
+    const timerDisplay = document.getElementById('timer-display');
+    const timerCard = document.getElementById('exam-timer-card');
+    const modalTimerMirror = document.getElementById('modal-timer-mirror');
+    const timerIcon = document.getElementById('timer-icon');
+
+    function updateTimer() {
+      if (totalSeconds > 0) {
+        totalSeconds--;
+        const m = Math.floor(totalSeconds / 60);
+        const s = totalSeconds % 60;
+        const formatted = `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+        timerDisplay.textContent = formatted;
+        if (modalTimerMirror) modalTimerMirror.textContent = formatted;
+
+        // Visual alerts depending on remaining time
+        if (totalSeconds <= 300 && totalSeconds > 60) {
+          // Under 5 minutes: amber warning
+          timerCard.className = "flex items-center gap-2 px-4 py-2 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed shadow-sm transition-colors duration-500";
+          timerIcon.className = "material-symbols-outlined text-[20px] text-tertiary";
+        } else if (totalSeconds <= 60) {
+          // Under 1 minute: urgent red
+          timerCard.className = "flex items-center gap-2 px-4 py-2 rounded-xl bg-error-container text-on-error-container shadow-sm transition-colors duration-500";
+          timerIcon.className = "material-symbols-outlined text-[20px] text-error";
+        }
+      }
+    }
+    setInterval(updateTimer, 1000);
+
+    // Passage reading pane collapse/expand toggle
+    function togglePassageView() {
+      const passage = document.getElementById('passage-container');
+      const btnText = document.getElementById('toggle-passage-text');
+      if (passage.classList.contains('hidden')) {
+        passage.classList.remove('hidden');
+        btnText.textContent = "Matnni yig'ish";
+      } else {
+        passage.classList.add('hidden');
+        btnText.textContent = "Matnni ko'rsatish";
+      }
+    }
+
+    // Question options toggle
+    function toggleOption(checkbox, containerId) {
+      const container = document.getElementById(containerId);
+      const box = container.querySelector('[id^="box-"]');
+      const checkIcon = box.querySelector('span');
+
+      if (checkbox.checked) {
+        container.className = "group relative flex items-start gap-space-md p-space-md rounded-xl cursor-pointer transition-all duration-200 bg-surface-container-high/60 shadow-sm";
+        box.className = "w-6 h-6 rounded-md flex items-center justify-center shrink-0 mt-0.5 transition-colors bg-primary text-on-primary";
+        checkIcon.classList.remove('opacity-0');
+      } else {
+        container.className = "group relative flex items-start gap-space-md p-space-md rounded-xl cursor-pointer transition-all duration-200 bg-surface hover:bg-surface-container-low shadow-sm";
+        box.className = "w-6 h-6 rounded-md flex items-center justify-center shrink-0 mt-0.5 transition-colors bg-surface-container text-on-surface-variant group-hover:bg-surface-container-high";
+        checkIcon.classList.add('opacity-0');
+      }
+
+      // Update save heartbeat timestamp
+      const now = new Date();
+      const timeStr = now.toTimeString().split(' ')[0];
+      const stamp = document.getElementById('save-timestamp');
+      if (stamp) stamp.textContent = `Javob saqlandi (${timeStr})`;
+    }
+
+    // Flag for later review toggle
+    let isFlagged = false;
+    function toggleFlag() {
+      isFlagged = !isFlagged;
+      const btn = document.getElementById('flag-toggle-btn');
+      const icon = document.getElementById('flag-icon');
+      const text = document.getElementById('flag-btn-text');
+
+      if (isFlagged) {
+        btn.className = "px-space-md py-3 rounded-lg bg-tertiary-container text-on-tertiary font-label-md text-label-md flex items-center gap-1.5 transition-colors";
+        icon.textContent = "bookmark";
+        text.textContent = "Belgilandi (Qaytiladi)";
+      } else {
+        btn.className = "px-space-md py-3 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed hover:bg-tertiary-fixed-dim font-label-md text-label-md flex items-center gap-1.5 transition-colors";
+        icon.textContent = "bookmark_border";
+        text.textContent = "Keyin qaytaman (Belgilash)";
+      }
+    }
+
+    // Network disconnection test simulation
+    let isOnline = true;
+    function toggleNetworkSimulation() {
+      isOnline = !isOnline;
+      const alertBox = document.getElementById('offline-alert');
+      const netIndicator = document.getElementById('net-indicator');
+
+      if (!isOnline) {
+        alertBox.classList.remove('hidden');
+        netIndicator.className = "flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-error-container text-on-error-container font-label-sm text-label-sm cursor-pointer";
+        netIndicator.innerHTML = '<span class="w-2 h-2 rounded-full bg-error"></span><span class="font-medium">Oflayn rejim</span>';
+      } else {
+        alertBox.classList.add('hidden');
+        netIndicator.className = "flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-secondary-container text-on-secondary-container font-label-sm text-label-sm cursor-pointer";
+        netIndicator.innerHTML = '<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="font-medium">Aloqa barqaror</span>';
+      }
+    }
+
+    // Submit Modal controllers
+    function openSubmitModal() {
+      document.getElementById('submission-modal').classList.remove('hidden');
+    }
+    function closeSubmitModal() {
+      document.getElementById('submission-modal').classList.add('hidden');
+    }
+    function finalizeExam() {
+      alert("Imtihon topshirildi! Natijalar kriptografik shifrlanib serverga yuborilmoqda.");
+      closeSubmitModal();
+    }
+
+    // Keyboard Shortcuts (1, 2, 3, 4 to select answers)
+    window.addEventListener('keydown', (e) => {
+      if (['1', '2', '3', '4'].includes(e.key)) {
+        const index = parseInt(e.key);
+        const container = document.getElementById(`opt-container-${index}`);
+        if (container) {
+          const input = container.querySelector('input');
+          input.checked = !input.checked;
+          toggleOption(input, `opt-container-${index}`);
+        }
+      }
+    });
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest/80 py-space-sm shadow-[0_-1px_6px_rgba(0,0,0,0.02)]"><div class="w-full px-gutter flex flex-col sm:flex-row items-center justify-between gap-space-xs font-label-sm text-label-sm text-on-surface-variant"><span>OZAQ Secure Assessment Engine • Versiya 3.4.0</span><div class="flex items-center gap-space-md"><span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-secondary">shield</span> Kriptografik nazorat faol</span><span>ID sessiya: #OZ-88219-Q</span></div></div></footer><script>document.addEventListener('click',function(e){var el=e.target.closest&&e.target.closest('a,button,[role=button]');if(!el)return;try{parent.postMessage({ozaq:1,label:(el.textContent||'').replace(/\s+/g,' ').trim()},'*')}catch(_){}},true);</script></body></html>

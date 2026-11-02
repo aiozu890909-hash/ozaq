@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="uz"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>OZAQ — EdTech platformasi</title>
+<style>
+:root{--bg:#0F1412;--card:#1B2420;--line:#263029;--fg:#E8F0EC;--mut:#93A39B;--pri:#0B6B4F;--hi:#5CFFB0;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F1412;--card:#1B2420;--line:#263029;--fg:#E8F0EC;--mut:#93A39B}}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#F4F7F5;--card:#FFFFFF;--line:#D5DED9;--fg:#14201B;--mut:#5B6B64}}
+:root[data-theme="dark"]{--bg:#0F1412;--card:#1B2420;--line:#263029;--fg:#E8F0EC;--mut:#93A39B}
+html,body{height:100%;margin:0}body{background:var(--bg);color:var(--fg);font-family:Inter,system-ui,sans-serif}
+iframe{display:block;width:100%;height:100%;border:0;background:#fff}
+#fab{position:fixed;left:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:50;display:flex;align-items:center;gap:8px;padding:9px 14px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--fg);font:600 13px Inter,system-ui,sans-serif;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+#fab i{width:9px;height:9px;border-radius:50%;background:var(--hi);box-shadow:0 0 8px var(--hi)}
+#panel{position:fixed;left:12px;bottom:calc(60px + env(safe-area-inset-bottom,0px));z-index:50;width:min(320px,calc(100vw - 24px));max-height:70vh;overflow:auto;padding:12px;border-radius:16px;border:1px solid var(--line);background:var(--card);box-shadow:0 12px 36px rgba(0,0,0,.35);display:none}
+#panel.on{display:block}
+#panel h4{margin:10px 6px 6px;font:700 11px Inter,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+#panel h4:first-child{margin-top:2px}
+#panel button{display:block;width:100%;text-align:left;margin:2px 0;padding:8px 10px;border:0;border-radius:10px;background:transparent;color:var(--fg);font:500 14px Inter,system-ui,sans-serif;cursor:pointer}
+#panel button:hover{background:var(--line)}
+#panel button.cur{background:var(--pri);color:#fff}
+</style></head><body>
+<iframe id="f" title="OZAQ ekran"></iframe>
+<button id="fab" type="button" aria-expanded="false"><i></i><span id="cur">Ekranlar</span></button>
+<div id="panel" role="menu"></div>
+<script>
+var META=[{"r": "a-live", "t": "Admin: kirish va panel (jonli)", "g": "adminlive"}, {"r": "r-register", "t": "Ro’yxatdan o’tish (Google)", "g": "auth"}, {"r": "t-overview", "t": "Umumiy panel", "g": "teacher"}, {"r": "t-mocks", "t": "Mock testlar", "g": "teacher"}, {"r": "t-editor", "t": "Mock muharriri", "g": "teacher"}, {"r": "t-students", "t": "O’quvchilar va kirish", "g": "teacher"}, {"r": "t-results", "t": "Natijalar", "g": "teacher"}, {"r": "p-overview", "t": "Umumiy panel (rahbariyat)", "g": "premium"}, {"r": "p-errors", "t": "Xatolar xaritasi", "g": "premium"}, {"r": "p-retention", "t": "Retention xavfi", "g": "premium"}, {"r": "a-overview", "t": "Umumiy ko’rinish", "g": "admin"}, {"r": "a-clients", "t": "Premium mijozlar", "g": "admin"}, {"r": "a-new", "t": "Yangi mijoz yaratish", "g": "admin"}, {"r": "s-login", "t": "Imtihonga kirish", "g": "student"}, {"r": "s-brief", "t": "Yo’riqnoma", "g": "student"}, {"r": "s-exam", "t": "Imtihon oynasi", "g": "student"}, {"r": "s-result", "t": "Natija", "g": "student"}],GROUPS=[["auth", "Kirish va ro’yxat"], ["adminlive", "Super Admin (jonli)"], ["teacher", "Freemium o’qituvchi"], ["premium", "Premium rahbariyat"], ["admin", "Super Admin"], ["student", "O’quvchi (imtihon)"]],MAPS={"auth": [["__go:t-overview", "t-overview"]], "teacher": [["Yangi test yaratish", "t-editor"], ["Testlar ro'yxati", "t-mocks"], ["Nashr qilish", "t-students"], ["Savollar va Tahrir", "t-editor"], ["Jonli natijalar", "t-results"], ["Umumiy panel", "t-overview"], ["Mock testlar", "t-mocks"], ["Natijalar", "t-results"], ["Havola olish", "t-students"], ["Kuzatish", "t-students"], ["Tariflar taqqoslash", "t-results"], ["Hammasini ko'rish", "t-results"]], "premium": [["Umumiy panel", "p-overview"], ["Xatolar xaritasi", "p-errors"], ["Retention", "p-retention"], ["Mock testlar", "t-mocks"]], "admin": [["Umumiy ko", "a-overview"], ["Premium mijozlar", "a-clients"], ["Yangi mijoz", "a-new"]], "student": [["Imtihonga kirish", "s-brief"], ["Testni boshlash", "s-exam"], ["Ha, topshirish", "s-result"], ["Bosh sahifaga qaytish", "s-login"], ["Sessiyani yakunlash", "s-login"]]},MODE="src",DATA={};
+var f=document.getElementById('f'),panel=document.getElementById('panel'),fab=document.getElementById('fab'),cur=document.getElementById('cur');
+var route=null;
+function byRoute(r){for(var i=0;i<META.length;i++)if(META[i].r===r)return META[i];return null}
+function go(r){var m=byRoute(r);if(!m)return;if(location.hash!=='#'+r){location.hash=r;return}
+ if(route===r)return;route=r;
+ if(MODE==='srcdoc')f.srcdoc=DATA[r];else f.src='screens/'+r+'.html';
+ cur.textContent=m.t;panel.classList.remove('on');fab.setAttribute('aria-expanded','false');draw()}
+function draw(){var h='';GROUPS.forEach(function(g){h+='<h4>'+g[1]+'</h4>';META.filter(function(m){return m.g===g[0]}).forEach(function(m){h+='<button type="button" data-r="'+m.r+'" class="'+(m.r===route?'cur':'')+'">'+m.t+'</button>'})});panel.innerHTML=h}
+panel.addEventListener('click',function(e){var b=e.target.closest('button');if(b)go(b.getAttribute('data-r'))});
+fab.addEventListener('click',function(){var on=panel.classList.toggle('on');fab.setAttribute('aria-expanded',on)});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')panel.classList.remove('on')});
+window.addEventListener('message',function(e){if(e.source!==f.contentWindow||!e.data||!e.data.ozaq)return;
+ var m=byRoute(route);if(!m)return;var map=MAPS[m.g]||[];
+ for(var i=0;i<map.length;i++){if(e.data.label.indexOf(map[i][0])>-1){go(map[i][1]);return}}});
+window.addEventListener('hashchange',function(){go(location.hash.slice(1))});
+draw();go(byRoute(location.hash.slice(1))?location.hash.slice(1):'t-overview');
+</script></body></html>

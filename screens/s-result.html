@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+
+<html lang="uz"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_blank" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com/3.4.17"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-tertiary": "#ffffff",
+          "error": "#ba1a1a",
+          "secondary": "#0c6b4f",
+          "surface-tint": "#5148d7",
+          "primary": "#2a14b4",
+          "surface-container-lowest": "#ffffff",
+          "outline": "#777586",
+          "inverse-primary": "#c3c0ff",
+          "on-tertiary-fixed-variant": "#7d2d00",
+          "on-tertiary-fixed": "#360f00",
+          "surface-container-low": "#f2f3ff",
+          "on-tertiary-container": "#ffb393",
+          "surface-container-highest": "#dae2fd",
+          "on-secondary": "#ffffff",
+          "on-error-container": "#93000a",
+          "surface-bright": "#faf8ff",
+          "on-secondary-fixed": "#002116",
+          "tertiary-fixed": "#ffdbcd",
+          "inverse-surface": "#283044",
+          "secondary-fixed-dim": "#85d7b4",
+          "primary-fixed": "#e3dfff",
+          "on-primary-fixed-variant": "#372abf",
+          "on-surface-variant": "#464554",
+          "secondary-fixed": "#a0f3cf",
+          "inverse-on-surface": "#eef0ff",
+          "primary-container": "#4338ca",
+          "on-primary-container": "#c1beff",
+          "tertiary": "#692400",
+          "primary-fixed-dim": "#c3c0ff",
+          "on-secondary-fixed-variant": "#00513b",
+          "surface-container-high": "#e2e7ff",
+          "background": "#faf8ff",
+          "on-primary": "#ffffff",
+          "surface-variant": "#dae2fd",
+          "surface": "#faf8ff",
+          "on-surface": "#131b2e",
+          "surface-dim": "#d2d9f4",
+          "on-secondary-container": "#187255",
+          "outline-variant": "#c7c4d7",
+          "on-primary-fixed": "#100069",
+          "surface-container": "#eaedff",
+          "on-error": "#ffffff",
+          "tertiary-container": "#8f3400",
+          "secondary-container": "#a0f3cf",
+          "on-background": "#131b2e",
+          "tertiary-fixed-dim": "#ffb597",
+          "error-container": "#ffdad6"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-xs": "0.25rem",
+          "space-lg": "1.5rem",
+          "gutter": "1.5rem",
+          "margin-mobile": "1rem",
+          "gutter-mobile": "0.75rem",
+          "space-md": "1rem",
+          "margin": "2rem",
+          "space-sm": "0.5rem",
+          "space-xl": "2.5rem"
+        },
+        "fontFamily": {
+          "label-lg": [
+            "Inter"
+          ],
+          "body-xl": [
+            "Inter"
+          ],
+          "label-md": [
+            "Inter"
+          ],
+          "headline-lg": [
+            "Plus Jakarta Sans"
+          ],
+          "label-sm": [
+            "Inter"
+          ],
+          "body-sm": [
+            "Inter"
+          ],
+          "body-lg": [
+            "Inter"
+          ],
+          "headline-sm": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-xl": [
+            "Plus Jakarta Sans"
+          ],
+          "timer-display": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-xl-mobile": [
+            "Plus Jakarta Sans"
+          ],
+          "body-md": [
+            "Inter"
+          ],
+          "headline-md": [
+            "Plus Jakarta Sans"
+          ]
+        },
+        "fontSize": {
+          "label-lg": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "600"
+            }
+          ],
+          "body-xl": [
+            "20px",
+            {
+              "lineHeight": "32px",
+              "fontWeight": "400"
+            }
+          ],
+          "label-md": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-lg": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "fontWeight": "700"
+            }
+          ],
+          "label-sm": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "letterSpacing": "0.025em",
+              "fontWeight": "500"
+            }
+          ],
+          "body-sm": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "400"
+            }
+          ],
+          "body-lg": [
+            "18px",
+            {
+              "lineHeight": "28px",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-sm": [
+            "18px",
+            {
+              "lineHeight": "26px",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-xl": [
+            "36px",
+            {
+              "lineHeight": "44px",
+              "fontWeight": "700"
+            }
+          ],
+          "timer-display": [
+            "24px",
+            {
+              "lineHeight": "28px",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-xl-mobile": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "fontWeight": "700"
+            }
+          ],
+          "body-md": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-md": [
+            "22px",
+            {
+              "lineHeight": "30px",
+              "fontWeight": "600"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-surface font-body-md text-body-md text-on-surface"><main class="w-full bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="w-full max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-10 flex flex-col gap-8">
+<!-- Top Status Ribbon -->
+<div class="flex flex-wrap items-center justify-between gap-4 bg-surface-container-low px-5 py-3.5 rounded-xl">
+<div class="flex items-center gap-3">
+<span class="flex h-3 w-3 rounded-full bg-secondary"></span>
+<span class="font-label-md text-label-md text-on-surface">Ariza holati: Qabul qilingan</span>
+<span class="font-label-sm text-label-sm bg-surface-container-highest px-2.5 py-0.5 rounded-full text-on-surface-variant">ID: #MOCK-8924-UZ</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-base">cloud_done</span>
+<span class="font-label-sm text-label-sm">Natijangiz o'qituvchi kabinetiga to'g'ridan-to'g'ri yuborildi</span>
+</div>
+</div>
+<!-- Main Asymmetric Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left Column: Celebration & Scores (8 cols) -->
+<div class="lg:col-span-8 flex flex-col gap-6">
+<!-- Success Hero Card -->
+<div class="relative overflow-hidden bg-surface-container-lowest p-6 sm:p-8 rounded-xl shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+<div class="relative z-10 flex items-start gap-4">
+<div class="flex-shrink-0 w-14 h-14 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">task_alt</span>
+</div>
+<div>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container text-primary font-label-sm text-label-sm mb-2">
+<span class="material-symbols-outlined text-sm">verified</span>
+<span>Topshiriq yakunlandi</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Javoblaringiz muvaffaqiyatli qabul qilindi!</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Imtihon topshirish sessiyasi rasman yakunlandi va tizimda muhrlandi.</p>
+</div>
+</div>
+<div class="relative z-10 flex-shrink-0 self-end sm:self-center">
+<div class="flex flex-col items-end">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Topshirilgan vaqt</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Bugun, 15:18</span>
+</div>
+</div>
+<!-- Decorative Ambient Geometry -->
+<div class="absolute -right-12 -bottom-12 w-48 h-48 rounded-full bg-surface-container-low opacity-60 pointer-events-none"></div>
+</div>
+<!-- Policy State Selector (Toggle between Immediately Available & Teacher Locked) -->
+<div class="flex items-center justify-between bg-surface-container-low p-2 rounded-xl">
+<span class="font-label-sm text-label-sm text-on-surface-variant px-3">Ko'rinish rejimi (O'qituvchi sozlamasi):</span>
+<div class="flex gap-1.5">
+<button class="px-3.5 py-1.5 rounded-lg font-label-sm text-label-sm transition-all bg-primary-container text-on-primary" id="toggle-state-1" onclick="showState(1)">
+              1-holat: Ball ochiq
+            </button>
+<button class="px-3.5 py-1.5 rounded-lg font-label-sm text-label-sm transition-all bg-surface-container-lowest text-on-surface-variant hover:text-on-surface" id="toggle-state-2" onclick="showState(2)">
+              2-holat: Natija kutilmoqda
+            </button>
+</div>
+</div>
+<!-- STATE 1: Immediate Score Preview Card -->
+<div class="flex flex-col gap-6" id="state-1-container">
+<div class="bg-surface-container-lowest p-6 sm:p-8 rounded-xl shadow-sm flex flex-col gap-6">
+<div class="flex flex-wrap items-center justify-between gap-3">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Boshlang'ich tekshiruv natijasi</span>
+<h2 class="font-headline-md text-headline-md text-on-surface mt-0.5">Sizning natijangiz: 82%</h2>
+</div>
+<div class="flex items-center gap-2 bg-secondary-container text-on-secondary-container px-4 py-2 rounded-xl">
+<span class="material-symbols-outlined text-lg">workspace_premium</span>
+<span class="font-headline-sm text-headline-sm font-bold">Band 7.5</span>
+</div>
+</div>
+<!-- Score Visualizer: Circular Gauge + Metrics -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+<!-- Circular Progress Card -->
+<div class="bg-surface-container-low p-5 rounded-xl flex items-center gap-4">
+<div class="relative w-16 h-16 flex-shrink-0 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container-high" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-secondary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="82.5, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<span class="absolute font-headline-sm text-headline-sm font-bold text-on-surface">33</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">To'g'ri javoblar</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">33 / 40 savol</span>
+</div>
+</div>
+<!-- Time Efficiency -->
+<div class="bg-surface-container-low p-5 rounded-xl flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant mb-2">
+<span class="font-label-sm text-label-sm">Sarflangan vaqt</span>
+<span class="material-symbols-outlined text-lg">timer</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface">45:12</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Ajratilgan: 60:00 daq</span>
+</div>
+</div>
+<!-- Accuracy Index -->
+<div class="bg-surface-container-low p-5 rounded-xl flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant mb-2">
+<span class="font-label-sm text-label-sm">Aniqlik ko'rsatkichi</span>
+<span class="material-symbols-outlined text-lg">insights</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm font-bold text-secondary">A'lo daraja</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Xatolar: 7 ta savol</span>
+</div>
+</div>
+</div>
+<!-- Reading Section Breakdown (Passage 1, 2, 3) -->
+<div class="flex flex-col gap-3 pt-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Matnlar kesimidagi tahlil</span>
+<div class="space-y-2.5">
+<div class="bg-surface-container-low p-3.5 rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="w-7 h-7 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center font-label-sm text-label-sm font-semibold">P1</span>
+<span class="font-label-md text-label-md text-on-surface">Passage 1: The Evolution of Silk Roads</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-label-sm text-label-sm text-secondary font-medium">13 / 13 to'g'ri (100%)</span>
+<span class="material-symbols-outlined text-secondary text-lg">check_circle</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-3.5 rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="w-7 h-7 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center font-label-sm text-label-sm font-semibold">P2</span>
+<span class="font-label-md text-label-md text-on-surface">Passage 2: Cognitive Mapping in Avian Species</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-label-sm text-label-sm text-primary font-medium">11 / 13 to'g'ri (85%)</span>
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-3.5 rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="w-7 h-7 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center font-label-sm text-label-sm font-semibold">P3</span>
+<span class="font-label-md text-label-md text-on-surface">Passage 3: Neuroplasticity &amp; Linguistic Memory</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">9 / 14 to'g'ri (64%)</span>
+<span class="material-symbols-outlined text-on-surface-variant text-lg">tune</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- STATE 2: Teacher Lock Notification Banner (Hidden by default, triggered by toggle) -->
+<div class="hidden flex-col gap-6" id="state-2-container">
+<div class="bg-surface-container-lowest p-6 sm:p-8 rounded-xl shadow-sm flex flex-col gap-5">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed text-tertiary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-2xl">lock_clock</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="inline-flex items-center gap-2 font-label-sm text-label-sm text-tertiary-container font-semibold">
+<span>O'QITUVCHI SOZLAMASI FAOLLASHTIRILGAN</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Natijalar hozircha maxfiy saqlanmoqda</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                  Ushbu testning to'liq tahlili, to'g'ri javoblar kaliti va yakuniy ballari barcha o'quvchilar topshirib bo'lgach (<strong class="text-on-surface">soat 16:00 dan so'ng</strong>) tizimda avtomatik ravishda e'lon qilinadi.
+                </p>
+</div>
+</div>
+<!-- Wait Countdown Banner -->
+<div class="bg-surface-container-low p-4 rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant">schedule</span>
+<span class="font-body-sm text-body-sm text-on-surface">E'lon qilinishiga qolgan vaqt:</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-bold text-primary">00:41:48</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant text-xs">
+<span class="material-symbols-outlined text-sm">notifications_active</span>
+<span class="font-label-sm text-label-sm">Natijangiz e'lon qilinganda profilingizga va Telegram botingizga bildirishnoma yuboriladi.</span>
+</div>
+</div>
+</div>
+<!-- Submission Integrity Receipt -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm flex flex-col gap-4">
+<div class="flex items-center justify-between pb-3 bg-surface-container-lowest">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Topshiriq hisoboti (Audit ma'lumotlari)</span>
+<span class="font-label-sm text-label-sm text-secondary flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-sm">security</span> Tekshirilgan
+            </span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="flex flex-col gap-1 p-3 bg-surface-container-low rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Test nomi</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Matematika Mini-Mock #3</span>
+</div>
+<div class="flex flex-col gap-1 p-3 bg-surface-container-low rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Jami savollar soni</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">40 ta (barchasi to'liq qayd etildi)</span>
+</div>
+<div class="flex flex-col gap-1 p-3 bg-surface-container-low rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sarflangan aniq vaqt</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">45 daqiqa 12 soniya</span>
+</div>
+<div class="flex flex-col gap-1 p-3 bg-surface-container-low rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Imtihon topshiruvchi ID</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">STU-78210 (Javohir Olimov)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Actions, Receipt & Proctor Note (4 cols) -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<!-- Next Steps Action Card -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm flex flex-col gap-5">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Keyingi harakatlar</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Imtihon chekini saqlab oling yoki shaxsiy kabinetingizga qayting.</p>
+</div>
+<!-- Primary & Secondary Actions -->
+<div class="flex flex-col gap-3">
+<button class="w-full flex items-center justify-center gap-2 bg-primary text-on-primary py-3.5 px-4 rounded-xl font-label-md text-label-md hover:bg-primary-container transition-colors shadow-sm" id="pdf-btn" onclick="simulatePdfDownload()">
+<span class="material-symbols-outlined text-lg">download</span>
+<span>PDF tasdiqnoma / chekni yuklab olish</span>
+</button>
+<a class="w-full flex items-center justify-center gap-2 bg-surface-container-low text-on-surface py-3.5 px-4 rounded-xl font-label-md text-label-md hover:bg-surface-container-high transition-colors" href="#dashboard">
+<span class="material-symbols-outlined text-lg">home</span>
+<span>Bosh sahifaga qaytish</span>
+</a>
+<button class="w-full flex items-center justify-center gap-2 bg-surface-container-lowest text-on-surface-variant py-2.5 px-4 rounded-xl font-label-md text-label-md hover:bg-surface-container-low hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-lg">logout</span>
+<span>Sessiyani yakunlash va Chiqish</span>
+</button>
+</div>
+</div>
+<!-- Instructor Support & Proctor Notice -->
+<div class="bg-surface-container-low p-6 rounded-xl flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest text-primary flex items-center justify-center">
+<span class="material-symbols-outlined">school</span>
+</div>
+<div>
+<span class="font-label-md text-label-md text-on-surface font-semibold block">O'qituvchi nazorati</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Mr. Rustam Rahimov</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Ushbu natijalar bo'yicha e'tiroz yoki apellatsiya kiritish zarur bo'lsa, o'qituvchingiz bilan 24 soat ichida bog'lanishingiz mumkin.
+          </p>
+<div class="pt-2 flex items-center justify-between text-on-surface-variant">
+<span class="font-label-sm text-label-sm">Akademik guruh:</span>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">DTM-INTENSIV-04</span>
+</div>
+</div>
+<!-- Exam Session Digest Photo/Graphic Badge -->
+<div class="relative overflow-hidden bg-surface-container-lowest p-5 rounded-xl shadow-sm flex items-center gap-4">
+<div class="w-16 h-16 rounded-lg bg-surface-container flex-shrink-0 overflow-hidden flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="A modern student examination confirmation badge on a minimalist desk with stationery and soft studio lighting in indigo and teal hues" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCA2NCA2NCc+PHJlY3Qgd2lkdGg9JzY0JyBoZWlnaHQ9JzY0JyBmaWxsPScjMEI2QjRGJy8+PGNpcmNsZSBjeD0nMzInIGN5PScyNScgcj0nMTEnIGZpbGw9JyM1Q0ZGQjAnLz48cGF0aCBkPSdNMTAgNjRjMi0xNiAxMi0yNCAyMi0yNHMyMCA4IDIyIDI0eicgZmlsbD0nIzVDRkZCMCcvPjwvc3ZnPg=="/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Raqamli muhr</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Tizim orqali shifrlangan</span>
+<span class="font-label-sm text-label-sm text-secondary mt-0.5">Xavfsiz topshirildi</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive JavaScript logic -->
+<script>
+    function showState(state) {
+      const state1 = document.getElementById('state-1-container');
+      const state2 = document.getElementById('state-2-container');
+      const btn1 = document.getElementById('toggle-state-1');
+      const btn2 = document.getElementById('toggle-state-2');
+
+      if (state === 1) {
+        state1.classList.remove('hidden');
+        state1.classList.add('flex');
+        state2.classList.add('hidden');
+        state2.classList.remove('flex');
+        
+        btn1.className = 'px-3.5 py-1.5 rounded-lg font-label-sm text-label-sm transition-all bg-primary-container text-on-primary';
+        btn2.className = 'px-3.5 py-1.5 rounded-lg font-label-sm text-label-sm transition-all bg-surface-container-lowest text-on-surface-variant hover:text-on-surface';
+      } else {
+        state2.classList.remove('hidden');
+        state2.classList.add('flex');
+        state1.classList.add('hidden');
+        state1.classList.remove('flex');
+
+        btn2.className = 'px-3.5 py-1.5 rounded-lg font-label-sm text-label-sm transition-all bg-primary-container text-on-primary';
+        btn1.className = 'px-3.5 py-1.5 rounded-lg font-label-sm text-label-sm transition-all bg-surface-container-lowest text-on-surface-variant hover:text-on-surface';
+      }
+    }
+
+    function simulatePdfDownload() {
+      const btn = document.getElementById('pdf-btn');
+      const originalHTML = btn.innerHTML;
+      btn.innerHTML = '<span class="material-symbols-outlined text-lg animate-spin">progress_activity</span><span>Yuklanmoqda...</span>';
+      btn.disabled = true;
+      
+      setTimeout(() => {
+        btn.innerHTML = '<span class="material-symbols-outlined text-lg">check</span><span>PDF yuklab olindi!</span>';
+        setTimeout(() => {
+          btn.innerHTML = originalHTML;
+          btn.disabled = false;
+        }, 2500);
+      }, 1000);
+    }
+  </script>
+</div></main><script>document.addEventListener('click',function(e){var el=e.target.closest&&e.target.closest('a,button,[role=button]');if(!el)return;try{parent.postMessage({ozaq:1,label:(el.textContent||'').replace(/\s+/g,' ').trim()},'*')}catch(_){}},true);</script></body></html>

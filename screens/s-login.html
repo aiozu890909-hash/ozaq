@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+
+<html lang="uz"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_blank" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com/3.4.17"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-tertiary": "#ffffff",
+          "error": "#ba1a1a",
+          "secondary": "#0c6b4f",
+          "surface-tint": "#5148d7",
+          "primary": "#2a14b4",
+          "surface-container-lowest": "#ffffff",
+          "outline": "#777586",
+          "inverse-primary": "#c3c0ff",
+          "on-tertiary-fixed-variant": "#7d2d00",
+          "on-tertiary-fixed": "#360f00",
+          "surface-container-low": "#f2f3ff",
+          "on-tertiary-container": "#ffb393",
+          "surface-container-highest": "#dae2fd",
+          "on-secondary": "#ffffff",
+          "on-error-container": "#93000a",
+          "surface-bright": "#faf8ff",
+          "on-secondary-fixed": "#002116",
+          "tertiary-fixed": "#ffdbcd",
+          "inverse-surface": "#283044",
+          "secondary-fixed-dim": "#85d7b4",
+          "primary-fixed": "#e3dfff",
+          "on-primary-fixed-variant": "#372abf",
+          "on-surface-variant": "#464554",
+          "secondary-fixed": "#a0f3cf",
+          "inverse-on-surface": "#eef0ff",
+          "primary-container": "#4338ca",
+          "on-primary-container": "#c1beff",
+          "tertiary": "#692400",
+          "primary-fixed-dim": "#c3c0ff",
+          "on-secondary-fixed-variant": "#00513b",
+          "surface-container-high": "#e2e7ff",
+          "background": "#faf8ff",
+          "on-primary": "#ffffff",
+          "surface-variant": "#dae2fd",
+          "surface": "#faf8ff",
+          "on-surface": "#131b2e",
+          "surface-dim": "#d2d9f4",
+          "on-secondary-container": "#187255",
+          "outline-variant": "#c7c4d7",
+          "on-primary-fixed": "#100069",
+          "surface-container": "#eaedff",
+          "on-error": "#ffffff",
+          "tertiary-container": "#8f3400",
+          "secondary-container": "#a0f3cf",
+          "on-background": "#131b2e",
+          "tertiary-fixed-dim": "#ffb597",
+          "error-container": "#ffdad6"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-xs": "0.25rem",
+          "space-lg": "1.5rem",
+          "gutter": "1.5rem",
+          "margin-mobile": "1rem",
+          "gutter-mobile": "0.75rem",
+          "space-md": "1rem",
+          "margin": "2rem",
+          "space-sm": "0.5rem",
+          "space-xl": "2.5rem"
+        },
+        "fontFamily": {
+          "label-lg": [
+            "Inter"
+          ],
+          "body-xl": [
+            "Inter"
+          ],
+          "label-md": [
+            "Inter"
+          ],
+          "headline-lg": [
+            "Plus Jakarta Sans"
+          ],
+          "label-sm": [
+            "Inter"
+          ],
+          "body-sm": [
+            "Inter"
+          ],
+          "body-lg": [
+            "Inter"
+          ],
+          "headline-sm": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-xl": [
+            "Plus Jakarta Sans"
+          ],
+          "timer-display": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-xl-mobile": [
+            "Plus Jakarta Sans"
+          ],
+          "body-md": [
+            "Inter"
+          ],
+          "headline-md": [
+            "Plus Jakarta Sans"
+          ]
+        },
+        "fontSize": {
+          "label-lg": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "600"
+            }
+          ],
+          "body-xl": [
+            "20px",
+            {
+              "lineHeight": "32px",
+              "fontWeight": "400"
+            }
+          ],
+          "label-md": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-lg": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "fontWeight": "700"
+            }
+          ],
+          "label-sm": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "letterSpacing": "0.025em",
+              "fontWeight": "500"
+            }
+          ],
+          "body-sm": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "400"
+            }
+          ],
+          "body-lg": [
+            "18px",
+            {
+              "lineHeight": "28px",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-sm": [
+            "18px",
+            {
+              "lineHeight": "26px",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-xl": [
+            "36px",
+            {
+              "lineHeight": "44px",
+              "fontWeight": "700"
+            }
+          ],
+          "timer-display": [
+            "24px",
+            {
+              "lineHeight": "28px",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-xl-mobile": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "fontWeight": "700"
+            }
+          ],
+          "body-md": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-md": [
+            "22px",
+            {
+              "lineHeight": "30px",
+              "fontWeight": "600"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-surface font-body-md text-body-md text-on-surface"><main class="w-full bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="relative w-full flex flex-col items-center justify-center px-4 py-8 md:py-16 overflow-hidden">
+<!-- Subtle Ambient Backdrop Highlights -->
+<div class="absolute -top-32 -left-32 w-96 h-96 bg-primary-container/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-24 -right-24 w-96 h-96 bg-secondary-container/20 rounded-full blur-3xl pointer-events-none"></div>
+<!-- Main Container -->
+<div class="w-full max-w-lg flex flex-col gap-6 relative z-10">
+<!-- Top Utility Header: Language Switcher & System Pulse -->
+<div class="w-full flex items-center justify-between px-2">
+<div class="flex items-center gap-2">
+<span class="inline-flex relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-secondary"></span>
+</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant tracking-wide uppercase">Xavfsiz Portal v2.4</span>
+</div>
+<!-- Language Selector -->
+<div class="bg-surface-container p-1 rounded-lg flex items-center shadow-sm" id="langSelector">
+<button class="px-2.5 py-1 rounded font-label-sm text-label-sm font-semibold transition-all bg-surface-container-lowest text-primary shadow-sm" id="btn-uz" onclick="setLanguage('uz')" type="button">UZ</button>
+<button class="px-2.5 py-1 rounded font-label-sm text-label-sm font-semibold transition-all text-on-surface-variant hover:text-on-surface" id="btn-ru" onclick="setLanguage('ru')" type="button">RU</button>
+<button class="px-2.5 py-1 rounded font-label-sm text-label-sm font-semibold transition-all text-on-surface-variant hover:text-on-surface" id="btn-en" onclick="setLanguage('en')" type="button">EN</button>
+</div>
+</div>
+<!-- Core Card -->
+<div class="w-full bg-surface-container-lowest rounded-xl shadow-md p-6 sm:p-10 flex flex-col gap-7">
+<!-- Header Branding & Section Title -->
+<div class="flex flex-col items-center text-center gap-3">
+<div class="w-14 h-14 rounded-xl bg-primary-container text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">O‘ZBEKISTON RESPUBLIKASI MILLIY TIZIMI</span>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">OZAQ Imtihon Tizimi</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Talaba identifikatsiya va imtihonga kirish moduli</p>
+</div>
+</div>
+<!-- Scheduled Exam Countdown Banner -->
+<div class="bg-surface-container-low rounded-xl p-4.5 flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-xl">schedule</span>
+<span class="font-label-md text-label-md text-on-surface">Rejalashtirilgan sessiya:</span>
+</div>
+<span class="bg-surface-container-high text-primary font-label-sm text-label-sm px-2.5 py-0.5 rounded-full font-semibold">14:00 da boshlanadi</span>
+</div>
+<div class="flex items-baseline justify-between pt-1">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Boshlanishiga qoldi:</span>
+<div class="flex items-center gap-1.5 font-timer-display text-timer-display text-primary tracking-tight">
+<span class="bg-surface-container-highest px-2 py-0.5 rounded-md" id="countdown-minutes">14</span>
+<span class="text-outline">:</span>
+<span class="bg-surface-container-highest px-2 py-0.5 rounded-md" id="countdown-seconds">20</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant ml-1 font-normal">daqiqa</span>
+</div>
+</div>
+<!-- Subtle Progress Line -->
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden mt-1">
+<div class="bg-primary h-full rounded-full transition-all duration-1000" style="width: 72%;"></div>
+</div>
+</div>
+<!-- Soft Notice / Validation Banner -->
+<div class="bg-error-container text-on-error-container p-3.5 rounded-xl flex items-start gap-3 transition-all duration-300" id="statusBanner">
+<span class="material-symbols-outlined text-xl flex-shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">info</span>
+<div class="flex flex-col gap-0.5">
+<span class="font-label-md text-label-md font-semibold text-on-error-container">Diqqat qiling</span>
+<p class="font-body-sm text-body-sm leading-snug">Login yoki parol kiritilmadi yoki noto‘g‘ri kiritildi. Ma'lumotlarni qayta tekshirib ko‘ring.</p>
+</div>
+</div>
+<!-- Login Form -->
+<form class="flex flex-col gap-5" id="loginForm" onsubmit="event.preventDefault(); handleExamLogin();">
+<!-- Student ID Field -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface" for="studentId">
+                Talaba ID / Login raqami
+              </label>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Masalan: ozaq-4821</span>
+</div>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-outline text-xl pointer-events-none">badge</span>
+<input class="w-full h-12 pl-11 pr-4 bg-surface-container-lowest text-on-surface rounded-lg font-body-md text-body-md focus:bg-surface-container-low transition-colors outline-none shadow-sm" id="studentId" name="studentId" placeholder="ID raqamni kiriting" required="" type="text" value="ozaq-4821"/>
+</div>
+</div>
+<!-- Password Field with Toggle -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface" for="studentPassword">
+                Shaxsiy parol
+              </label>
+<button class="font-label-sm text-label-sm text-primary hover:underline" onclick="alert('Parolingizni qayta tiklash uchun guruh kuratori yoki imtihon koordinatori bilan bog‘laning.');" type="button">
+                Parolni unutdingizmi?
+              </button>
+</div>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-outline text-xl pointer-events-none">lock</span>
+<input class="w-full h-12 pl-11 pr-12 bg-surface-container-lowest text-on-surface rounded-lg font-body-md text-body-md focus:bg-surface-container-low transition-colors outline-none shadow-sm" id="studentPassword" name="studentPassword" placeholder="Maxfiy parolingiz" required="" type="password"/>
+<button aria-label="Parolni ko'rsatish yoki yashirish" class="absolute right-3 p-1.5 text-outline hover:text-on-surface flex items-center justify-center rounded focus:outline-none" id="togglePassBtn" onclick="togglePasswordVisibility()" type="button">
+<span class="material-symbols-outlined text-xl" id="passIcon">visibility</span>
+</button>
+</div>
+</div>
+<!-- Candidate Session Agreement Checkbox -->
+<label class="flex items-start gap-3 cursor-pointer select-none pt-1">
+<input checked="" class="mt-1 h-4 w-4 rounded text-primary focus:ring-0 cursor-pointer accent-primary" id="rulesConsent" required="" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+              Imtihon tartib-qoidalari va audio/video nazorat tizimi talablariga roziman.
+            </span>
+</label>
+<!-- Primary Submit Action -->
+<button class="w-full h-13 mt-2 bg-primary-container text-on-primary hover:bg-primary font-label-lg text-label-lg rounded-xl flex items-center justify-center gap-2 shadow-sm transition-all transform active:scale-[0.99]" id="submitBtn" type="submit">
+<span>Imtihonga kirish</span>
+<span class="material-symbols-outlined text-xl">arrow_forward</span>
+</button>
+</form>
+<!-- Technical Diagnostic Status -->
+<div class="bg-surface-container-low rounded-xl p-3.5 flex flex-wrap items-center justify-between gap-3 text-on-surface-variant">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-secondary text-lg flex-shrink-0">wifi</span>
+<span class="font-body-sm text-body-sm truncate">
+              Internet: <strong class="text-on-surface font-semibold">Barqaror</strong> (Ping: 24ms)
+            </span>
+</div>
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-secondary text-lg flex-shrink-0">check_circle</span>
+<span class="font-body-sm text-body-sm">
+              Qurilma: <strong class="text-on-surface font-semibold">Tayyor</strong>
+</span>
+</div>
+</div>
+</div>
+<!-- Footer Help & Proctors Info -->
+<div class="flex flex-col items-center text-center gap-2 px-4 pb-4">
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center justify-center gap-1.5 flex-wrap">
+<span class="material-symbols-outlined text-outline text-base">support_agent</span>
+          Muammo yuzaga kelsa o‘qituvchingizga murojaat qiling
+        </p>
+<div class="flex items-center gap-4 font-label-sm text-label-sm text-outline">
+<span>Qo‘llab-quvvatlash: (71) 200-00-44</span>
+<span>•</span>
+<span>ID: STU-89201</span>
+</div>
+</div>
+</div>
+</div>
+<script>
+    // Password visibility toggle
+    function togglePasswordVisibility() {
+      const passInput = document.getElementById('studentPassword');
+      const passIcon = document.getElementById('passIcon');
+      if (passInput.type === 'password') {
+        passInput.type = 'text';
+        passIcon.textContent = 'visibility_off';
+      } else {
+        passInput.type = 'password';
+        passIcon.textContent = 'visibility';
+      }
+    }
+
+    // Language Toggle Interactive State
+    function setLanguage(lang) {
+      const langs = ['uz', 'ru', 'en'];
+      langs.forEach(l => {
+        const btn = document.getElementById('btn-' + l);
+        if (l === lang) {
+          btn.className = 'px-2.5 py-1 rounded font-label-sm text-label-sm font-semibold transition-all bg-surface-container-lowest text-primary shadow-sm';
+        } else {
+          btn.className = 'px-2.5 py-1 rounded font-label-sm text-label-sm font-semibold transition-all text-on-surface-variant hover:text-on-surface';
+        }
+      });
+    }
+
+    // Interactive Exam Submit Flow
+    function handleExamLogin() {
+      const studentId = document.getElementById('studentId').value.trim();
+      const studentPassword = document.getElementById('studentPassword').value.trim();
+      const banner = document.getElementById('statusBanner');
+      const btn = document.getElementById('submitBtn');
+
+      if (!studentId || !studentPassword) {
+        banner.classList.remove('hidden');
+        return;
+      }
+
+      // Simulated Entry Progression
+      btn.innerHTML = '<span class="material-symbols-outlined animate-spin text-xl">progress_activity</span> Tekshirilmoqda...';
+      btn.classList.add('opacity-90', 'pointer-events-none');
+
+      setTimeout(() => {
+        banner.className = 'bg-secondary-container text-on-secondary-container p-3.5 rounded-xl flex items-start gap-3 transition-all duration-300';
+        banner.innerHTML = `
+          <span class="material-symbols-outlined text-xl flex-shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">task_alt</span>
+          <div class="flex flex-col gap-0.5">
+            <span class="font-label-md text-label-md font-semibold text-on-secondary-container">Identifikatsiya muvaffaqiyatli</span>
+            <p class="font-body-sm text-body-sm leading-snug">Imtihon savollari xavfsiz kanaldan yuklanmoqda...</p>
+          </div>
+        `;
+        btn.innerHTML = '<span class="material-symbols-outlined text-xl">lock_open</span> Imtihon xonasiga yo‘naltirilmoqda';
+      }, 900);
+    }
+
+    // Simple Live countdown
+    let totalSecs = 14 * 60 + 20;
+    const minEl = document.getElementById('countdown-minutes');
+    const secEl = document.getElementById('countdown-seconds');
+
+    setInterval(() => {
+      if (totalSecs > 0) {
+        totalSecs--;
+        const m = Math.floor(totalSecs / 60);
+        const s = totalSecs % 60;
+        if (minEl) minEl.textContent = m < 10 ? '0' + m : m;
+        if (secEl) secEl.textContent = s < 10 ? '0' + s : s;
+      }
+    }, 1000);
+  </script>
+</div></main><script>document.addEventListener('click',function(e){var el=e.target.closest&&e.target.closest('a,button,[role=button]');if(!el)return;try{parent.postMessage({ozaq:1,label:(el.textContent||'').replace(/\s+/g,' ').trim()},'*')}catch(_){}},true);</script></body></html>

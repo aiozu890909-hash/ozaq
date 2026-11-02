@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="uz"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OZAQ — Ro’yxatdan o’tish</title>
+<style>
+:root{--bg:#0F1412;--card:#1B2420;--line:#263029;--fg:#E8F0EC;--mut:#93A39B;--pri:#0B6B4F;--hi:#5CFFB0}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%}
+body{background:radial-gradient(900px 420px at 50% -10%,#12392d 0,var(--bg) 70%);color:var(--fg);font-family:Inter,system-ui,sans-serif;display:flex;align-items:center;justify-content:center;padding:24px}
+.card{width:100%;max-width:430px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px}
+.logo{font-weight:800;font-size:22px;letter-spacing:.04em;margin-bottom:6px}.logo b{color:var(--hi)}
+h1{font-size:20px;margin:0 0 4px}p.s{margin:0 0 20px;color:var(--mut);font-size:14px}
+.g{width:100%;display:flex;align-items:center;justify-content:center;gap:10px;padding:12px;border-radius:12px;border:1px solid var(--line);background:#fff;color:#1f1f1f;font:600 15px Inter,system-ui,sans-serif;cursor:pointer}
+.g:hover{background:#f1f3f2}
+.or{display:flex;align-items:center;gap:12px;margin:18px 0;color:var(--mut);font-size:12px}.or:before,.or:after{content:"";flex:1;height:1px;background:var(--line)}
+label{display:block;font-size:13px;color:var(--mut);margin:12px 0 6px}
+input{width:100%;padding:11px 12px;border-radius:10px;border:1px solid var(--line);background:#121a16;color:var(--fg);font:15px Inter,system-ui,sans-serif}
+input:focus{outline:2px solid var(--pri);border-color:var(--hi)}
+.chk{display:flex;gap:8px;align-items:flex-start;margin:14px 0;font-size:13px;color:var(--mut)}.chk input{width:auto;margin-top:2px}
+.btn{width:100%;padding:12px;border:0;border-radius:12px;background:var(--pri);color:#fff;font:700 15px Inter,system-ui,sans-serif;cursor:pointer}
+.btn:hover{background:#0d7f5d}
+#msg{min-height:18px;margin-top:12px;font-size:13px;color:var(--hi)}#msg.e{color:#ff8a8a}
+.note{margin-top:14px;padding:10px 12px;border-radius:10px;background:#121a16;border:1px dashed var(--line);color:var(--mut);font-size:12px}
+.user{display:none;align-items:center;gap:12px;margin-bottom:16px;padding:10px;border:1px solid var(--line);border-radius:12px}.user img{width:40px;height:40px;border-radius:50%}
+</style></head><body>
+<main class="card">
+<div class="logo">OZ<b>AQ</b></div>
+<h1>Ro’yxatdan o’tish</h1>
+<p class="s">Bepul Start tarifida boshlang: 2 ta guruh va oddiy mock testlar.</p>
+<div id="user" class="user"><img id="ph" alt=""><div><div id="un" style="font-weight:600"></div><div id="ue" style="font-size:13px;color:var(--mut)"></div></div></div>
+<button class="g" id="gbtn" type="button">
+<svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.9 6.1C12.4 13.6 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.7c-.6 3-2.3 5.5-4.8 7.2l7.5 5.8c4.4-4.1 7.1-10.1 7.1-17.5z"/><path fill="#FBBC05" d="M10.5 28.7c-.5-1.5-.8-3-.8-4.7s.3-3.2.8-4.7l-7.9-6.1C.9 16.4 0 20.1 0 24s.9 7.6 2.6 10.8l7.9-6.1z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.5-5.8c-2.1 1.4-4.9 2.3-8.4 2.3-6.3 0-11.6-4.1-13.5-9.8l-7.9 6.1C6.5 42.6 14.6 48 24 48z"/></svg>
+Google orqali davom etish</button>
+<div class="or">yoki email bilan</div>
+<form id="f" novalidate>
+<label for="n">Ism va familiya</label><input id="n" autocomplete="name" placeholder="Masalan, Alisher Muyassarov">
+<label for="o">Maktab yoki o’quv markazi</label><input id="o" placeholder="Masalan, Fastrack Ta’lim Markazi">
+<label for="e">Email</label><input id="e" type="email" autocomplete="email" placeholder="siz@example.com">
+<label for="p">Parol</label><input id="p" type="password" autocomplete="new-password" placeholder="Kamida 8 ta belgi">
+<div class="chk"><input id="t" type="checkbox"><label for="t" style="margin:0">Foydalanish shartlari va maxfiylik siyosatiga roziman</label></div>
+<button class="btn" type="submit">Ro’yxatdan o’tish</button>
+</form>
+<div id="msg" role="status"></div>
+<div class="note" id="note"></div>
+</main>
+<script src="../config.js"></script><script src="../api.js"></script>
+<script>
+// Google Cloud Console → APIs & Services → Credentials → OAuth client ID (Web) yarating,
+// "Authorized JavaScript origins" ga sayt manzilingizni qo’shing va ID ni shu yerga qo’ying.
+var CFG_=window.OZAQ_CONFIG||{},GOOGLE_CLIENT_ID=CFG_.GOOGLE_CLIENT_ID||'',LIVE=!!(CFG_.API_URL&&window.OZAQ);
+var msg=document.getElementById('msg'),note=document.getElementById('note');
+function say(t,err){msg.textContent=t;msg.className=err?'e':''}
+function done(u){
+  try{sessionStorage.setItem('ozaq_user',JSON.stringify(u))}catch(_){}
+  if(u.picture){document.getElementById('ph').src=u.picture}
+  document.getElementById('un').textContent=u.name||'';document.getElementById('ue').textContent=u.email||'';
+  document.getElementById('user').style.display=u.name?'flex':'none';
+  say('Xush kelibsiz'+(u.name?', '+u.name:'')+'! Panelga o’tilmoqda…');
+  setTimeout(function(){try{parent.postMessage({ozaq:1,label:'__go:t-overview'},'*')}catch(_){}},700)
+}
+function jwt(c){var b=c.split('.')[1].replace(/-/g,'+').replace(/_/g,'/');
+  return JSON.parse(decodeURIComponent(atob(b).split('').map(function(x){return '%'+('00'+x.charCodeAt(0).toString(16)).slice(-2)}).join('')))}
+document.getElementById('f').addEventListener('submit',function(ev){ev.preventDefault();
+  var n=document.getElementById('n').value.trim(),e=document.getElementById('e').value.trim(),p=document.getElementById('p').value;
+  if(!n||!/^\S+@\S+\.\S+$/.test(e)||p.length<8||!document.getElementById('t').checked){say('Barcha maydonlarni to’g’ri to’ldiring va shartlarga rozilik bering.',true);return}
+  if(!LIVE){done({name:n,email:e});return}
+  say('Yuborilmoqda…');OZAQ.call('auth.register',{name:n,email:e,password:p,org:document.getElementById('o').value}).then(function(r){OZAQ.setToken(r.token);done(r.user)}).catch(function(x){say(x.message,true)})});
+var gb=document.getElementById('gbtn');
+if(!GOOGLE_CLIENT_ID){
+  note.textContent='Demo rejim: Google Client ID kiritilmagan, shuning uchun tugma namunaviy foydalanuvchi bilan ishlaydi.';
+  if(LIVE){note.textContent='Google orqali kirish uchun config.js ga GOOGLE_CLIENT_ID kiriting.';gb.addEventListener('click',function(){say('Google Client ID hali kiritilmagan (config.js).',true)})}
+  else gb.addEventListener('click',function(){done({name:'Demo Foydalanuvchi',email:'demo@gmail.com'})});
+}else{
+  note.style.display='none';
+  var s=document.createElement('script');s.src='https://accounts.google.com/gsi/client';s.async=true;
+  s.onload=function(){google.accounts.id.initialize({client_id:GOOGLE_CLIENT_ID,callback:function(r){
+      if(LIVE){OZAQ.call('auth.google',{credential:r.credential}).then(function(x){OZAQ.setToken(x.token);done(x.user)}).catch(function(x){say(x.message,true)});return}
+      var d=jwt(r.credential);done({name:d.name,email:d.email,picture:d.picture})}});
+    gb.addEventListener('click',function(){google.accounts.id.prompt()})};
+  s.onerror=function(){say('Google xizmatiga ulanib bo’lmadi.',true)};
+  document.head.appendChild(s);
+}
+</script><script>document.addEventListener('click',function(e){var el=e.target.closest&&e.target.closest('a,button,[role=button]');if(!el)return;try{parent.postMessage({ozaq:1,label:(el.textContent||'').replace(/\s+/g,' ').trim()},'*')}catch(_){}},true);</script></body></html>

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="uz"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com/3.4.17"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-container":"#171f33","surface-dim":"#0b1326","background":"#0b1326","on-primary":"#1d00a5","on-secondary-fixed":"#001f26","on-surface":"#dae2fd","on-background":"#dae2fd","on-primary-container":"#dad7ff","on-secondary-fixed-variant":"#004e5c","error":"#ffb4ab","on-error-container":"#ffdad6","secondary":"#4cd7f6","surface":"#0b1326","tertiary":"#d0bcff","primary":"#c3c0ff","on-secondary-container":"#00424e","on-primary-fixed-variant":"#3323cc","inverse-primary":"#4d44e3","primary-container":"#4f46e5","on-secondary":"#003640","primary-fixed-dim":"#c3c0ff","surface-tint":"#c3c0ff","surface-container-low":"#131b2e","surface-container-highest":"#2d3449","on-surface-variant":"#c7c4d8","on-tertiary":"#3c0091","tertiary-fixed":"#e9ddff","outline-variant":"#464555","on-primary-fixed":"#0f0069","error-container":"#93000a","surface-bright":"#31394d","primary-fixed":"#e2dfff","secondary-fixed-dim":"#4cd7f6","inverse-on-surface":"#283044","tertiary-fixed-dim":"#d0bcff","surface-container-lowest":"#060e20","surface-container-high":"#222a3d","secondary-fixed":"#acedff","surface-variant":"#2d3449","inverse-surface":"#dae2fd","on-tertiary-fixed":"#23005c","on-error":"#690005","outline":"#918fa1","secondary-container":"#03b5d3","on-tertiary-fixed-variant":"#5516be","tertiary-container":"#6f3dd9","on-tertiary-container":"#e3d5ff"},borderRadius:{DEFAULT:"0.125rem",lg:"0.25rem",xl:"0.5rem",full:"0.75rem"},spacing:{"space-2xl":"3rem","margin-desktop":"2rem","space-sm":"0.5rem","space-xl":"2rem","space-md":"0.75rem","gutter-desktop":"1.5rem",margin:"1rem","space-base":"1rem",gutter:"1rem","space-2xs":"0.125rem","space-lg":"1.5rem","space-xs":"0.25rem"},fontFamily:{"body-lg":["Inter"],"headline-md":["Plus Jakarta Sans"],"caption-bold":["Inter"],"label-code-lg":["JetBrains Mono"],"headline-xl":["Plus Jakarta Sans"],"label-code-sm":["JetBrains Mono"],"body-md":["Inter"],"headline-lg":["Plus Jakarta Sans"],"body-sm":["Inter"],"headline-sm":["Plus Jakarta Sans"]},fontSize:{"body-lg":["1.0rem",{lineHeight:"1.5rem",fontWeight:"400"}],"headline-md":["1.25rem",{lineHeight:"1.75rem",letterSpacing:"-0.015em",fontWeight:"600"}],"caption-bold":["0.6875rem",{lineHeight:"0.875rem",letterSpacing:"0.05em",fontWeight:"600"}],"label-code-lg":["0.875rem",{lineHeight:"1.25rem",letterSpacing:"0.02em",fontWeight:"500"}],"headline-xl":["2.25rem",{lineHeight:"2.75rem",letterSpacing:"-0.025em",fontWeight:"700"}],"label-code-sm":["0.75rem",{lineHeight:"1.0rem",letterSpacing:"0.03em",fontWeight:"400"}],"body-md":["0.875rem",{lineHeight:"1.25rem",fontWeight:"400"}],"headline-lg":["1.75rem",{lineHeight:"2.25rem",letterSpacing:"-0.02em",fontWeight:"600"}],"body-sm":["0.75rem",{lineHeight:"1.0rem",fontWeight:"400"}],"headline-sm":["1.0rem",{lineHeight:"1.5rem",letterSpacing:"-0.01em",fontWeight:"600"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-72 bg-surface-container-low z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div class="flex flex-col h-full overflow-hidden"><div class="p-space-base bg-surface-container-lowest/60"><div class="flex items-center justify-between gap-space-xs"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container font-headline-md text-headline-sm font-bold">OQ</div><div class="flex flex-col"><span class="font-headline-md text-headline-sm text-on-surface font-bold tracking-tight">OZAQ OPS</span><span class="font-caption-bold text-caption-bold text-secondary uppercase tracking-widest">HQ / SUPER ADMIN</span></div></div><span class="font-label-code-sm text-caption-bold bg-surface-container-high text-on-surface-variant px-space-xs py-space-2xs rounded">PROD • v4.2.0</span></div></div><div class="flex-1 overflow-y-auto px-space-sm py-space-md"><nav class="flex flex-col gap-space-base" data-active-classes="bg-primary-container text-on-primary-container font-medium rounded-lg"><div class="flex flex-col gap-space-2xs"><span class="px-space-sm font-caption-bold text-caption-bold text-outline uppercase tracking-wider">ASOSIY</span><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="umumiy-korinish" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-body-md text-body-md flex-1">Umumiy ko'rinish</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-sm font-caption-bold text-caption-bold text-outline uppercase tracking-wider">MIJOZLAR</span><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="premium-mijozlar" href="#"><span class="material-symbols-outlined text-[20px]">verified_user</span><span class="font-body-md text-body-md flex-1">Premium mijozlar</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-xs transition-all bg-primary-container text-on-primary-container font-medium rounded-lg" data-path="yangi-mijoz-yaratish" href="#"><span class="material-symbols-outlined text-[20px]">person_add</span><span class="font-body-md text-body-md flex-1">Yangi mijoz yaratish</span><span class="font-label-code-sm text-caption-bold bg-primary-container text-on-primary-container px-space-xs rounded font-bold">+</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="freemium-foydalanuvchilar" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span class="font-body-md text-body-md flex-1">Freemium foydalanuvchilar</span><span class="font-label-code-sm text-caption-bold bg-surface-container-high text-on-surface px-space-xs rounded">2,410</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="demo-sorovlar-leads" href="#"><span class="material-symbols-outlined text-[20px]">track_changes</span><span class="font-body-md text-body-md flex-1">Demo so'rovlar (Leads)</span><span class="font-label-code-sm text-caption-bold bg-secondary-container text-on-secondary-container px-space-xs rounded font-medium">14 Yangi</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-sm font-caption-bold text-caption-bold text-outline uppercase tracking-wider">BOSHQARUV</span><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="tariflar-va-limitlar" href="#"><span class="material-symbols-outlined text-[20px]">tune</span><span class="font-body-md text-body-md flex-1">Tariflar va limitlar</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="tolovlar-va-shartnomalar" href="#"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span class="font-body-md text-body-md flex-1">To'lovlar va shartnomalar</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="crm-integratsiyalar" href="#"><span class="material-symbols-outlined text-[20px]">layers</span><span class="font-body-md text-body-md flex-1">CRM integratsiyalar</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-sm font-caption-bold text-caption-bold text-outline uppercase tracking-wider">XAVFSIZLIK</span><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="faoliyat-jurnali-audit" href="#"><span class="material-symbols-outlined text-[20px]">terminal</span><span class="font-body-md text-body-md flex-1">Faoliyat jurnali (Audit)</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="sozlamalar" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span class="font-body-md text-body-md flex-1">Sozlamalar</span></a></div></nav></div><div class="p-space-sm bg-surface-container-lowest/80"><div class="p-space-xs rounded-lg bg-surface-container flex items-center justify-between gap-space-xs"><div class="flex items-center gap-space-sm min-w-0"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="flex flex-col min-w-0"><span class="font-headline-sm text-body-sm font-semibold text-on-surface truncate">Javohir Toshmatov</span><span class="font-body-sm text-caption-bold text-on-surface-variant truncate">Super Admin • Bosh xavfsizlik</span><div class="flex items-center gap-space-2xs mt-space-2xs"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span><span class="font-label-code-sm text-caption-bold text-secondary font-medium">2FA Faol</span></div></div></div><button class="p-space-xs rounded text-outline hover:text-error hover:bg-surface-container-high transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">logout</span></button></div></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/90 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.25)] flex items-center justify-between px-gutter-desktop"><div class="flex items-center gap-space-base flex-1 max-w-2xl"><div class="relative w-full"><span class="material-symbols-outlined absolute left-space-sm top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span><input class="w-full bg-surface-container-lowest text-on-surface pl-9 pr-space-base py-space-xs rounded-lg font-body-sm text-body-sm placeholder:text-outline-variant focus:outline-none focus:ring-1 focus:ring-primary-container" placeholder="Mijoz, tashkilot nomi, ID yoki litsenziya qidirish (Ctrl+K)" type="text"/></div></div><div class="flex items-center gap-space-md"><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-surface-container-low"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-code-sm text-caption-bold text-on-surface">Production Cluster UZ-1 (99.98% Barqaror)</span></div><div class="hidden md:flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container-high"><span class="material-symbols-outlined text-secondary text-[16px]">verified</span><span class="font-caption-bold text-caption-bold text-on-surface">Super Admin: To'liq huquq</span></div><div class="hidden lg:flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container text-on-surface-variant"><span class="material-symbols-outlined text-[16px] text-primary">lock</span><span class="font-label-code-sm text-caption-bold">2FA Himoyalangan Seans</span></div><button class="relative p-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-error ring-2 ring-surface"></span></button><button class="flex items-center gap-space-xs px-space-md py-space-xs rounded bg-primary-container hover:bg-primary-container/90 text-on-primary-container font-headline-sm text-body-sm font-semibold transition-all shadow-sm" type="button"><span class="material-symbols-outlined text-[18px]">add</span><span>+ Yangi mijoz</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-16 w-full bg-background min-h-screen px-gutter-desktop py-space-lg"><div class="flex flex-col w-full">
+<!-- Sub-header / Stepper Control Rail -->
+<div class="w-full flex flex-col gap-space-lg mb-space-xl">
+<!-- Breadcrumb & Direct Hierarchy -->
+<div class="flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-caption-bold text-caption-bold uppercase tracking-wider">
+<span class="hover:text-primary transition-colors cursor-pointer">Mijozlar boshqaruvi</span>
+<span class="text-outline">/</span>
+<span class="text-primary font-bold">Yangi Premium mijoz yaratish</span>
+<span class="text-outline">/</span>
+<span class="text-secondary font-label-code-sm">TENANT-PROV-2024-884</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface font-extrabold tracking-tight">
+          Yangi Premium mijoz qo'shish va litsenziya taqdim etish
+        </h1>
+</div>
+<!-- Quick Session Security Badge -->
+<div class="flex items-center gap-space-sm bg-surface-container px-space-md py-space-xs rounded-xl shadow-sm">
+<span class="flex h-2.5 w-2.5 rounded-full bg-secondary animate-pulse"></span>
+<div class="flex flex-col">
+<span class="font-label-code-sm text-caption-bold text-on-surface-variant uppercase">Operator Seansi</span>
+<span class="font-label-code-sm text-body-sm font-semibold text-secondary">ADMIN-ID #0042 • SECURE</span>
+</div>
+</div>
+</div>
+<!-- 4-Stage Connected Workflow Stepper -->
+<div class="w-full bg-surface-container-low rounded-xl p-space-md shadow-md">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-md relative">
+<!-- Stage 1: Completed -->
+<div class="flex items-center gap-space-md p-space-sm rounded-lg bg-surface-container-lowest/50 transition-all">
+<div class="w-9 h-9 shrink-0 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-label-code-lg text-body-md font-bold shadow-sm">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-caption-bold text-caption-bold text-secondary uppercase tracking-widest">1-BOSQICH</span>
+<span class="bg-surface-container-high text-secondary px-space-xs rounded font-label-code-sm text-caption-bold">Bajarildi</span>
+</div>
+<span class="font-headline-sm text-body-md text-on-surface font-semibold truncate">Tashkilot ma'lumotlari</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Apex Educational Academy</span>
+</div>
+</div>
+<!-- Stage 2: Completed -->
+<div class="flex items-center gap-space-md p-space-sm rounded-lg bg-surface-container-lowest/50 transition-all">
+<div class="w-9 h-9 shrink-0 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-label-code-lg text-body-md font-bold shadow-sm">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-caption-bold text-caption-bold text-secondary uppercase tracking-widest">2-BOSQICH</span>
+<span class="bg-surface-container-high text-secondary px-space-xs rounded font-label-code-sm text-caption-bold">Bajarildi</span>
+</div>
+<span class="font-headline-sm text-body-md text-on-surface font-semibold truncate">Tarif va litsenziya limitlari</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Enterprise Pro (1,500 o'quvchi)</span>
+</div>
+</div>
+<!-- Stage 3: ACTIVE CURRENT -->
+<div class="flex items-center gap-space-md p-space-sm rounded-lg bg-primary-container/20 shadow-md transition-all">
+<div class="w-9 h-9 shrink-0 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-label-code-lg text-body-md font-bold shadow-lg">
+            3
+          </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-caption-bold text-caption-bold text-primary uppercase tracking-widest">3-BOSQICH</span>
+<span class="bg-primary text-on-primary px-space-xs rounded font-label-code-sm text-caption-bold font-bold">Faol jarayon</span>
+</div>
+<span class="font-headline-sm text-body-md text-on-primary-container font-bold truncate">Kirish ma'lumotlari</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Master Admin xavfsizligi</span>
+</div>
+</div>
+<!-- Stage 4: Pending -->
+<div class="flex items-center gap-space-md p-space-sm rounded-lg bg-surface-container-lowest/30 opacity-60">
+<div class="w-9 h-9 shrink-0 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center font-label-code-lg text-body-md font-bold">
+            4
+          </div>
+<div class="flex flex-col min-w-0">
+<span class="font-caption-bold text-caption-bold text-outline uppercase tracking-widest">4-BOSQICH</span>
+<span class="font-headline-sm text-body-md text-on-surface-variant font-medium truncate">Tasdiqlash va faollashtirish</span>
+<span class="font-body-sm text-body-sm text-outline truncate">Shartnoma & Provisioning</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Multi-Column Split Workspace -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Left Workspace: Step 3 Form Elements (7 cols) -->
+<div class="lg:col-span-7 flex flex-col gap-space-lg">
+<!-- Master Card: Credentials Provisioning -->
+<div class="bg-surface-container-low rounded-xl p-space-xl shadow-lg flex flex-col gap-space-xl">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-caption-bold text-caption-bold text-primary tracking-widest uppercase">SUPER ADMIN PROVISIONING PROTOKOLI</span>
+<span class="font-label-code-sm text-caption-bold bg-error-container text-on-error-container px-space-xs py-space-2xs rounded font-semibold uppercase">
+              Xavfsizlik eslatmasi: Bir martalik ko'rinish
+            </span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold">
+            3-Bosqich: Bosh Admin kirish ma'lumotlari va xavfsizlik
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Tashkilot rahbari yoki bosh mas'ul shaxsiga birinchi kirish uchun hisob ma'lumotlarini shakllantiring. Parol faqat hozir ochiq ko'rinadi!
+          </p>
+</div>
+<!-- Input 1: Login Proposal Block -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<label class="font-headline-sm text-body-md font-semibold text-on-surface" for="admin-login-input">
+              Bosh login / Tizim foydalanuvchi nomi
+            </label>
+<div class="flex items-center gap-space-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-code-sm text-caption-bold text-secondary font-medium">Mavjud va unikal</span>
+</div>
+</div>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-space-md text-outline text-[20px]">badge</span>
+<input class="w-full bg-surface-container-lowest text-on-surface font-label-code-lg text-body-md pl-11 pr-32 py-space-md rounded-lg focus:outline-none focus:bg-surface-container transition-all" id="admin-login-input" type="text" value="apex_edu_admin"/>
+<button class="absolute right-space-sm px-space-sm py-space-xs rounded bg-surface-container-high hover:bg-surface-bright text-primary font-caption-bold text-caption-bold transition-all flex items-center gap-space-2xs" onclick="regenerateUsername()" type="button">
+<span class="material-symbols-outlined text-[14px]">refresh</span>
+              Qayta taklif
+            </button>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+            Tizim taklifi: Tashkilot kodi + "_admin" sufiksi. Tenant DB bo'yicha to'liq izolyatsiya qilingan.
+          </span>
+</div>
+<!-- Input 2: Strong Password Generator Matrix -->
+<div class="flex flex-col gap-space-sm bg-surface-container rounded-lg p-space-lg shadow-sm">
+<div class="flex items-center justify-between">
+<label class="font-headline-sm text-body-md font-semibold text-on-surface flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">key</span>
+              Boshlang'ich vaqtinchalik xavfsiz parol
+            </label>
+<span class="font-label-code-sm text-caption-bold text-secondary bg-surface-container-high px-space-xs py-space-2xs rounded">
+              ENTROPY: 98.4 BITS
+            </span>
+</div>
+<!-- Password Display Capsule -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-space-md bg-surface-container-lowest p-space-md rounded-lg">
+<div class="flex items-center gap-space-md">
+<span class="font-label-code-lg text-headline-sm font-bold text-primary tracking-wider select-all" id="password-display">
+                Ax#99_Km!2024Q
+              </span>
+<span class="hidden font-caption-bold text-caption-bold bg-secondary-container text-on-secondary-container px-space-xs py-space-2xs rounded animate-bounce" id="copy-badge">
+                Nusxalandi!
+              </span>
+</div>
+<div class="flex items-center gap-space-xs shrink-0">
+<button class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-container-high hover:bg-surface-bright text-on-surface font-body-sm text-body-sm transition-all" id="toggle-vis-btn" onclick="togglePasswordVisibility()" type="button">
+<span class="material-symbols-outlined text-[16px]" id="vis-icon">visibility</span>
+<span id="vis-text">Yashirish</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-primary text-on-primary font-headline-sm text-body-sm font-semibold hover:bg-primary/90 transition-all shadow-sm" onclick="copyPasswordToClipboard()" type="button">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+                Nusxa olish
+              </button>
+<button class="p-space-xs rounded bg-surface-container-high hover:bg-surface-bright text-secondary transition-all" onclick="generateNewPassword()" title="Yangi xavfsiz parol generatsiya qilish" type="button">
+<span class="material-symbols-outlined text-[20px] transition-transform duration-300" id="refresh-icon">autorenew</span>
+</button>
+</div>
+</div>
+<!-- Security Strength Meter -->
+<div class="flex flex-col gap-space-2xs mt-space-2xs">
+<div class="flex items-center justify-between text-caption-bold">
+<span class="font-caption-bold text-caption-bold text-secondary flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+                Kuchli (14 belgi, raqam va maxsus belgilar)
+              </span>
+<span class="font-label-code-sm text-caption-bold text-on-surface-variant">100% Mos keluvchi</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden flex gap-0.5">
+<div class="h-full w-1/4 bg-secondary"></div>
+<div class="h-full w-1/4 bg-secondary"></div>
+<div class="h-full w-1/4 bg-secondary"></div>
+<div class="h-full w-1/4 bg-secondary"></div>
+</div>
+</div>
+</div>
+<!-- Compliance & Security Toggles -->
+<div class="flex flex-col gap-space-md">
+<span class="font-caption-bold text-caption-bold text-outline uppercase tracking-wider">XAVFSIZLIK VA PRIVILEGIYA SOZLAMALARI</span>
+<label class="flex items-start gap-space-md p-space-md rounded-lg bg-surface-container cursor-pointer hover:bg-surface-container-high transition-all">
+<input checked="" class="mt-1 h-4 w-4 rounded accent-primary bg-surface-container-lowest cursor-pointer" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-md font-semibold text-on-surface">Birinchi kirishda parolni majburiy almashtirish</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Xavfsizlik standarti: Foydalanuvchi birinchi marta login qilganda tizim yangi shaxsiy parol kiritishni talab qiladi.</span>
+</div>
+</label>
+<label class="flex items-start gap-space-md p-space-md rounded-lg bg-surface-container cursor-pointer hover:bg-surface-container-high transition-all">
+<input checked="" class="mt-1 h-4 w-4 rounded accent-primary bg-surface-container-lowest cursor-pointer" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-md font-semibold text-on-surface">2FA (Ikki bosqichli tasdiqlash) talab qilish</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Super Admin va Boshqaruvchi hisoblari uchun SMS yoki OTP Authenticator majburiy hisoblanadi.</span>
+</div>
+</label>
+<label class="flex items-start gap-space-md p-space-md rounded-lg bg-surface-container cursor-pointer hover:bg-surface-container-high transition-all">
+<input checked="" class="mt-1 h-4 w-4 rounded accent-primary bg-surface-container-lowest cursor-pointer" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-md font-semibold text-on-surface">Mijoz boshqaruv tizimiga to'liq administrator (Tenant Owner) huquqini berish</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Filiallar qo'shish, xodimlar rollari, to'lov monitoringi va audit jurnallariga cheklovsiz kirish ruxsati.</span>
+</div>
+</label>
+</div>
+<!-- Instant Delivery & Dispatch Channels -->
+<div class="flex flex-col gap-space-md p-space-lg rounded-xl bg-surface-container-lowest">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">send_and_archive</span>
+<span class="font-headline-sm text-body-md font-semibold text-on-surface">Hisob ma'lumotlarini avtomatik yetkazish kanallari</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm">
+<!-- Delivery Opt 1 -->
+<label class="flex items-center gap-space-sm p-space-sm rounded bg-surface-container hover:bg-surface-container-high transition-colors cursor-pointer">
+<input checked="" class="h-4 w-4 rounded accent-primary bg-surface-container-lowest" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-caption-bold font-semibold text-on-surface">SMS orqali</span>
+<span class="font-label-code-sm text-caption-bold text-on-surface-variant truncate">+998 90 987-65-43</span>
+</div>
+</label>
+<!-- Delivery Opt 2 -->
+<label class="flex items-center gap-space-sm p-space-sm rounded bg-surface-container hover:bg-surface-container-high transition-colors cursor-pointer">
+<input checked="" class="h-4 w-4 rounded accent-primary bg-surface-container-lowest" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-caption-bold font-semibold text-on-surface">Email qo'llanma</span>
+<span class="font-label-code-sm text-caption-bold text-on-surface-variant truncate">info@apexedu.uz</span>
+</div>
+</label>
+<!-- Delivery Opt 3 -->
+<label class="flex items-center gap-space-sm p-space-sm rounded bg-surface-container hover:bg-surface-container-high transition-colors cursor-pointer">
+<input class="h-4 w-4 rounded accent-primary bg-surface-container-lowest" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-caption-bold font-semibold text-on-surface">Telegram bot</span>
+<span class="font-label-code-sm text-caption-bold text-outline truncate">Ulanmagan (Ixtiyoriy)</span>
+</div>
+</label>
+</div>
+</div>
+</div>
+<!-- Security Audit & Ledger Callout -->
+<div class="bg-surface-container p-space-md rounded-xl flex items-start gap-space-md shadow-sm">
+<span class="material-symbols-outlined text-secondary text-[24px] shrink-0 mt-0.5">security_update_good</span>
+<div class="flex flex-col gap-space-2xs">
+<span class="font-headline-sm text-body-md font-bold text-on-surface">Xavfsizlik va Kriptografik Audit qaydi</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Diqqat: Ushbu amal OZAQ Audit tizimida (<span class="text-on-surface font-semibold">Super Admin: Javohir T.</span>) qayd etiladi va mijoz uchun alohida shifrlangan Tenant ma'lumotlar bazasi ajratiladi. Har bir litsenziya kaliti SHA-256 bilan muhrlanadi.
+          </p>
+</div>
+</div>
+</div>
+<!-- Right Workspace: Live Organization & License Summary Card (5 cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-lg">
+<div class="bg-surface-container-low rounded-xl p-space-xl shadow-lg flex flex-col gap-space-lg sticky top-20">
+<!-- Live Preview Header -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">assignment_turned_in</span>
+<span class="font-headline-md text-headline-sm font-bold text-on-surface">Litsenziya xulosasi</span>
+</div>
+<span class="font-caption-bold text-caption-bold uppercase tracking-wider bg-surface-container px-space-sm py-space-2xs rounded-full text-secondary">
+            Jonli prebyu
+          </span>
+</div>
+<!-- Tenant Header Capsule -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-primary flex items-center justify-center font-headline-md text-headline-md font-black text-on-primary shrink-0 shadow-md">
+            AE
+          </div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-md text-headline-sm font-bold text-on-surface truncate">Apex Educational Academy</span>
+<span class="font-body-sm text-body-sm text-secondary font-medium">Xususiy Maktab & Tayyorlov Markazi</span>
+<div class="flex items-center gap-space-2xs text-outline text-caption-bold font-caption-bold mt-space-2xs">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+<span>Toshkent sh., Yunusobod tumani</span>
+</div>
+</div>
+</div>
+<!-- Key Representative Identity -->
+<div class="bg-surface-container p-space-md rounded-lg flex flex-col gap-space-xs">
+<span class="font-caption-bold text-caption-bold text-outline uppercase tracking-wider">MAS'UL SHAXS & ALOQA</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-md font-semibold text-on-surface">Aziz Rahimov</span>
+<span class="font-body-sm text-caption-bold text-on-surface-variant">Bosh Direktor (Direktorat vakili)</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-xs mt-space-xs font-label-code-sm text-caption-bold text-on-surface-variant">
+<div class="flex items-center gap-space-2xs bg-surface-container-lowest p-space-xs rounded">
+<span class="material-symbols-outlined text-[14px] text-secondary">call</span>
+<span class="truncate">+998 90 987-65-43</span>
+</div>
+<div class="flex items-center gap-space-2xs bg-surface-container-lowest p-space-xs rounded">
+<span class="material-symbols-outlined text-[14px] text-primary">mail</span>
+<span class="truncate">info@apexedu.uz</span>
+</div>
+</div>
+</div>
+<!-- Quota & Subscription Breakdown -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-caption-bold text-caption-bold text-outline uppercase tracking-wider">PAKET & KVOTALAR</span>
+<span class="font-label-code-sm text-caption-bold text-on-primary-container bg-primary-container px-space-xs rounded">Enterprise Pro (Yillik)</span>
+</div>
+<div class="grid grid-cols-3 gap-space-xs">
+<div class="bg-surface-container p-space-sm rounded-lg flex flex-col items-center text-center">
+<span class="font-label-code-sm text-caption-bold text-on-surface-variant">Filiallar</span>
+<span class="font-headline-md text-headline-sm font-bold text-on-surface mt-space-2xs">4 ta</span>
+<span class="font-caption-bold text-caption-bold text-secondary">kvota</span>
+</div>
+<div class="bg-surface-container p-space-sm rounded-lg flex flex-col items-center text-center">
+<span class="font-label-code-sm text-caption-bold text-on-surface-variant">Guruhlar</span>
+<span class="font-headline-md text-headline-sm font-bold text-on-surface mt-space-2xs">50 ta</span>
+<span class="font-caption-bold text-caption-bold text-secondary">maksimal</span>
+</div>
+<div class="bg-surface-container p-space-sm rounded-lg flex flex-col items-center text-center">
+<span class="font-label-code-sm text-caption-bold text-on-surface-variant">O'quvchilar</span>
+<span class="font-headline-md text-headline-sm font-bold text-primary mt-space-2xs">1,500</span>
+<span class="font-caption-bold text-caption-bold text-primary">faol litsenziya</span>
+</div>
+</div>
+</div>
+<!-- Activated Modules Grid -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-caption-bold text-caption-bold text-outline uppercase tracking-wider">FAOLLASHTIRILGAN XIZMATLAR VA MODULLAR</span>
+<div class="flex flex-wrap gap-space-xs">
+<span class="font-caption-bold text-caption-bold bg-surface-container text-on-surface px-space-sm py-space-xs rounded flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-secondary text-[14px]">bolt</span>
+              AI Pedagogik Analitika
+            </span>
+<span class="font-caption-bold text-caption-bold bg-surface-container text-on-surface px-space-sm py-space-xs rounded flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-secondary text-[14px]">grid_view</span>
+              Xatolar xaritasi (Heatmap)
+            </span>
+<span class="font-caption-bold text-caption-bold bg-surface-container text-on-surface px-space-sm py-space-xs rounded flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-secondary text-[14px]">picture_as_pdf</span>
+              Ota-onalar PDF portali
+            </span>
+<span class="font-caption-bold text-caption-bold bg-surface-container text-on-surface px-space-sm py-space-xs rounded flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-secondary text-[14px]">sync_alt</span>
+              Modme CRM integratsiyasi
+            </span>
+<span class="font-caption-bold text-caption-bold bg-surface-container text-on-surface px-space-sm py-space-xs rounded flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-secondary text-[14px]">troubleshoot</span>
+              Retention (Churn) signallari
+            </span>
+</div>
+</div>
+<!-- Subscription Duration Validity -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[22px]">calendar_month</span>
+<div class="flex flex-col">
+<span class="font-caption-bold text-caption-bold text-outline uppercase tracking-wider">OBUNA MUDDATI</span>
+<span class="font-label-code-sm text-caption-bold text-on-surface font-semibold">12-Noyabr, 2024 — 12-Noyabr, 2025</span>
+</div>
+</div>
+<span class="font-label-code-sm text-caption-bold bg-surface-container-high text-secondary px-space-sm py-space-xs rounded font-bold">
+            365 kun
+          </span>
+</div>
+<!-- SVG Visual Data Topology: Provisioning Architecture Preview -->
+<div class="bg-surface-container rounded-lg p-space-md flex flex-col gap-space-xs">
+<span class="font-caption-bold text-caption-bold text-outline uppercase tracking-wider">TENANT KLASTER TOPOLOGIYASI</span>
+<div class="w-full flex items-center justify-center py-space-xs">
+<svg class="w-full h-16 text-primary" fill="none" viewbox="0 0 320 64" xmlns="http://www.w3.org/2000/svg">
+<rect fill="currentColor" fill-opacity="0.15" height="32" rx="4" stroke="currentColor" stroke-width="1.5" width="70" x="10" y="16"></rect>
+<text fill="#dae2fd" font-family="JetBrains Mono" font-size="9" font-weight="600" text-anchor="middle" x="45" y="36">UZ-1 REGION</text>
+<line stroke="#4cd7f6" stroke-dasharray="3 3" stroke-width="1.5" x1="80" x2="120" y1="32" y2="32"></line>
+<rect fill="#4f46e5" fill-opacity="0.3" height="40" rx="4" stroke="#c3c0ff" stroke-width="1.5" width="80" x="120" y="12"></rect>
+<text fill="#dad7ff" font-family="JetBrains Mono" font-size="9" font-weight="bold" text-anchor="middle" x="160" y="31">TENANT DB</text>
+<text fill="#4cd7f6" font-family="JetBrains Mono" font-size="8" text-anchor="middle" x="160" y="43">APEX-EDU-PROD</text>
+<line stroke="#4cd7f6" stroke-dasharray="3 3" stroke-width="1.5" x1="200" x2="240" y1="32" y2="32"></line>
+<rect fill="currentColor" fill-opacity="0.15" height="32" rx="4" stroke="currentColor" stroke-width="1.5" width="70" x="240" y="16"></rect>
+<text fill="#dae2fd" font-family="JetBrains Mono" font-size="9" font-weight="600" text-anchor="middle" x="275" y="36">AUTH & 2FA</text>
+</svg>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Pinned Operational Control Action Bar -->
+<div class="mt-space-xl bg-surface-container-low rounded-xl p-space-md shadow-xl flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<button class="flex items-center gap-space-xs px-space-md py-space-sm rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-headline-sm text-body-md font-semibold transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+        2-bosqichga qaytish
+      </button>
+<button class="flex items-center gap-space-xs px-space-md py-space-sm rounded bg-surface-container-lowest hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-body-md text-body-md transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">save</span>
+        Qoralamada saqlash
+      </button>
+</div>
+<!-- Final Primary Trigger -->
+<div class="flex items-center gap-space-md">
+<span class="hidden md:inline font-caption-bold text-caption-bold text-outline">
+        Barcha majburiy maydonlar to'ldirildi
+      </span>
+<button class="flex items-center gap-space-sm px-space-xl py-space-md rounded bg-primary-container hover:bg-primary-container/90 text-on-primary-container font-headline-md text-headline-sm font-bold shadow-lg transition-all transform active:scale-95" onclick="triggerProvisioningFlow(this)" type="button">
+<span class="material-symbols-outlined text-[20px] text-secondary">bolt</span>
+        Mijozni yaratish va litsenziyani faollashtirish
+        <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Operational Toast / Feedback Container -->
+<div class="hidden fixed bottom-6 right-6 z-50 bg-surface-container-high text-on-surface p-space-md rounded-xl shadow-2xl flex items-center gap-space-md" id="provision-toast">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">done_all</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-md font-bold text-on-surface">Tenant litsenziyasi yaratilmoqda...</span>
+<span class="font-body-sm text-caption-bold text-on-surface-variant">Apex Educational Academy bazasi muvaffaqiyatli ishga tushirildi.</span>
+</div>
+</div>
+</div>
+<script>
+  let isPasswordVisible = true;
+  let currentPass = "Ax#99_Km!2024Q";
+
+  function togglePasswordVisibility() {
+    const displayEl = document.getElementById("password-display");
+    const visIcon = document.getElementById("vis-icon");
+    const visText = document.getElementById("vis-text");
+
+    if (isPasswordVisible) {
+      displayEl.textContent = "••••••••••••••";
+      visIcon.textContent = "visibility_off";
+      visText.textContent = "Ko'rsatish";
+      isPasswordVisible = false;
+    } else {
+      displayEl.textContent = currentPass;
+      visIcon.textContent = "visibility";
+      visText.textContent = "Yashirish";
+      isPasswordVisible = true;
+    }
+  }
+
+  function generateNewPassword() {
+    const charPool = "ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz23456789!@#$%&*";
+    let newPass = "";
+    const length = 14;
+    for (let i = 0; i < length; i++) {
+      newPass += charPool.charAt(Math.floor(Math.random() * charPool.length));
+    }
+    currentPass = newPass;
+
+    const refreshIcon = document.getElementById("refresh-icon");
+    refreshIcon.classList.add("rotate-180");
+    setTimeout(() => refreshIcon.classList.remove("rotate-180"), 300);
+
+    const displayEl = document.getElementById("password-display");
+    if (isPasswordVisible) {
+      displayEl.textContent = currentPass;
+    } else {
+      displayEl.textContent = "••••••••••••••";
+    }
+
+    const badge = document.getElementById("copy-badge");
+    badge.textContent = "Yangi parol tayyor!";
+    badge.classList.remove("hidden");
+    setTimeout(() => badge.classList.add("hidden"), 1800);
+  }
+
+  function copyPasswordToClipboard() {
+    navigator.clipboard.writeText(currentPass).then(() => {
+      const badge = document.getElementById("copy-badge");
+      badge.textContent = "Nusxalandi!";
+      badge.classList.remove("hidden");
+      setTimeout(() => badge.classList.add("hidden"), 2000);
+    }).catch(() => {
+      // Fallback
+      const badge = document.getElementById("copy-badge");
+      badge.textContent = "Nusxa olindi";
+      badge.classList.remove("hidden");
+      setTimeout(() => badge.classList.add("hidden"), 1500);
+    });
+  }
+
+  function regenerateUsername() {
+    const suffixes = ["admin", "super", "lead", "dir", "hq"];
+    const randomSuffix = suffixes[Math.floor(Math.random() * suffixes.length)];
+    const randomNum = Math.floor(10 + Math.random() * 90);
+    const input = document.getElementById("admin-login-input");
+    input.value = `apex_${randomSuffix}_${randomNum}`;
+  }
+
+  function triggerProvisioningFlow(buttonEl) {
+    const originalText = buttonEl.innerHTML;
+    buttonEl.innerHTML = `<span class="material-symbols-outlined text-[20px] animate-spin">refresh</span> Litsenziya shakllanmoqda...`;
+    buttonEl.disabled = true;
+
+    setTimeout(() => {
+      const toast = document.getElementById("provision-toast");
+      toast.classList.remove("hidden");
+      buttonEl.innerHTML = `<span class="material-symbols-outlined text-[20px]">check_circle</span> Faollashtirildi!`;
+      
+      setTimeout(() => {
+        toast.classList.add("hidden");
+        buttonEl.innerHTML = originalText;
+        buttonEl.disabled = false;
+      }, 3500);
+    }, 1200);
+  }
+</script></main></div><script>document.addEventListener('click',function(e){var el=e.target.closest&&e.target.closest('a,button,[role=button]');if(!el)return;try{parent.postMessage({ozaq:1,label:(el.textContent||'').replace(/\s+/g,' ').trim()},'*')}catch(_){}},true);</script></body></html>

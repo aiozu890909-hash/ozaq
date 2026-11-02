@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+
+<html lang="uz"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com/3.4.17"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-tertiary": "#ffffff",
+          "error": "#ba1a1a",
+          "secondary": "#0c6b4f",
+          "surface-tint": "#5148d7",
+          "primary": "#2a14b4",
+          "surface-container-lowest": "#ffffff",
+          "outline": "#777586",
+          "inverse-primary": "#c3c0ff",
+          "on-tertiary-fixed-variant": "#7d2d00",
+          "on-tertiary-fixed": "#360f00",
+          "surface-container-low": "#f2f3ff",
+          "on-tertiary-container": "#ffb393",
+          "surface-container-highest": "#dae2fd",
+          "on-secondary": "#ffffff",
+          "on-error-container": "#93000a",
+          "surface-bright": "#faf8ff",
+          "on-secondary-fixed": "#002116",
+          "tertiary-fixed": "#ffdbcd",
+          "inverse-surface": "#283044",
+          "secondary-fixed-dim": "#85d7b4",
+          "primary-fixed": "#e3dfff",
+          "on-primary-fixed-variant": "#372abf",
+          "on-surface-variant": "#464554",
+          "secondary-fixed": "#a0f3cf",
+          "inverse-on-surface": "#eef0ff",
+          "primary-container": "#4338ca",
+          "on-primary-container": "#c1beff",
+          "tertiary": "#692400",
+          "primary-fixed-dim": "#c3c0ff",
+          "on-secondary-fixed-variant": "#00513b",
+          "surface-container-high": "#e2e7ff",
+          "background": "#faf8ff",
+          "on-primary": "#ffffff",
+          "surface-variant": "#dae2fd",
+          "surface": "#faf8ff",
+          "on-surface": "#131b2e",
+          "surface-dim": "#d2d9f4",
+          "on-secondary-container": "#187255",
+          "outline-variant": "#c7c4d7",
+          "on-primary-fixed": "#100069",
+          "surface-container": "#eaedff",
+          "on-error": "#ffffff",
+          "tertiary-container": "#8f3400",
+          "secondary-container": "#a0f3cf",
+          "on-background": "#131b2e",
+          "tertiary-fixed-dim": "#ffb597",
+          "error-container": "#ffdad6"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-xs": "0.25rem",
+          "space-lg": "1.5rem",
+          "gutter": "1.5rem",
+          "margin-mobile": "1rem",
+          "gutter-mobile": "0.75rem",
+          "space-md": "1rem",
+          "margin": "2rem",
+          "space-sm": "0.5rem",
+          "space-xl": "2.5rem"
+        },
+        "fontFamily": {
+          "label-lg": [
+            "Inter"
+          ],
+          "body-xl": [
+            "Inter"
+          ],
+          "label-md": [
+            "Inter"
+          ],
+          "headline-lg": [
+            "Plus Jakarta Sans"
+          ],
+          "label-sm": [
+            "Inter"
+          ],
+          "body-sm": [
+            "Inter"
+          ],
+          "body-lg": [
+            "Inter"
+          ],
+          "headline-sm": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-xl": [
+            "Plus Jakarta Sans"
+          ],
+          "timer-display": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-xl-mobile": [
+            "Plus Jakarta Sans"
+          ],
+          "body-md": [
+            "Inter"
+          ],
+          "headline-md": [
+            "Plus Jakarta Sans"
+          ]
+        },
+        "fontSize": {
+          "label-lg": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "600"
+            }
+          ],
+          "body-xl": [
+            "20px",
+            {
+              "lineHeight": "32px",
+              "fontWeight": "400"
+            }
+          ],
+          "label-md": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-lg": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "fontWeight": "700"
+            }
+          ],
+          "label-sm": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "letterSpacing": "0.025em",
+              "fontWeight": "500"
+            }
+          ],
+          "body-sm": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "400"
+            }
+          ],
+          "body-lg": [
+            "18px",
+            {
+              "lineHeight": "28px",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-sm": [
+            "18px",
+            {
+              "lineHeight": "26px",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-xl": [
+            "36px",
+            {
+              "lineHeight": "44px",
+              "fontWeight": "700"
+            }
+          ],
+          "timer-display": [
+            "24px",
+            {
+              "lineHeight": "28px",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-xl-mobile": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "fontWeight": "700"
+            }
+          ],
+          "body-md": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-md": [
+            "22px",
+            {
+              "lineHeight": "30px",
+              "fontWeight": "600"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-surface font-body-md text-body-md text-on-surface select-none"><header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-gutter flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md min-w-0"><div class="flex items-center gap-space-sm shrink-0"><div class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center text-on-primary font-headline-sm text-headline-sm tracking-wider font-bold shadow-sm">O</div><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface hidden sm:inline">OZAQ</span></div><div class="h-5 w-px bg-outline-variant shrink-0"></div><div class="min-w-0"><h1 class="font-label-md text-label-md text-on-surface truncate">Respublika Fan Olimpiadasi — Bosqich II</h1><p class="font-label-sm text-label-sm text-on-surface-variant truncate">Matematika va mantiqiy fikrlash</p></div></div><div class="flex items-center gap-space-md shrink-0"><div class="hidden md:flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-low text-secondary"><span class="material-symbols-outlined text-[18px]">cloud_done</span><span class="font-label-sm text-label-sm font-medium">Barcha javoblar saqlandi</span></div><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-secondary-container text-on-secondary-container"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-sm text-label-sm font-semibold">Onlayn</span></div><nav class="flex items-center bg-surface-container-low p-1 rounded-lg" data-active-classes="bg-primary-container text-on-primary rounded-lg"><a class="px-2 py-0.5 font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="language-uz" href="#">UZ</a><a class="px-2 py-0.5 font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="language-ru" href="#">RU</a><a class="px-2 py-0.5 font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="language-en" href="#">EN</a></nav><div class="h-5 w-px bg-outline-variant shrink-0"></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="hidden lg:flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface leading-tight">Azizbek Rahimov</span><span class="font-label-sm text-label-sm text-on-surface-variant font-mono">ID: 2024-9841</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="w-full max-w-7xl mx-auto px-gutter py-space-lg md:py-space-xl">
+<div class="relative overflow-hidden rounded-xl bg-surface-container-high p-space-lg mb-space-lg">
+<div class="absolute -right-16 -top-16 w-64 h-64 rounded-full bg-primary-fixed opacity-40 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="space-y-space-xs">
+<div class="inline-flex items-center gap-space-xs px-3 py-1 rounded-full bg-surface-container-lowest text-secondary text-label-sm font-label-sm shadow-sm">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+<span>Tasdiqlangan imtihon muhiti</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">
+            Xush kelibsiz, <span class="text-primary-container">Jasur Temirov</span>
+</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-2">
+<span>Nomzod identifikatori: <strong class="font-mono text-on-surface font-semibold">ozaq-4821</strong></span>
+<span>•</span>
+<span>Guruh: <strong class="text-on-surface">Akademik Tayyorgarlik A-12</strong></span>
+</p>
+</div>
+<div class="flex items-center gap-space-sm bg-surface-container-lowest px-space-md py-space-sm rounded-lg shadow-sm">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[20px]">laptop_mac</span>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface font-semibold">Qurilma nazorati: Mos</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant text-[11px]">Proktoring tekshiruvi yakunlangan</div>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex flex-wrap items-center justify-between gap-space-sm pb-space-sm">
+<span class="px-3 py-1 rounded-md bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold uppercase tracking-wider">
+              Bosqich III • Standart Sinov
+            </span>
+<span class="flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-primary-container">lock_clock</span>
+              Xavfsiz sessiya tartibi
+            </span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-2 mb-space-xs">
+            Algebra va Geometriya Mini-Mock #3
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Mazkur sinov xalqaro DTM Academic standarti asosidagi o‘qish va leksika savodxonligini baholash uchun mo‘ljallangan. Barcha bo‘limlar qat‘iy belgilangan vaqt reglamentiga ega.
+          </p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm mt-space-md pt-space-md">
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[18px]">quiz</span>
+<span>Jami savollar</span>
+</div>
+<div class="mt-2 font-headline-md text-headline-md text-on-surface font-bold">
+                40 <span class="font-label-sm text-label-sm text-on-surface-variant font-normal">ta</span>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[18px]">timer</span>
+<span>Ajratilgan vaqt</span>
+</div>
+<div class="mt-2 font-headline-md text-headline-md text-on-surface font-bold text-primary-container">
+                60 <span class="font-label-sm text-label-sm text-on-surface-variant font-normal">daqiqa</span>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[18px]">grade</span>
+<span>O‘tish bali</span>
+</div>
+<div class="mt-2 font-headline-md text-headline-md text-on-surface font-bold text-secondary">
+                60% <span class="font-label-sm text-label-sm text-on-surface-variant font-normal">(24/40)</span>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[18px]">sync_problem</span>
+<span>Urinishlar soni</span>
+</div>
+<div class="mt-2 font-headline-md text-headline-md text-tertiary-container font-bold">
+                1 ta <span class="font-label-sm text-label-sm text-on-surface-variant font-normal">(Yagona)</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center gap-space-sm mb-space-md">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[20px]">assignment</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Imtihon qoidalari va tavsiyalar</h4>
+</div>
+<div class="space-y-space-sm">
+<div class="flex items-start gap-space-sm p-space-sm rounded-lg bg-surface-container-low">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest flex items-center justify-center shrink-0 font-label-sm text-label-sm font-bold text-primary">
+                1
+              </div>
+<div class="min-w-0">
+<p class="font-label-md text-label-md text-on-surface font-semibold">Brauzerni yopmang va yangilamang (F5 bosmang)</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                  Navigatsiyani o‘zboshimchalik bilan yangilash yoki boshqa sahifaga o‘tish xavfsizlik filtri tomonidan urinishni yakunlash deb baholanishi mumkin.
+                </p>
+</div>
+</div>
+<div class="flex items-start gap-space-sm p-space-sm rounded-lg bg-surface-container-low">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest flex items-center justify-center shrink-0 font-label-sm text-label-sm font-bold text-primary">
+                2
+              </div>
+<div class="min-w-0">
+<p class="font-label-md text-label-md text-on-surface font-semibold">Avtomatik bulutga sinxronizatsiya</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                  Har bir tanlangan variant serverga avtomatik yetkaziladi. Internet aloqasi uzilsa ham, javoblar keshda saqlanib qayta tiklanadi.
+                </p>
+</div>
+</div>
+<div class="flex items-start gap-space-sm p-space-sm rounded-lg bg-surface-container-low">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest flex items-center justify-center shrink-0 font-label-sm text-label-sm font-bold text-primary">
+                3
+              </div>
+<div class="min-w-0">
+<p class="font-label-md text-label-md text-on-surface font-semibold">“Keyin qaytaman” bayroqchasi (Flag)</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                  Ikkilanayotgan savollaringizni belgilab keting. O‘ng tomondagi tezkor savollar matritsasi orqali istalgan daqiqada ularga qayta olasiz.
+                </p>
+</div>
+</div>
+<div class="flex items-start gap-space-sm p-space-sm rounded-lg bg-surface-container-low">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest flex items-center justify-center shrink-0 font-label-sm text-label-sm font-bold text-primary">
+                4
+              </div>
+<div class="min-w-0">
+<p class="font-label-md text-label-md text-on-surface font-semibold">Qat‘iy avtomatik yakunlanish</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                  60:00 daqiqa tugagach, tizim barcha kiritilgan javoblarni mustaqil qabul qilib oladi va natijalarni hisoblashga yo‘naltiradi.
+                </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-4 flex flex-col gap-space-lg">
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface">Tizim holati tekshiruvi</span>
+<span class="flex items-center gap-1 font-label-sm text-label-sm text-secondary font-semibold">
+<span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+              Barchasi tayyor
+            </span>
+</div>
+<div class="space-y-space-sm">
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">wifi</span>
+<span class="font-label-md text-label-md text-on-surface">Internet tezligi</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-semibold">Barqaror (42 Mb/s)</span>
+</div>
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">fullscreen</span>
+<span class="font-label-md text-label-md text-on-surface">Ekran ruxsati</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">1920 × 1080 FHD</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">volume_up</span>
+<span class="font-label-md text-label-md text-on-surface">Ovoz moduli tekshiruvi</span>
+</div>
+<button class="px-2.5 py-1 rounded bg-surface-container-highest text-primary font-label-sm text-label-sm font-semibold hover:bg-primary hover:text-on-primary transition-colors" id="audioTestBtn" onclick="testAudio()" type="button">
+                  Sinash
+                </button>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant text-[11px]" id="audioStatusText">
+                Eshitish qobiliyati standart test uchun sozlandi.
+              </p>
+</div>
+</div>
+<div class="pt-space-sm">
+<div class="rounded-xl bg-surface-container-low p-space-md">
+<label class="flex items-start gap-space-sm cursor-pointer select-none">
+<input class="mt-1 w-5 h-5 rounded text-primary-container focus:ring-0 cursor-pointer" id="agreementCheckbox" onchange="toggleStartButton()" type="checkbox"/>
+<span class="font-label-md text-label-md text-on-surface leading-snug">
+                  Men imtihonning barcha qoidalari va reglamentlari bilan to‘liq tanishdim hamda testni boshlashga tayyorman.
+                </span>
+</label>
+</div>
+</div>
+<div class="pt-space-xs">
+<button class="w-full h-14 rounded-xl font-label-lg text-label-lg font-bold flex items-center justify-center gap-space-sm transition-all duration-200 bg-surface-container-high text-outline cursor-not-allowed" disabled="" id="startExamBtn" onclick="startExamSession()" type="button">
+<span>Testni boshlash (Start Exam)</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<p class="text-center font-label-sm text-label-sm text-on-surface-variant mt-2">
+              Tugmani bosgan zahotingiz hisoblagich (60:00) ishga tushadi.
+            </p>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-space-md flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary-container shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[20px]">support_agent</span>
+</div>
+<div class="min-w-0">
+<div class="font-label-md text-label-md text-on-surface font-semibold">Texnik yordam markazi</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Muammo yuzaga kelsa, xona nazoratchisiga murojaat qiling.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleStartButton() {
+    var checkbox = document.getElementById('agreementCheckbox');
+    var btn = document.getElementById('startExamBtn');
+    if (!checkbox || !btn) return;
+
+    if (checkbox.checked) {
+      btn.disabled = false;
+      btn.className = "w-full h-14 rounded-xl font-label-lg text-label-lg font-bold flex items-center justify-center gap-space-sm transition-all duration-200 bg-primary-container text-on-primary shadow-md hover:bg-primary active:scale-[0.99] cursor-pointer";
+    } else {
+      btn.disabled = true;
+      btn.className = "w-full h-14 rounded-xl font-label-lg text-label-lg font-bold flex items-center justify-center gap-space-sm transition-all duration-200 bg-surface-container-high text-outline cursor-not-allowed";
+    }
+  }
+
+  function testAudio() {
+    var btn = document.getElementById('audioTestBtn');
+    var status = document.getElementById('audioStatusText');
+    if (!btn || !status) return;
+
+    btn.textContent = "Tekshirilmoqda...";
+    setTimeout(function() {
+      btn.textContent = "Soz";
+      btn.className = "px-2.5 py-1 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold pointer-events-none";
+      status.textContent = "Signal muvaffaqiyatli uzatildi. Ovoz balandligi maqbul.";
+      status.className = "font-label-sm text-label-sm text-secondary font-medium text-[11px]";
+    }, 700);
+  }
+
+  function startExamSession() {
+    var btn = document.getElementById('startExamBtn');
+    if (!btn || btn.disabled) return;
+    btn.innerHTML = '<span class="material-symbols-outlined animate-spin text-[20px]">progress_activity</span> Sessiya ochilmoqda...';
+    btn.disabled = true;
+    setTimeout(function() {
+      alert("Imtihon sessiyasiga muvaffaqiyatli ulandingiz. Omad tilaymiz!");
+    }, 600);
+  }
+</script></main><footer class="w-full bg-surface-container-lowest/80 py-space-sm shadow-[0_-1px_6px_rgba(0,0,0,0.02)]"><div class="w-full px-gutter flex flex-col sm:flex-row items-center justify-between gap-space-xs font-label-sm text-label-sm text-on-surface-variant"><span>OZAQ Secure Assessment Engine • Versiya 3.4.0</span><div class="flex items-center gap-space-md"><span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-secondary">shield</span> Kriptografik nazorat faol</span><span>ID sessiya: #OZ-88219-Q</span></div></div></footer><script>document.addEventListener('click',function(e){var el=e.target.closest&&e.target.closest('a,button,[role=button]');if(!el)return;try{parent.postMessage({ozaq:1,label:(el.textContent||'').replace(/\s+/g,' ').trim()},'*')}catch(_){}},true);</script></body></html>
