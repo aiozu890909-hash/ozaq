@@ -1,18 +1,17 @@
-// OZAQ API klienti: barcha ekranlar shu orqali Apps Script bilan gaplashadi.
+// OZAQ API klienti (Apps Script bilan gaplashadi). student=true bo'lsa o'quvchi sessiyasi alohida saqlanadi.
 (function () {
-  var TK = 'ozaq_token';
+  var K = function (s) { return s ? 'ozaq_stoken' : 'ozaq_token'; };
   window.OZAQ = {
-    setToken: function (t) { try { localStorage.setItem(TK, t); } catch (_) {} },
-    getToken: function () { try { return localStorage.getItem(TK) || ''; } catch (_) { return ''; } },
-    clear: function () { try { localStorage.removeItem(TK); } catch (_) {} },
-    // Misol: await OZAQ.call('mock.list')  |  OZAQ.call('exam.save', {items:[{qid, answer, ms}]})
-    call: function (action, data) {
+    setToken: function (t, s) { try { localStorage.setItem(K(s), t); } catch (_) {} },
+    getToken: function (s) { try { return localStorage.getItem(K(s)) || ''; } catch (_) { return ''; } },
+    clear: function (s) { try { localStorage.removeItem(K(s)); } catch (_) {} },
+    call: function (action, data, student) {
       var url = (window.OZAQ_CONFIG || {}).API_URL;
       if (!url) return Promise.reject(new Error('API_URL config.js da kiritilmagan'));
-      var body = Object.assign({ action: action, token: this.getToken() }, data || {});
-      // text/plain: brauzer "preflight" so'rovini yubormaydi, Apps Script bilan shunday ishlash kerak
+      var body = Object.assign({ action: action, token: this.getToken(student) }, data || {});
+      // text/plain: brauzer preflight yubormaydi (Apps Script uchun shart)
       return fetch(url, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(body) })
-        .then(function (r) { return r.json(); })
+        .then(function (r) { return r.json(); }, function () { throw new Error('Serverga ulanib bo’lmadi. Internetni tekshiring.'); })
         .then(function (j) { if (!j.ok) throw new Error(j.error || 'Xatolik'); return j.data; });
     }
   };

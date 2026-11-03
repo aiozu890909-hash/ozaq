@@ -1,8 +1,14 @@
-# OZAQ sayti (statik prototip)
+# OZAQ — mock testlar va analitika platformasi
 
-- `index.html` — yagona kirish nuqtasi (router). Chap-pastdagi "Ekranlar" tugmasi barcha 15 ekranni ochadi.
-- `screens/*.html` — har bir ekran alohida fayl (Stitch dizaynidan, Tailwind CDN bilan).
+Haqiqiy ishlaydigan tizim: **Vercel** (frontend) → **Google Apps Script** (server) → **Google Sheets** (baza).
 
-Google bilan ro’yxatdan o’tish: `screens/r-register.html` ichidagi `GOOGLE_CLIENT_ID` ga OAuth Client ID ni qo’ying (Google Cloud Console, Web client, sayt manzili Authorized JavaScript origins da bo’lsin). Token serverda tekshirilishi shart.
+| Fayl | Vazifasi |
+|---|---|
+| `index.html`, `app.js`, `api.js` | O’qituvchi paneli, mock muharriri, o’quvchi imtihoni, ro’yxatdan o’tish (email + Google) |
+| `admin.html` | Super Admin paneli (Premium mijozlar, demo so’rovlar) |
+| `config.js` | `API_URL` va `GOOGLE_CLIENT_ID` |
+| `apps-script/Code.gs` | Backend (Apps Script) |
+| `OZAQ-DB.xlsx` | Sheets uchun tayyor sarlavhalar |
+| `prototype/` | Faqat dizayn namunalari (statik, backendga ulanmagan) |
 
-Ishga tushirish: `python3 -m http.server 8000` va http://localhost:8000 ni oching.
+To’liq sozlash: `DEPLOY.md`.

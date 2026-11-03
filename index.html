@@ -1,43 +1,40 @@
 <!DOCTYPE html>
-<html lang="uz"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>OZAQ — EdTech platformasi</title>
+<html lang="uz"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OZAQ — mock testlar va analitika</title>
 <style>
-:root{--bg:#0F1412;--card:#1B2420;--line:#263029;--fg:#E8F0EC;--mut:#93A39B;--pri:#0B6B4F;--hi:#5CFFB0;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F1412;--card:#1B2420;--line:#263029;--fg:#E8F0EC;--mut:#93A39B}}
-@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#F4F7F5;--card:#FFFFFF;--line:#D5DED9;--fg:#14201B;--mut:#5B6B64}}
-:root[data-theme="dark"]{--bg:#0F1412;--card:#1B2420;--line:#263029;--fg:#E8F0EC;--mut:#93A39B}
-html,body{height:100%;margin:0}body{background:var(--bg);color:var(--fg);font-family:Inter,system-ui,sans-serif}
-iframe{display:block;width:100%;height:100%;border:0;background:#fff}
-#fab{position:fixed;left:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:50;display:flex;align-items:center;gap:8px;padding:9px 14px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--fg);font:600 13px Inter,system-ui,sans-serif;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.25)}
-#fab i{width:9px;height:9px;border-radius:50%;background:var(--hi);box-shadow:0 0 8px var(--hi)}
-#panel{position:fixed;left:12px;bottom:calc(60px + env(safe-area-inset-bottom,0px));z-index:50;width:min(320px,calc(100vw - 24px));max-height:70vh;overflow:auto;padding:12px;border-radius:16px;border:1px solid var(--line);background:var(--card);box-shadow:0 12px 36px rgba(0,0,0,.35);display:none}
-#panel.on{display:block}
-#panel h4{margin:10px 6px 6px;font:700 11px Inter,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
-#panel h4:first-child{margin-top:2px}
-#panel button{display:block;width:100%;text-align:left;margin:2px 0;padding:8px 10px;border:0;border-radius:10px;background:transparent;color:var(--fg);font:500 14px Inter,system-ui,sans-serif;cursor:pointer}
-#panel button:hover{background:var(--line)}
-#panel button.cur{background:var(--pri);color:#fff}
-</style></head><body>
-<iframe id="f" title="OZAQ ekran"></iframe>
-<button id="fab" type="button" aria-expanded="false"><i></i><span id="cur">Ekranlar</span></button>
-<div id="panel" role="menu"></div>
-<script>
-var META=[{"r": "a-live", "t": "Admin: kirish va panel (jonli)", "g": "adminlive"}, {"r": "r-register", "t": "Ro’yxatdan o’tish (Google)", "g": "auth"}, {"r": "t-overview", "t": "Umumiy panel", "g": "teacher"}, {"r": "t-mocks", "t": "Mock testlar", "g": "teacher"}, {"r": "t-editor", "t": "Mock muharriri", "g": "teacher"}, {"r": "t-students", "t": "O’quvchilar va kirish", "g": "teacher"}, {"r": "t-results", "t": "Natijalar", "g": "teacher"}, {"r": "p-overview", "t": "Umumiy panel (rahbariyat)", "g": "premium"}, {"r": "p-errors", "t": "Xatolar xaritasi", "g": "premium"}, {"r": "p-retention", "t": "Retention xavfi", "g": "premium"}, {"r": "a-overview", "t": "Umumiy ko’rinish", "g": "admin"}, {"r": "a-clients", "t": "Premium mijozlar", "g": "admin"}, {"r": "a-new", "t": "Yangi mijoz yaratish", "g": "admin"}, {"r": "s-login", "t": "Imtihonga kirish", "g": "student"}, {"r": "s-brief", "t": "Yo’riqnoma", "g": "student"}, {"r": "s-exam", "t": "Imtihon oynasi", "g": "student"}, {"r": "s-result", "t": "Natija", "g": "student"}],GROUPS=[["auth", "Kirish va ro’yxat"], ["adminlive", "Super Admin (jonli)"], ["teacher", "Freemium o’qituvchi"], ["premium", "Premium rahbariyat"], ["admin", "Super Admin"], ["student", "O’quvchi (imtihon)"]],MAPS={"auth": [["__go:t-overview", "t-overview"]], "teacher": [["Yangi test yaratish", "t-editor"], ["Testlar ro'yxati", "t-mocks"], ["Nashr qilish", "t-students"], ["Savollar va Tahrir", "t-editor"], ["Jonli natijalar", "t-results"], ["Umumiy panel", "t-overview"], ["Mock testlar", "t-mocks"], ["Natijalar", "t-results"], ["Havola olish", "t-students"], ["Kuzatish", "t-students"], ["Tariflar taqqoslash", "t-results"], ["Hammasini ko'rish", "t-results"]], "premium": [["Umumiy panel", "p-overview"], ["Xatolar xaritasi", "p-errors"], ["Retention", "p-retention"], ["Mock testlar", "t-mocks"]], "admin": [["Umumiy ko", "a-overview"], ["Premium mijozlar", "a-clients"], ["Yangi mijoz", "a-new"]], "student": [["Imtihonga kirish", "s-brief"], ["Testni boshlash", "s-exam"], ["Ha, topshirish", "s-result"], ["Bosh sahifaga qaytish", "s-login"], ["Sessiyani yakunlash", "s-login"]]},MODE="src",DATA={};
-var f=document.getElementById('f'),panel=document.getElementById('panel'),fab=document.getElementById('fab'),cur=document.getElementById('cur');
-var route=null;
-function byRoute(r){for(var i=0;i<META.length;i++)if(META[i].r===r)return META[i];return null}
-function go(r){var m=byRoute(r);if(!m)return;if(location.hash!=='#'+r){location.hash=r;return}
- if(route===r)return;route=r;
- if(MODE==='srcdoc')f.srcdoc=DATA[r];else f.src='screens/'+r+'.html';
- cur.textContent=m.t;panel.classList.remove('on');fab.setAttribute('aria-expanded','false');draw()}
-function draw(){var h='';GROUPS.forEach(function(g){h+='<h4>'+g[1]+'</h4>';META.filter(function(m){return m.g===g[0]}).forEach(function(m){h+='<button type="button" data-r="'+m.r+'" class="'+(m.r===route?'cur':'')+'">'+m.t+'</button>'})});panel.innerHTML=h}
-panel.addEventListener('click',function(e){var b=e.target.closest('button');if(b)go(b.getAttribute('data-r'))});
-fab.addEventListener('click',function(){var on=panel.classList.toggle('on');fab.setAttribute('aria-expanded',on)});
-document.addEventListener('keydown',function(e){if(e.key==='Escape')panel.classList.remove('on')});
-window.addEventListener('message',function(e){if(e.source!==f.contentWindow||!e.data||!e.data.ozaq)return;
- var m=byRoute(route);if(!m)return;var map=MAPS[m.g]||[];
- for(var i=0;i<map.length;i++){if(e.data.label.indexOf(map[i][0])>-1){go(map[i][1]);return}}});
-window.addEventListener('hashchange',function(){go(location.hash.slice(1))});
-draw();go(byRoute(location.hash.slice(1))?location.hash.slice(1):'t-overview');
-</script></body></html>
+:root{--bg:#0F1412;--card:#1B2420;--line:#263029;--fg:#E8F0EC;--mut:#93A39B;--pri:#0B6B4F;--hi:#5CFFB0;--err:#FF8A8A;--warn:#F5C451}
+*{box-sizing:border-box}html,body{margin:0}body{background:var(--bg);color:var(--fg);font:14px/1.5 Inter,system-ui,sans-serif}
+button,input,select,textarea{font:inherit;color:inherit}button{cursor:pointer}a{color:var(--hi)}
+.logo{font-weight:800;font-size:20px;letter-spacing:.04em}.logo i{color:var(--hi);font-style:normal}
+.bar{display:flex;align-items:center;gap:12px;padding:12px 20px;background:#161D1A;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+.sp{flex:1}.mut{color:var(--mut)}.wrap{max-width:1000px;margin:0 auto;padding:20px}.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:14px}.card h3{margin:0 0 10px;font-size:15px}
+.center{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;background:radial-gradient(900px 420px at 50% -10%,#12392d,var(--bg) 70%)}.narrow{width:100%;max-width:400px}
+label{display:block;font-size:12px;color:var(--mut);margin:10px 0 4px}
+input,select,textarea{width:100%;padding:9px 11px;border-radius:10px;border:1px solid var(--line);background:#121a16}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--pri)}input[type=radio],input[type=checkbox]{width:auto}
+input.num{width:70px}textarea{min-height:100px}
+.btn{padding:9px 15px;border:0;border-radius:10px;background:var(--pri);color:#fff;font-weight:700}.btn:hover{background:#0d7f5d}
+.btn.s{padding:5px 10px;font-size:12px;font-weight:600;background:transparent;border:1px solid var(--line)}.btn.s:hover{background:var(--line)}.btn.w{width:100%;margin-top:14px}.btn[disabled]{opacity:.5}
+.pill,.badge{padding:2px 10px;border-radius:99px;font-size:12px;font-weight:600;background:#0f3a2c;color:var(--hi)}
+.b-draft{background:#2a3350;color:#9db4ff}.b-published{background:#3a3320;color:var(--warn)}.b-closed{background:#3d2323;color:var(--err)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:14px}.kpis .card{margin:0}.kpis b{font-size:26px;display:block}
+table{width:100%;border-collapse:collapse}th{font-size:11px;text-transform:uppercase;color:var(--mut);text-align:left;padding:6px 8px;border-bottom:1px solid var(--line)}td{padding:8px;border-bottom:1px solid var(--line)}
+.tabs{display:flex;gap:6px;margin:14px 0}.tabs button{padding:8px 14px;border:1px solid var(--line);border-radius:10px;background:transparent}.tabs .on{background:var(--pri);border-color:var(--pri);color:#fff}
+.ti{font-size:18px;font-weight:700;max-width:420px}.note{padding:10px 12px;border-radius:10px;background:#2a2410;color:var(--warn);margin-bottom:12px}
+.tool{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.paper{background:#fff;color:#111;max-width:794px;min-height:200px;margin:0 auto 18px;padding:36px 44px;border-radius:4px;box-shadow:0 6px 30px rgba(0,0,0,.4);outline:0}
+.rt table{border-collapse:collapse;margin:8px 0}.rt td,.rt th{border:1px solid #888;padding:6px 10px;min-width:60px}.rt img{max-width:100%}
+.q-text{background:#fff;color:#111;border-radius:8px;padding:10px 12px;margin:10px 0;min-height:44px}
+.opt{display:flex;gap:8px;align-items:center;margin:6px 0}
+.hist{display:flex;align-items:flex-end;gap:6px;height:130px;margin:8px 0}.hb{flex:1;background:var(--pri);border-radius:4px 4px 0 0;position:relative;min-height:3px}.hb span{position:absolute;top:-18px;left:0;right:0;text-align:center;font-size:11px;color:var(--mut)}
+.hl{display:flex;gap:6px;font-size:10px;color:var(--mut)}.hl span{flex:1;text-align:center}
+.exb{display:flex;gap:16px;max-width:1000px;margin:0 auto;padding:16px}#nv{width:150px;flex:none;display:flex;flex-wrap:wrap;gap:6px;align-content:flex-start}
+#nv button{width:40px;height:36px;border:1px solid var(--line);border-radius:8px;background:transparent}#nv .done{background:#0f3a2c;border-color:var(--pri)}#nv .cur{outline:2px solid var(--hi)}
+#qv{flex:1;min-width:0}.ch{display:flex;gap:10px;align-items:center;padding:10px 12px;margin:8px 0;border:1px solid var(--line);border-radius:10px;cursor:pointer}.ch:hover{background:#222d28}
+.qt{background:#fff;color:#111;border-radius:8px;padding:12px 14px;margin:8px 0}.timer{font:700 18px ui-monospace,monospace}.timer.low{color:var(--err)}
+#toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);padding:10px 16px;border-radius:10px;background:#0f3a2c;color:#fff;opacity:0;pointer-events:none;transition:.2s;z-index:20;max-width:90vw}#toast.on{opacity:1}#toast.bad{background:#4a1f1f}
+.err{color:var(--err);min-height:18px}details.doc{margin-bottom:12px}details.doc summary{cursor:pointer;margin-bottom:8px}
+@media(max-width:720px){.exb{flex-direction:column}#nv{width:100%}.paper{padding:20px}}
+</style></head><body><div id="v"></div><div id="toast" role="status"></div>
+<script src="config.js"></script><script src="api.js"></script><script src="app.js"></script></body></html>

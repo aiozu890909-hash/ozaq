@@ -1,52 +1,34 @@
-# OZAQ — ishga tushirish (Google Apps Script + Sheets + Vercel)
+# OZAQ — ishga tushirish
 
-Arxitektura: **Vercel** (frontend, statik) → `fetch` → **Apps Script Web App** (server) → **Google Sheets** (baza).
+## 1. Google Sheets + Apps Script
+1. `OZAQ-DB.xlsx` ni Drive'ga yuklang → **Google Sheets bilan oching** → **File → Save as Google Sheets**.
+2. **Extensions → Apps Script** → `apps-script/Code.gs` ni to’liq joylang.
+3. Kod boshidagi `SHEET_ID` ga Sheets havolasidagi ID ni yozing (`/d/ID/edit`). Bog’langan skriptda bo’sh qoldirsangiz ham ishlaydi.
+4. `setGoogleClientId()` ichiga OAuth Client ID ni yozib bir marta ishga tushiring (2-bo’lim).
+5. `createFirstAdmin()` ichiga admin login va kuchli parolni yozing → **setup()**, keyin **createFirstAdmin()** ni ishga tushiring. Ishlatgach parolni koddan o’chiring.
+6. **Deploy → New deployment → Web app**: Execute as **Me**, Who has access **Anyone** → `.../exec` URL ni `config.js` dagi `API_URL` ga yozing.
+   Kodni o’zgartirsangiz: Deploy → Manage deployments → Edit → **New version**.
 
-## 1. Google Sheets va Apps Script
-1. `OZAQ-DB.xlsx` ni Google Drive'ga yuklang → ustiga bosib **Google Sheets bilan oching** → **File → Save as Google Sheets** (nomi: `OZAQ DB`). Tayyor 9 ta varaq va sarlavhalar bor. (Xohlasangiz bo'sh Sheets ham ochishingiz mumkin, `setup()` varaqlarni o'zi yaratadi.)
-2. **Extensions → Apps Script** → `apps-script/Code.gs` mazmunini to'liq joylang → saqlang.
-3. Sheets havolasidan ID ni oling (`docs.google.com/spreadsheets/d/`**`ID`**`/edit`) va Code.gs boshidagi `SHEET_ID` ga yozing (bog'langan skriptda bo'sh qoldirsangiz ham ishlaydi).
-4. `setGoogleClientId()` ichiga o'z Client ID ingizni yozing (pastdagi 2-bo'limda olinadi) va funksiyani bir marta ishga tushiring.
-5. **setup()** ni, keyin **createFirstAdmin()** ni ishga tushiring (ruxsat so'ralganda ruxsat bering). Ishlatgach parolni koddan o'chiring.
-6. **Deploy → New deployment → Web app**: *Execute as:* **Me**, *Who has access:* **Anyone** → URL ni nusxalang (`.../exec`).
-   Kodni o'zgartirsangiz: Deploy → Manage deployments → Edit → **New version**.
+Sheets fayliga faqat siz kiring (parol hash lari va test javoblari shu yerda).
 
-Sheets ichida 9 ta varaq yaratiladi: Users, Clients, Groups, Mocks, MockStudents, Attempts, Sessions, Leads, Audit.
-**Bu Sheets fayliga faqat o'zingiz kirishingiz kerak** (parol hash lari shu yerda). Uni hech kimga ulashmang.
-
-## 2. Google OAuth (Google bilan kirish)
-1. console.cloud.google.com → yangi loyiha → **APIs & Services → OAuth consent screen** (External) to'ldiring.
+## 2. Google bilan kirish
+1. console.cloud.google.com → **APIs & Services → OAuth consent screen** (External) → to’ldiring va **Publish app**.
 2. **Credentials → Create credentials → OAuth client ID → Web application**.
-3. **Authorized JavaScript origins** ga qo'shing: `https://SIZNING-LOYIHA.vercel.app` (va sinov uchun `http://localhost:8000`).
-4. Client ID ni ham Apps Script (`setGoogleClientId`), ham `config.js` ga yozing.
+3. **Authorized JavaScript origins**: `https://SIZNING.vercel.app` (va sinov uchun `http://localhost:8000`).
+4. Client ID ni Apps Script (`setGoogleClientId`) va `config.js` (`GOOGLE_CLIENT_ID`) ga yozing.
 
 ## 3. Vercel
-1. `config.js` ga `API_URL` va `GOOGLE_CLIENT_ID` ni yozing.
-2. Shu papkani GitHub'ga yuklab Vercel'da *Import* qiling yoki `npx vercel --prod` ishlating.
-   Framework: **Other**, build command yo'q, output: ildiz papka.
-3. Vercel domenini 2-bosqichdagi Authorized origins ga qo'shishni unutmang.
+Repo ni Vercel'ga *Import* qiling (Framework: **Other**, build command yo’q). Domen chiqqach 2-bo’limdagi origins ga qo’shing.
 
-## 4. Tekshirish
-```
-curl -L -X POST "APPS_SCRIPT_URL" -H "Content-Type: text/plain" -d '{"action":"ping"}'
-```
-Javob: `{"ok":true,"data":{"time":...}}`
+## 4. Tekshiruv ro’yxati
+1. `curl -L -X POST "API_URL" -H "Content-Type: text/plain" -d '{"action":"ping"}'` → `{"ok":true,...}`
+2. Saytda **Ro’yxatdan o’tish** (email) va **Google bilan** kirish.
+3. **Yangi mock** → savollar qo’shing (har savolga mavzu kiriting) → **Saqlash** → **Nashr qilish** → **Faollashtirish**.
+4. **O’quvchilar va kirish** → ismlarni yozing → login/parol yaratiladi.
+5. Boshqa brauzerda `https://SIZNING.vercel.app/#exam` → o’quvchi login/paroli bilan kirib testni yechadi.
+6. **Natijalar** tabida tahlil. `admin.html` da admin login bilan Premium mijoz yarating.
 
-## API amallari (action)
-| Guruh | Amallar |
-|---|---|
-| Ochiq | `auth.register`, `auth.google`, `auth.login`, `exam.login`, `lead.create` |
-| Hisob | `auth.me`, `auth.logout`, `auth.changePassword` |
-| Admin | `admin.stats`, `admin.createClient`, `admin.listClients`, `admin.setClientStatus`, `admin.resetClientPassword`, `admin.listLeads`, `admin.setLeadStatus` |
-| Direktor | `client.addTeacher` |
-| Guruh | `group.create`, `group.list` |
-| Mock | `mock.save`, `mock.get`, `mock.list`, `mock.setStatus` (draft→published→active→closed) |
-| Mockka o'quvchi | `mock.addStudents`, `mock.students`, `mock.resetStudentPassword`, `mock.reopenStudent`, `mock.removeStudent` |
-| Imtihon | `exam.start`, `exam.save`, `exam.flag`, `exam.submit` |
-| Tahlil | `analytics.mock` |
-
-## Cheklovlar (halol eslatma)
-- Apps Script bir vaqtda ~30 ta so'rovni bajaradi va har so'rov 0.3–1.5 soniya oladi. **Yuzlab o'quvchi bir vaqtda** yechsa, `exam.save` ni har javobdan emas, har 10–15 soniyada paketlab (`items`) yuboring.
-- Bitta katak 50 000 belgi: juda uzun test `mock.save` da xato beradi. Rasmlarni Sheets'ga emas, Drive/Cloudinary'ga yuklab, havolasini saqlang.
-- Parollar sha-256 (100 aylanish, tuz bilan) hash qilinadi, bcrypt emas. Parollar kuchli va tasodifiy yaratilgani uchun yetarli, lekin katta ishlab chiqarish uchun keyin Supabase/Firebase'ga o'tishni o'ylang.
-- Hozirgi dashboard ekranlari hali statik namuna: ularni `OZAQ.call(...)` ga ulash keyingi bosqich.
+## Cheklovlar
+- Apps Script so’rovlarni ketma-ket bajaradi (~0.3–1.5 s/so’rov). Bir vaqtda o’nlab o’quvchi muammosiz; yuzlab bo’lsa, javoblar har 10 soniyada paketlanib yuboriladi, lekin kechikish bo’lishi mumkin.
+- Bitta Sheets katagi 50 000 belgi: juda uzun test saqlanmaydi. Rasmlarni faqat https havola sifatida qo’shing.
+- Parollar sha-256 (tuz + 100 aylanish) bilan saqlanadi; 5 ta xato urinishdan keyin 10 daqiqaga bloklanadi.
