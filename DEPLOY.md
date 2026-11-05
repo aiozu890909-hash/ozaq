@@ -26,9 +26,14 @@ Repo ni Vercel'ga *Import* qiling (Framework: **Other**, build command yo’q). 
 3. **Yangi mock** → savollar qo’shing (har savolga mavzu kiriting) → **Saqlash** → **Nashr qilish** → **Faollashtirish**.
 4. **O’quvchilar va kirish** → ismlarni yozing → login/parol yaratiladi.
 5. Boshqa brauzerda `https://SIZNING.vercel.app/#exam` → o’quvchi login/paroli bilan kirib testni yechadi.
-6. **Natijalar** tabida tahlil. `admin.html` da admin login bilan Premium mijoz yarating.
+6. **Natijalar** tabida tahlil.
+7. Bosh sahifada (`/`) **Demo so’rash** formasini to’ldiring → `admin.html` → **Demo so’rovlar** da ko’rinadi.
+8. `admin.html` da admin login bilan Premium mijoz yarating → mijoz login/paroli bilan kiring → **O’qituvchilar** bo’limida o’qituvchi qo’shing.
+9. Premium o’qituvchi bilan **Uzun javob** savoli qo’shing, o’quvchi yozsin, **Natijalar** tabida ball qo’ying.
+10. **Guruhlar** bo’limida guruh yarating (Freemium: 2 tagacha) va o’quvchi qo’shishda tanlang.
 
 ## Cheklovlar
 - Apps Script so’rovlarni ketma-ket bajaradi (~0.3–1.5 s/so’rov). Bir vaqtda o’nlab o’quvchi muammosiz; yuzlab bo’lsa, javoblar har 10 soniyada paketlanib yuboriladi, lekin kechikish bo’lishi mumkin.
-- Bitta Sheets katagi 50 000 belgi: juda uzun test saqlanmaydi. Rasmlarni faqat https havola sifatida qo’shing.
+- Bitta Sheets katagi 50 000 belgi: juda uzun test saqlanmaydi. Rasmlarni faqat https havola sifatida qo’shing (fayl yuklash yo’q).
+- Tarjima (UZ/RU/EN), moslashtirish savoli, filiallar taqqoslash va PDF/Excel hisobotlar hali yo’q.
 - Parollar sha-256 (tuz + 100 aylanish) bilan saqlanadi; 5 ta xato urinishdan keyin 10 daqiqaga bloklanadi.

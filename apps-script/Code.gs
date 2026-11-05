@@ -279,10 +279,24 @@ const HANDLERS = {
     need_(s, ['teacher', 'director', 'admin']); const plan = planOf_(s.user);
     const mine = all_('Groups').filter(g => g.ownerId === s.id);
     if (plan === 'free' && mine.length >= CFG.FREE_MAX_GROUPS) throw new Error('LIMIT: Bepul tarifda ' + CFG.FREE_MAX_GROUPS + ' ta guruh. Premium\'ga o\'ting.');
+    if (plan === 'premium' && s.user.clientId) {
+      const c = one_('Clients', 'id', s.user.clientId);
+      if (c && Number(c.groupLimit) > 0 && all_('Groups').filter(x => x.clientId === c.id).length >= Number(c.groupLimit)) throw new Error('LIMIT: Tarifdagi guruhlar limiti (' + c.groupLimit + ') tugagan.');
+    }
     const g = { id: id_('g'), ownerId: s.id, clientId: s.user.clientId || '', name: String(r.name || '').trim(), createdAt: new Date().toISOString() };
     if (!g.name) throw new Error('Guruh nomi kerak'); add_('Groups', g); return g;
   },
-  'group.list': (r, s) => { need_(s, ['teacher', 'director', 'admin']); return all_('Groups').filter(g => g.ownerId === s.id || (s.user.clientId && g.clientId === s.user.clientId)).map(g => { delete g.__r; return g; }); },
+  'group.list': (r, s) => {
+    need_(s, ['teacher', 'director', 'admin']); const st = all_('MockStudents');
+    return all_('Groups').filter(g => g.ownerId === s.id || (s.user.clientId && g.clientId === s.user.clientId && s.user.role === 'director'))
+      .map(g => ({ id: g.id, name: g.name, createdAt: g.createdAt, students: st.filter(x => x.groupId === g.id && x.state !== 'removed').length }));
+  },
+  'group.students': (r, s) => {
+    need_(s, ['teacher', 'director', 'admin']); const g = one_('Groups', 'id', r.groupId);
+    if (!g || (g.ownerId !== s.id && s.user.role !== 'admin' && !(s.user.role === 'director' && s.user.clientId && g.clientId === s.user.clientId))) throw new Error('Guruh topilmadi');
+    const mk = {}; all_('Mocks').forEach(m => mk[m.id] = m.title);
+    return all_('MockStudents').filter(x => x.groupId === g.id && x.state !== 'removed').map(x => ({ name: x.name, mock: mk[x.mockId] || '', state: x.state }));
+  },
 
   // ---- mocks (muharrir) ----
   'mock.save': (r, s) => {
@@ -308,9 +322,9 @@ const HANDLERS = {
   },
   'mock.get': (r, s) => { need_(s, ['teacher', 'director', 'admin']); const m = mockFor_(s, r.id); return { id: m.id, title: m.title, subject: m.subject, status: m.status, settings: jparse_(m.settings, {}), doc: jparse_(m.doc, {}), questions: jparse_(m.questions, []) }; },
   'mock.list': (r, s) => {
-    need_(s, ['teacher', 'director', 'admin']); const u = s.user, stu = all_('MockStudents');
+    need_(s, ['teacher', 'director', 'admin']); const u = s.user, stu = all_('MockStudents'), own = {}; all_('Users').forEach(x => own[x.id] = x.name);
     return all_('Mocks').filter(m => u.role === 'admin' || m.ownerId === u.id || (u.clientId && m.clientId === u.clientId && u.role === 'director'))
-      .map(m => { const ss = stu.filter(x => x.mockId === m.id); return { id: m.id, title: m.title, subject: m.subject, status: m.status, updatedAt: m.updatedAt, students: ss.length, submitted: ss.filter(x => x.state === 'submitted').length }; });
+      .map(m => { const ss = stu.filter(x => x.mockId === m.id); return { id: m.id, title: m.title, subject: m.subject, status: m.status, updatedAt: m.updatedAt, owner: own[m.ownerId] || '', students: ss.length, submitted: ss.filter(x => x.state === 'submitted').length }; });
   },
   'mock.setStatus': (r, s) => {
     need_(s, ['teacher', 'director', 'admin']); const m = mockFor_(s, r.id);
@@ -326,6 +340,14 @@ const HANDLERS = {
     const names = (r.names || []).map(x => String(x).trim()).filter(Boolean);
     const have = all_('MockStudents').filter(x => x.mockId === m.id).length;
     if (plan === 'free' && have + names.length > CFG.FREE_MAX_STUDENTS) throw new Error('LIMIT: Bepul tarifda bitta mockga ' + CFG.FREE_MAX_STUDENTS + ' tagacha o\'quvchi.');
+    if (r.groupId) { const g = one_('Groups', 'id', r.groupId); if (!g || (g.ownerId !== s.id && !(s.user.clientId && g.clientId === s.user.clientId))) throw new Error('Guruh topilmadi'); }
+    if (plan === 'premium' && s.user.clientId) {
+      const c = one_('Clients', 'id', s.user.clientId);
+      if (c && Number(c.studentLimit) > 0) {
+        const mk = {}; all_('Mocks').filter(x => x.clientId === c.id).forEach(x => mk[x.id] = 1);
+        if (all_('MockStudents').filter(x => mk[x.mockId] && x.state !== 'removed').length + names.length > Number(c.studentLimit)) throw new Error('LIMIT: Tarifdagi o\'quvchilar limiti (' + c.studentLimit + ') tugagan.');
+      }
+    }
     return names.map(n => {
       const password = randStr_(6), st = { id: id_('s'), mockId: m.id, groupId: r.groupId || '', name: n.slice(0, 80), state: 'new', createdAt: new Date().toISOString() };
       st.login = uniqueLogin_('MockStudents', 'oz'); setPw_(st, password); add_('MockStudents', st);
@@ -398,7 +420,53 @@ const HANDLERS = {
     const m = one_('Mocks', 'id', att.mockId), set = jparse_(m.settings, {});
     if (!att.submittedAt) { if (r.items) HANDLERS['exam.save'](r, s); const a2 = one_('Attempts', 'id', att.id); finalize_(a2, m); }
     const fin = one_('Attempts', 'id', att.id), mode = set.showResult || 'instant';
-    return mode === 'instant' ? { shown: true, score: fin.score, maxScore: fin.maxScore, percent: Math.round(fin.score / fin.maxScore * 100) } : { shown: false };
+    return mode === 'instant' ? { shown: true, score: fin.score, maxScore: fin.maxScore, percent: Math.round(fin.score / fin.maxScore * 100), pending: Number(fin.manual) || 0 } : { shown: false };
+  },
+
+  // ---- direktor: o'qituvchilar boshqaruvi ----
+  'client.overview': (r, s) => {
+    need_(s, ['director']); const cid = s.user.clientId;
+    const users = all_('Users').filter(u => u.clientId === cid && (u.role === 'teacher' || u.role === 'director'));
+    const mocks = all_('Mocks').filter(m => m.clientId === cid), mid = {}; mocks.forEach(m => mid[m.id] = m);
+    const stu = all_('MockStudents').filter(x => mid[x.mockId] && x.state !== 'removed'), att = all_('Attempts').filter(a => a.submittedAt && mid[a.mockId]);
+    return users.map(u => {
+      const mm = mocks.filter(m => m.ownerId === u.id), ids = {}; mm.forEach(m => ids[m.id] = 1);
+      const aa = att.filter(a => ids[a.mockId]);
+      const avg = aa.length ? Math.round(aa.reduce((x, a) => x + (a.maxScore ? a.score / a.maxScore * 100 : 0), 0) / aa.length) : null;
+      return { id: u.id, name: u.name, login: u.login, role: u.role, mocks: mm.length, students: stu.filter(x => ids[x.mockId]).length, submitted: aa.length, avg: avg };
+    });
+  },
+  'client.resetTeacherPassword': (r, s) => {
+    need_(s, ['director']); const u = one_('Users', 'id', r.id);
+    if (!u || u.clientId !== s.user.clientId || u.role !== 'teacher') throw new Error('O\'qituvchi topilmadi');
+    const password = randStr_(8); setPw_(u, password); u.mustChangePw = true; upd_('Users', u); return { login: u.login, password: password };
+  },
+
+  // ---- uzun javoblarni qo'lda baholash ----
+  'mock.attempts': (r, s) => {
+    need_(s, ['teacher', 'director', 'admin']); const m = mockFor_(s, r.mockId), longs = jparse_(m.questions, []).filter(q => q.type === 'long');
+    if (!longs.length) return [];
+    const nm = {}; all_('MockStudents').filter(x => x.mockId === m.id).forEach(x => nm[x.id] = x.name);
+    return all_('Attempts').filter(a => a.mockId === m.id && a.submittedAt).map(a => {
+      const ans = jparse_(a.answers, {}), pq = jparse_(a.perq, {});
+      return { attemptId: a.id, name: nm[a.studentId] || '', score: a.score, maxScore: a.maxScore, pending: Number(a.manual) || 0,
+        items: longs.map(q => ({ qid: q.id, question: q.text, points: q.points, answer: ans[q.id] || '', given: pq[q.id] === undefined ? null : pq[q.id] })) };
+    });
+  },
+  'mock.grade': (r, s) => {
+    need_(s, ['teacher', 'director', 'admin']); const a = one_('Attempts', 'id', r.attemptId);
+    if (!a || !a.submittedAt) throw new Error('Urinish topilmadi');
+    const m = mockFor_(s, a.mockId), qs = jparse_(m.questions, []), pq = jparse_(a.perq, {});
+    Object.keys(r.grades || {}).forEach(qid => {
+      const q = qs.filter(x => x.id === qid && x.type === 'long')[0]; if (!q) return;
+      const v = Number(r.grades[qid]), mx = Number(q.points) || 1;
+      if (isNaN(v) || v < 0 || v > mx) throw new Error('Ball 0 dan ' + mx + ' gacha bo\'lishi kerak');
+      pq[qid] = v;
+    });
+    let score = 0, manual = 0;
+    qs.forEach(q => { const v = pq[q.id]; if (v === null || v === undefined) { if (q.type === 'long') manual++; } else score += Number(v); });
+    a.perq = jstr_(pq); a.score = Math.round(score * 100) / 100; a.manual = manual; upd_('Attempts', a);
+    return { score: a.score, pending: manual };
   },
 
   // ---- natijalar va tahlil ----
