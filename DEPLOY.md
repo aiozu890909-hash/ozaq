@@ -31,9 +31,11 @@ Repo ni Vercel'ga *Import* qiling (Framework: **Other**, build command yo’q). 
 8. `admin.html` da admin login bilan Premium mijoz yarating → mijoz login/paroli bilan kiring → **O’qituvchilar** bo’limida o’qituvchi qo’shing.
 9. Premium o’qituvchi bilan **Uzun javob** savoli qo’shing, o’quvchi yozsin, **Natijalar** tabida ball qo’ying.
 10. **Guruhlar** bo’limida guruh yarating (Freemium: 2 tagacha) va o’quvchi qo’shishda tanlang.
+11. **Natijalar** tabida **Excel (CSV)** yuklab oling va **Ota-ona hisoboti** orqali PDF (brauzer chop etish oynasida *PDF sifatida saqlash*) oling. Yangi oyna ochilishiga ruxsat bering.
+12. Yuqoridagi **UZ / RU / EN** tanlagichi va **quyosh** tugmasi (qorong’i/yorug’ rejim) ni tekshiring.
 
 ## Cheklovlar
 - Apps Script so’rovlarni ketma-ket bajaradi (~0.3–1.5 s/so’rov). Bir vaqtda o’nlab o’quvchi muammosiz; yuzlab bo’lsa, javoblar har 10 soniyada paketlanib yuboriladi, lekin kechikish bo’lishi mumkin.
 - Bitta Sheets katagi 50 000 belgi: juda uzun test saqlanmaydi. Rasmlarni faqat https havola sifatida qo’shing (fayl yuklash yo’q).
-- Tarjima (UZ/RU/EN), moslashtirish savoli, filiallar taqqoslash va PDF/Excel hisobotlar hali yo’q.
+- Tarjima: o’qituvchi, o’quvchi va bosh sahifa UZ/RU/EN; `admin.html` va ota-onalar PDF hisoboti hozircha faqat o’zbekcha. Moslashtirish savoli va filiallar taqqoslash hali yo’q.
 - Parollar sha-256 (tuz + 100 aylanish) bilan saqlanadi; 5 ta xato urinishdan keyin 10 daqiqaga bloklanadi.

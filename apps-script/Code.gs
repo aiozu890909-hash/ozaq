@@ -469,6 +469,26 @@ const HANDLERS = {
     return { score: a.score, pending: manual };
   },
 
+  // ---- hisobotlar (Excel/CSV va ota-onalar uchun PDF) ----
+  'mock.report': (r, s) => {
+    need_(s, ['teacher', 'director', 'admin']); const m = mockFor_(s, r.mockId), qs = jparse_(m.questions, []);
+    const nm = {}; all_('MockStudents').filter(x => x.mockId === m.id).forEach(x => nm[x.id] = x.name);
+    const att = all_('Attempts').filter(a => a.mockId === m.id && a.submittedAt);
+    const rows = att.map(a => {
+      const pq = jparse_(a.perq, {}), tm = jparse_(a.timings, {}), tp = {};
+      qs.forEach(q => { const t = tp[q.topic] = tp[q.topic] || { topic: q.topic, got: 0, max: 0 }; t.got += Number(pq[q.id]) || 0; t.max += Number(q.points) || 1; });
+      return { name: nm[a.studentId] || '', score: a.score, maxScore: a.maxScore, percent: a.maxScore ? Math.round(a.score / a.maxScore * 100) : 0, pending: Number(a.manual) || 0,
+        scores: qs.map(q => pq[q.id] == null ? null : pq[q.id]), seconds: qs.map(q => Math.round((tm[q.id] || 0) / 1000)),
+        topics: Object.keys(tp).map(k => ({ topic: k, percent: tp[k].max ? Math.round(tp[k].got / tp[k].max * 100) : 0 })) };
+    });
+    const ta = {}; rows.forEach(x => x.topics.forEach(t => { (ta[t.topic] = ta[t.topic] || []).push(t.percent); }));
+    const classTopics = {}; Object.keys(ta).forEach(k => classTopics[k] = Math.round(ta[k].reduce((x, y) => x + y, 0) / ta[k].length));
+    rows.forEach(x => x.rank = 1 + rows.filter(y => y.percent > x.percent).length); // teng ballar bir xil o'rin oladi
+    rows.sort((a, b) => a.name < b.name ? -1 : 1);
+    return { title: m.title, subject: m.subject, count: rows.length, average: rows.length ? Math.round(rows.reduce((x, y) => x + y.percent, 0) / rows.length) : 0,
+      questions: qs.map((q, i) => ({ n: i + 1, topic: q.topic, type: q.type, points: q.points })), classTopics: classTopics, students: rows };
+  },
+
   // ---- natijalar va tahlil ----
   'analytics.mock': (r, s) => {
     need_(s, ['teacher', 'director', 'admin']); const m = mockFor_(s, r.mockId), qs = jparse_(m.questions, []);

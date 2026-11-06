@@ -9,6 +9,59 @@ function $(s, r) { return (r || document).querySelector(s); }
 function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
 function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
 function h(x) { V.innerHTML = x; }
+
+// ---- ikonlar ----
+var IC = {
+  file: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h6"/>',
+  play: '<circle cx="12" cy="12" r="10"/><path d="M10 8l6 4-6 4z"/>',
+  users: '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>',
+  check: '<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/>',
+  chart: '<path d="M18 20V10M12 20V4M6 20v-6"/>',
+  clock: '<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>',
+  shield: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>',
+  edit: '<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/>',
+  sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
+  out: '<path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/>',
+  plus: '<path d="M12 5v14M5 12h14"/>',
+  down: '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>',
+  print: '<path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/>'
+};
+function ic(n) { return '<svg class="ic" viewBox="0 0 24 24" aria-hidden="true">' + IC[n] + '</svg>'; }
+function kp(i, l, v) { return '<div class="card"><span class="kic">' + ic(i) + '</span><div><b>' + v + '</b><span class="mut">' + l + '</span></div></div>'; }
+
+// ---- til (UZ / RU / EN): matnlar DOMga tushgach tarjima qilinadi ----
+var LANG = (function () { try { var l = localStorage.getItem('ozaq_lang'); return l === 'ru' || l === 'en' ? l : 'uz'; } catch (_) { return 'uz'; } })();
+var I18 = window.OZAQ_I18N || { pairs: [], pats: [] }, DICT = {}, PATS = [];
+I18.pairs.forEach(function (p) { DICT[p[0]] = [p[1], p[2]]; });
+I18.pats.forEach(function (p) { PATS.push([new RegExp(p[0]), p[1], p[2]]); });
+function tr(s) {
+  if (LANG === 'uz' || s == null) return s;
+  var k = String(s).trim(), i = LANG === 'ru' ? 0 : 1, d = DICT[k];
+  if (d && d[i]) return String(s).replace(k, function () { return d[i]; });
+  for (var j = 0; j < PATS.length; j++) { var m = PATS[j]; if (m[0].test(k)) { var t = k.replace(m[0], m[i + 1]); return String(s).replace(k, function () { return t; }); } }
+  return s;
+}
+var ORIG = typeof WeakMap === 'function' ? new WeakMap() : null;
+function trNode(n) {
+  if (LANG === 'uz') return;
+  if (n.nodeType === 3) {
+    var p = n.parentNode; if (!p || /^(SCRIPT|STYLE|TEXTAREA)$/.test(p.nodeName) || p.isContentEditable) return;
+    var o = ORIG.has(n) ? ORIG.get(n) : n.nodeValue, t = tr(o); if (t !== o) { ORIG.set(n, o); n.nodeValue = t; } return;
+  }
+  if (n.nodeType !== 1 || n.isContentEditable || /^(SCRIPT|STYLE)$/.test(n.nodeName)) return;
+  ['placeholder', 'title', 'aria-label'].forEach(function (a) { if (n.hasAttribute(a)) { var v = n.getAttribute(a), t = tr(v); if (t !== v) n.setAttribute(a, t); } });
+  if (n.classList && (n.classList.contains('paper') || n.classList.contains('qt') || n.classList.contains('q-text'))) return;
+  for (var c = n.firstChild; c; c = c.nextSibling) trNode(c);
+}
+if (window.MutationObserver) new MutationObserver(function (ms) { if (LANG === 'uz') return; ms.forEach(function (m) { Array.prototype.forEach.call(m.addedNodes, trNode); }); }).observe(document.body, { childList: true, subtree: true });
+function langSel() { return '<select class="lang" data-lang aria-label="Til">' + [['uz', 'UZ'], ['ru', 'RU'], ['en', 'EN']].map(function (l) { return '<option value="' + l[0] + '"' + (LANG === l[0] ? ' selected' : '') + '>' + l[1] + '</option>'; }).join('') + '</select>'; }
+function setLang(l) { LANG = l; try { localStorage.setItem('ozaq_lang', l); } catch (_) {} document.documentElement.lang = l; route(); }
+function toggleTheme() {
+  var cur = document.documentElement.getAttribute('data-theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'), nx = cur === 'light' ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', nx); try { localStorage.setItem('ozaq_theme', nx); } catch (_) {}
+}
+document.addEventListener('change', function (e) { if (e.target.matches && e.target.matches('[data-lang]')) setLang(e.target.value); });
+document.addEventListener('click', function (e) { if (e.target.closest && e.target.closest('[data-th]')) toggleTheme(); });
 function nid() { return 'o' + Math.random().toString(36).slice(2, 8); }
 function toast(m, bad) { var t = $('#toast'); t.textContent = m; t.className = 'on' + (bad ? ' bad' : ''); clearTimeout(toast.t); toast.t = setTimeout(function () { t.className = ''; }, 4500); }
 function call(a, d, st) { return O.call(a, d, st).catch(function (e) { toast(e.message, 1); throw e; }); }
@@ -71,14 +124,15 @@ function gbtn(el) {
 }
 function authView(mode) {
   var reg = mode === 'register';
-  h('<div class="center"><div class="card narrow"><div class="logo">OZ<i>AQ</i></div><p class="mut">Mock testlar va chuqur analitika platformasi</p>' +
-    '<div id="gb" style="min-height:44px;margin:6px 0"></div><div class="mut" style="text-align:center;margin:8px 0">yoki</div>' +
+  h('<div class="auth"><aside class="brandp"><a class="brand" href="#" style="color:#fff"><span class="mark"></span><span class="logo">OZ<i style="color:#5CFFB0">AQ</i></span></a><h2>Mock testlar va chuqur analitika</h2><ul><li>Word kabi test muharriri</li><li>Har o’quvchiga alohida login</li><li>Natija va tahlil soniyalarda</li></ul></aside>' +
+    '<div class="formp"><div class="card narrow"><div class="row"><b style="font-size:20px">' + (reg ? 'Ro’yxatdan o’tish' : 'Kirish') + '</b><span class="sp"></span>' + langSel() + '</div>' +
+    '<div id="gb" style="min-height:44px;margin:14px 0 4px"></div><div class="mut" style="text-align:center;margin:8px 0">yoki</div>' +
     '<form id="af" novalidate>' + (reg ? '<label>Ism va familiya</label><input id="nm" autocomplete="name">' : '') +
     '<label>' + (reg ? 'Email' : 'Login yoki email') + '</label><input id="lg" autocomplete="username" autocapitalize="off">' +
     '<label>Parol' + (reg ? ' (kamida 8 belgi)' : '') + '</label><input id="pw" type="password" autocomplete="' + (reg ? 'new-password' : 'current-password') + '">' +
     '<div class="err" id="er"></div><button class="btn w" id="ab" type="submit">' + (reg ? 'Ro’yxatdan o’tish' : 'Kirish') + '</button></form>' +
     '<p style="margin:14px 0 4px">' + (reg ? 'Akkauntingiz bormi? <a href="#login">Kirish</a>' : 'Akkaunt yo’qmi? <a href="#register">Ro’yxatdan o’tish</a>') + '</p>' +
-    '<p style="margin:4px 0"><a href="#exam">O’quvchi: mock testga kirish →</a></p>' + (C.API_URL ? '' : '<div class="note">API_URL config.js da kiritilmagan.</div>') + '</div></div>');
+    '<p style="margin:4px 0"><a href="#exam">O’quvchi: mock testga kirish →</a></p><p style="margin:4px 0"><a href="#">← Bosh sahifa</a></p>' + (C.API_URL ? '' : '<div class="note">API_URL config.js da kiritilmagan.</div>') + '</div></div></div>');
   gbtn($('#gb'));
   $('#af').onsubmit = function (e) {
     e.preventDefault(); var lg = $('#lg').value.trim(), pw = $('#pw').value, er = $('#er'); er.textContent = '';
@@ -94,39 +148,47 @@ function authView(mode) {
   };
 }
 function shell(inner) {
-  h('<header class="bar"><span class="logo">OZ<i>AQ</i></span><a href="#t/home">Testlar</a><a href="#t/groups">Guruhlar</a>' + (ME.role === 'director' ? '<a href="#t/team">O’qituvchilar</a>' : '') + '<span class="sp"></span><span class="mut">' + esc(ME.name) + '</span><span class="pill">' + (ME.plan === 'premium' ? 'Premium' : 'Freemium') + '</span><button class="btn s" id="lo">Chiqish</button></header><main class="wrap">' + inner + '</main>');
+  var r = location.hash.slice(1);
+  function nv(hh, label, ico) { var on = r === hh || (hh === 't/home' && r.indexOf('t/m/') === 0); return '<a href="#' + hh + '" class="nav' + (on ? ' on' : '') + '">' + ic(ico) + '<span>' + label + '</span></a>'; }
+  var ini = (ME.name || '?').trim().charAt(0).toUpperCase();
+  h('<header class="bar"><a class="brand" href="#t/home"><span class="mark"></span><span class="logo">OZ<i>AQ</i></span></a><nav class="navs">' + nv('t/home', 'Testlar', 'file') + nv('t/groups', 'Guruhlar', 'users') + (ME.role === 'director' ? nv('t/team', 'O’qituvchilar', 'chart') : '') + '</nav><span class="sp"></span>' + langSel() +
+    '<button class="ibtn" data-th title="Qorong’i / yorug’ rejim">' + ic('sun') + '</button><span class="chip"><span class="av">' + esc(ini) + '</span><span class="nm">' + esc(ME.name) + '</span></span><span class="pill">' + (ME.plan === 'premium' ? 'Premium' : 'Freemium') + '</span>' +
+    '<button class="ibtn" id="lo" title="Chiqish">' + ic('out') + '</button></header><main class="wrap">' + inner + '</main>');
   $('#lo').onclick = logout;
 }
-
 // ---- o'qituvchi: bosh sahifa ----
 function home() {
   call('mock.list').then(function (L) {
     var act = L.filter(function (m) { return m.status === 'active'; }).length, st = 0, sb = 0; L.forEach(function (m) { st += m.students; sb += m.submitted; });
-    shell('<div class="row"><h2 style="margin:0">Mock testlar</h2><span class="sp"></span><button class="btn" id="nw">+ Yangi mock</button></div><br>' +
-      '<div class="kpis"><div class="card"><span class="mut">Jami testlar</span><b>' + L.length + '</b></div><div class="card"><span class="mut">Faol</span><b>' + act + '</b></div><div class="card"><span class="mut">O’quvchilar</span><b>' + st + '</b></div><div class="card"><span class="mut">Topshirganlar</span><b>' + sb + '</b></div></div>' +
-      '<div class="card"><table><thead><tr><th>Nomi</th><th>Holat</th><th>O’quvchi</th><th>Topshirgan</th><th></th></tr></thead><tbody>' +
-      (L.length ? L.map(function (m) { return '<tr><td><b>' + esc(m.title) + '</b>' + (ME.role === 'director' && m.owner ? '<div class="mut">' + esc(m.owner) + '</div>' : '') + '</td><td><span class="badge b-' + esc(m.status) + '">' + esc(ST[m.status]) + '</span></td><td>' + m.students + '</td><td>' + m.submitted + '</td><td><a href="#t/m/' + esc(m.id) + '">Ochish</a></td></tr>'; }).join('') : '<tr><td colspan="5" class="mut">Hali test yo’q. “Yangi mock” tugmasini bosing.</td></tr>') + '</tbody></table></div>');
+    shell('<div class="head"><h2>Mock testlar</h2><span class="sp"></span><button class="btn" id="nw">' + ic('plus') + ' Yangi mock</button></div>' +
+      '<div class="kpis">' + kp('file', 'Jami testlar', L.length) + kp('play', 'Faol', act) + kp('users', 'O’quvchilar', st) + kp('check', 'Topshirganlar', sb) + '</div>' +
+      (L.length ? '<div class="card tw"><table><thead><tr><th>Nomi</th><th>Holat</th><th>O’quvchi</th><th>Topshirgan</th><th></th></tr></thead><tbody>' +
+        L.map(function (m) { return '<tr><td><b>' + esc(m.title) + '</b>' + (ME.role === 'director' && m.owner ? '<div class="mut">' + esc(m.owner) + '</div>' : '') + '</td><td><span class="badge b-' + esc(m.status) + '">' + esc(ST[m.status]) + '</span></td><td>' + m.students + '</td><td>' + m.submitted + '</td><td><a href="#t/m/' + esc(m.id) + '">Ochish</a></td></tr>'; }).join('') + '</tbody></table></div>'
+        : '<div class="card empty"><span class="kic">' + ic('file') + '</span><div>Hali test yo’q. “Yangi mock” tugmasini bosing.</div></div>'));
     $('#nw').onclick = function () { call('mock.save', { title: 'Yangi mock', settings: { duration: 45, showResult: 'instant' }, doc: { html: '' }, questions: [] }).then(function (r) { go('t/m/' + r.id); }).catch(function () {}); };
   }).catch(function () { go('login'); });
 }
-
-
 // ---- landing ----
 function landing() {
-  var A = ' style="text-decoration:none;display:inline-block"';
-  h('<header class="bar"><span class="logo">OZ<i>AQ</i></span><span class="sp"></span><a href="#exam" class="btn s"' + A + '>Testga kirish</a><a href="#login" class="btn s"' + A + '>Kirish</a><a href="#register" class="btn"' + A + '>Bepul boshlash</a></header>' +
+  var A = ' style="text-decoration:none"';
+  var F = [['chart', 'Guruhning o’rta beli', 'Ballar taqsimoti, o’rtacha va median: sinf darajasi bir qarashda.'], ['clock', 'Savol va vaqt tahlili', 'Har savolga sarflangan vaqt va eng ko’p xato qilingan TOP-5 savol.'], ['edit', 'Word kabi test muharriri', 'Jadval, formatlash, 4 xil savol turi va uzun javob. Tekshiruv avtomatik.'], ['shield', 'Xavfsiz kirish', 'Har o’quvchiga alohida login va parol. To’g’ri javoblar brauzerga yuborilmaydi.']];
+  var W = [['Test yarating', 'Savollarni qo’shing, mavzu va ball belgilang, testni faollashtiring.'], ['O’quvchilarni qo’shing', 'Ismlarni yozing: tizim har biriga login va parol yaratadi.'], ['Natijani oling', 'Ballar, qiyin savollar va ota-onalar uchun PDF hisobot tayyor.']];
+  h('<header class="bar"><a class="brand" href="#"><span class="mark"></span><span class="logo">OZ<i>AQ</i></span></a><span class="sp"></span>' + langSel() + '<button class="ibtn" data-th title="Qorong’i / yorug’ rejim">' + ic('sun') + '</button><a href="#exam" class="btn s"' + A + '>Testga kirish</a><a href="#login" class="btn s"' + A + '>Kirish</a><a href="#register" class="btn"' + A + '>Bepul boshlash</a></header>' +
     '<section class="hero"><h1>Mock testlar va chuqur analitika: o’quv markazlar va xususiy maktablar uchun</h1><p class="mut">Test yarating, o’quvchilarga login va parol bering, natijani soniyalarda oling: sinfning o’rta beli, eng ko’p xato qilingan savollar va har bir savolga sarflangan vaqt.</p>' +
-    '<div class="row" style="justify-content:center"><a class="btn" href="#register"' + A + '>Bepul boshlash</a><button class="btn s" id="gd">Demo so’rash</button></div></section>' +
-    '<main class="wrap"><div class="grid">' + [['Guruhning o’rta beli', 'Ballar taqsimoti, o’rtacha va median: sinf darajasi bir qarashda.'], ['Savol va vaqt tahlili', 'Har savolga sarflangan vaqt va eng ko’p xato qilingan TOP-5 savol.'], ['Word kabi test muharriri', 'Jadval, formatlash, 4 xil savol turi va uzun javob. Tekshiruv avtomatik.'], ['Xavfsiz kirish', 'Har o’quvchiga alohida login/parol. To’g’ri javoblar brauzerga yuborilmaydi.']].map(function (f) { return '<div class="card"><h3>' + f[0] + '</h3><span class="mut">' + f[1] + '</span></div>'; }).join('') + '</div>' +
-    '<h2 style="text-align:center;margin:28px 0 12px">Tariflar</h2><div class="grid"><div class="card price"><h3>Freemium: bepul</h3><ul class="mut"><li>2 tagacha guruh</li><li>Bitta mockga 30 tagacha o’quvchi</li><li>Bitta/ko’p variant, qisqa javob, to’g’ri-noto’g’ri</li><li>Natijalar va asosiy tahlil</li></ul><a class="btn" href="#register"' + A + '>Boshlash</a></div>' +
-    '<div class="card price" style="border-color:var(--hi)"><h3>Premium: kelishilgan narxda</h3><ul class="mut"><li>Cheksiz guruh va o’quvchi (tarif bo’yicha)</li><li>O’qituvchilar akkauntlari va direktor paneli</li><li>Uzun javob va qo’lda baholash</li><li>Shaxsiy menejer</li></ul><button class="btn s" id="gd2">Demo so’rash</button></div></div>' +
-    '<div class="card" id="dm" style="max-width:520px;margin:28px auto"><h3>Demo so’rash</h3><form id="df" novalidate><label>Ism</label><input id="dn"><label>Maktab yoki markaz</label><input id="do"><label>Telefon</label><input id="dp" placeholder="+998"><div class="err" id="de"></div><button class="btn w" type="submit">Yuborish</button></form></div></main>');
+    '<div class="row" style="justify-content:center"><a class="btn" href="#register"' + A + '>Bepul boshlash</a><button class="btn s" id="gd">Demo so’rash</button></div>' +
+    '<div class="mockp" aria-hidden="true"><div class="r"><div></div><div></div><div></div></div><div class="b"><i style="height:30%"></i><i style="height:48%"></i><i style="height:72%"></i><i style="height:95%"></i><i style="height:80%"></i><i style="height:55%"></i><i style="height:38%"></i><i style="height:22%"></i></div></div></section>' +
+    '<main class="wrap"><div class="grid">' + F.map(function (f) { return '<div class="card"><span class="kic">' + ic(f[0]) + '</span><h3>' + f[1] + '</h3><span class="mut">' + f[2] + '</span></div>'; }).join('') + '</div>' +
+    '<h2 class="sec">Qanday ishlaydi</h2><div class="grid steps">' + W.map(function (w) { return '<div class="card"><h3>' + w[0] + '</h3><span class="mut">' + w[1] + '</span></div>'; }).join('') + '</div>' +
+    '<h2 class="sec">Tariflar</h2><div class="grid"><div class="card price"><h3>Freemium: bepul</h3><ul class="mut"><li>2 tagacha guruh</li><li>Bitta mockga 30 tagacha o’quvchi</li><li>Bitta/ko’p variant, qisqa javob, to’g’ri-noto’g’ri</li><li>Natijalar va asosiy tahlil</li></ul><a class="btn" href="#register"' + A + '>Boshlash</a></div>' +
+    '<div class="card price hot"><span class="rib">Eng ommabop</span><h3>Premium: kelishilgan narxda</h3><ul class="mut"><li>Cheksiz guruh va o’quvchi (tarif bo’yicha)</li><li>O’qituvchilar akkauntlari va direktor paneli</li><li>Uzun javob va qo’lda baholash</li><li>Ota-onalar uchun PDF va Excel hisobotlar</li><li>Shaxsiy menejer</li></ul><button class="btn" id="gd2">Demo so’rash</button></div></div>' +
+    '<div class="card" id="dm" style="max-width:520px;margin:36px auto 0"><h3>Demo so’rash</h3><form id="df" novalidate><label>Ism</label><input id="dn"><label>Maktab yoki markaz</label><input id="do"><label>Telefon</label><input id="dp" placeholder="+998"><div class="err" id="de"></div><button class="btn w" type="submit">Yuborish</button></form></div></main>' +
+    '<footer class="foot">© OZAQ · Mock testlar va analitika platformasi</footer>');
   var sc = function () { var e = $('#dm'); if (e.scrollIntoView) e.scrollIntoView({ behavior: 'smooth' }); };
   $('#gd').onclick = sc; $('#gd2').onclick = sc;
   $('#df').onsubmit = function (e) {
-    e.preventDefault(); var n = $('#dn').value.trim(), p = $('#dp').value.trim(), er = $('#de'); er.className = 'err';
+    e.preventDefault(); var n = $('#dn').value.trim(), p = $('#dp').value.trim(), er = $('#de'); er.style.color = '';
     if (!n || !p) { er.textContent = 'Ism va telefonni kiriting.'; return; }
-    O.call('lead.create', { name: n, org: $('#do').value.trim(), phone: p }).then(function () { er.className = 'err'; er.style.color = 'var(--hi)'; er.textContent = 'Rahmat! Tez orada bog’lanamiz.'; $('#df').reset(); }).catch(function (x) { er.style.color = ''; er.textContent = x.message; });
+    O.call('lead.create', { name: n, org: $('#do').value.trim(), phone: p }).then(function () { er.style.color = 'var(--hi)'; er.textContent = 'Rahmat! Tez orada bog’lanamiz.'; $('#df').reset(); }).catch(function (x) { er.style.color = ''; er.textContent = x.message; });
   };
 }
 function credBox(title, c) {
@@ -301,14 +363,48 @@ function tabR() {
   call('analytics.mock', { mockId: M.id }).then(function (a) {
     if (!a.submitted) { $('#tab').innerHTML = '<div class="card mut">Hali hech kim topshirmagan.</div>'; return; }
     var mx = Math.max.apply(null, a.histogram) || 1;
-    $('#tab').innerHTML = '<div class="kpis"><div class="card"><span class="mut">Topshirganlar</span><b>' + a.submitted + '</b></div><div class="card"><span class="mut">O’rtacha</span><b>' + a.avg + '%</b></div><div class="card"><span class="mut">Median</span><b>' + a.median + '%</b></div></div>' +
+    $('#tab').innerHTML = '<div class="kpis">' + kp('check', 'Topshirganlar', a.submitted) + kp('chart', 'O’rtacha', a.avg + '%') + kp('chart', 'Median', a.median + '%') + '</div>' +
       '<div class="card"><h3>Ballar taqsimoti</h3><div class="hist">' + a.histogram.map(function (n) { return '<div class="hb" style="height:' + (n ? Math.max(8, n / mx * 100) : 2) + '%"><span>' + n + '</span></div>'; }).join('') + '</div><div class="hl">' + a.histogram.map(function (_, i) { return '<span>' + i * 10 + '–' + (i + 1) * 10 + '</span>'; }).join('') + '</div></div>' +
-      '<div class="card"><h3>Eng qiyin savollar (TOP-5)</h3><table><thead><tr><th>№</th><th>Mavzu</th><th>To’g’ri javob</th><th>O’rtacha vaqt</th></tr></thead><tbody>' + a.hardest.map(function (q) { return '<tr><td>' + q.n + '</td><td>' + esc(q.topic) + '</td><td>' + q.correctRate + '%</td><td>' + q.avgSec + ' s</td></tr>'; }).join('') + '</tbody></table></div>' +
+      '<div class="card"><h3>Eng qiyin savollar (TOP-5)</h3><table><thead><tr><th>№</th><th>Mavzu</th><th>To’g’ri javob</th><th>O’rtacha vaqt</th></tr></thead><tbody>' + a.hardest.map(function (q) { return '<tr><td>' + q.n + '</td><td>' + esc(q.topic) + '</td><td><div class="row"><div class="bar2"><i style="width:' + q.correctRate + '%"></i></div>' + q.correctRate + '%</div></td><td>' + q.avgSec + ' s</td></tr>'; }).join('') + '</tbody></table></div>' +
       '<div class="card"><h3>Mavzular bo’yicha</h3><table><tbody>' + a.topics.map(function (t) { return '<tr><td>' + esc(t.topic) + '</td><td>' + t.avgRate + '%</td></tr>'; }).join('') + '</tbody></table></div>' +
-      '<div class="card"><h3>O’quvchilar</h3><table><thead><tr><th>Ism</th><th>Ball</th><th>Toifa</th></tr></thead><tbody>' + a.people.map(function (p) { return '<tr><td>' + esc(p.name) + '</td><td>' + p.percent + '%</td><td>' + esc(BAND[p.band]) + '</td></tr>'; }).join('') + '</tbody></table></div>';
-  }).then(function () { if (M.questions.some(function (q) { return q.type === 'long'; })) gradeBox(); }).catch(function () { $('#tab').innerHTML = ''; });
+      '<div class="card"><h3>O’quvchilar</h3><table><thead><tr><th>Ism</th><th>Ball</th><th>Toifa</th></tr></thead><tbody>' + a.people.map(function (p) { return '<tr><td>' + esc(p.name) + '</td><td>' + p.percent + '%</td><td><span class="band ' + esc(p.band) + '">' + esc(BAND[p.band]) + '</span></td></tr>'; }).join('') + '</tbody></table></div>';
+  }).then(function () { reportBox(); if (M.questions.some(function (q) { return q.type === 'long'; })) gradeBox(); }).catch(function () { $('#tab').innerHTML = ''; });
 }
 
+
+
+// ---- hisobotlar: Excel (CSV) va ota-onalar uchun PDF ----
+function csvCell(v) { var t = String(v == null ? '' : v); return /[",;\n]/.test(t) ? '"' + t.replace(/"/g, '""') + '"' : t; }
+function fname(t) { return String(t || 'natijalar').replace(/[^\w\u0400-\u04FF-]+/g, '_').slice(0, 40); }
+function exportCsv(R) {
+  var head = ['Ism', 'Ball', 'Maksimal', 'Foiz', 'O’rin'].concat(R.questions.map(function (q) { return q.n + '-savol (' + q.topic + ')'; }));
+  var rows = R.students.map(function (s) { return [s.name, s.score, s.maxScore, s.percent, s.rank].concat(s.scores.map(function (v) { return v == null ? '' : v; })); });
+  dl(fname(R.title) + '.csv', 'sep=,\n' + [head].concat(rows).map(function (r) { return r.map(csvCell).join(','); }).join('\n'));
+}
+function reportHtml(R, list) {
+  var css = 'body{font-family:Inter,Arial,sans-serif;color:#13201B;margin:0}.pg{padding:36px 44px;page-break-after:always;max-width:780px;margin:0 auto}.hd{display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #0B6B4F;padding-bottom:12px}.lg{font-weight:800;font-size:22px;letter-spacing:.04em}.lg i{color:#0B6B4F;font-style:normal}h1{font-size:24px;margin:22px 0 4px}.big{font-size:60px;font-weight:800;color:#0B6B4F;line-height:1}.rw{display:flex;gap:32px;align-items:flex-end;margin:18px 0}.m{color:#5A6D65}table{width:100%;border-collapse:collapse;margin-top:14px}th,td{padding:8px 6px;border-bottom:1px solid #DCE6E1;text-align:left;font-size:13px}.br{height:9px;background:#E6EEEA;border-radius:9px;overflow:hidden;min-width:120px}.br i{display:block;height:100%;background:#0B6B4F}.ft{margin-top:24px;font-size:13px;padding:12px 14px;background:#F2F6F4;border-radius:10px}';
+  var d = new Date().toISOString().slice(0, 10);
+  return '<!DOCTYPE html><html><head><meta charset="utf-8"><title>' + esc(R.title) + '</title><style>' + css + '</style></head><body>' + list.map(function (s) {
+    var weak = s.topics.filter(function (t) { return t.percent < 60; }).map(function (t) { return t.topic; });
+    return '<div class="pg"><div class="hd"><span class="lg">OZ<i>AQ</i></span><span class="m">' + d + '</span></div><h1>' + esc(s.name) + '</h1><div class="m">' + esc(R.title) + '</div>' +
+      '<div class="rw"><div><div class="big">' + s.percent + '%</div><div class="m">' + s.score + ' / ' + s.maxScore + ' ball</div></div><div><div><b>O’rin:</b> ' + s.rank + ' / ' + R.count + '</div><div><b>Sinf o’rtachasi:</b> ' + R.average + '%</div>' + (s.pending ? '<div class="m">' + s.pending + ' ta yozma javob hali baholanmagan</div>' : '') + '</div></div>' +
+      '<table><thead><tr><th>Mavzu</th><th>O’quvchi</th><th></th><th>Sinf o’rtachasi</th></tr></thead><tbody>' + s.topics.map(function (t) { return '<tr><td>' + esc(t.topic) + '</td><td>' + t.percent + '%</td><td><div class="br"><i style="width:' + t.percent + '%"></i></div></td><td>' + (R.classTopics[t.topic] != null ? R.classTopics[t.topic] + '%' : '–') + '</td></tr>'; }).join('') + '</tbody></table>' +
+      '<div class="ft">' + (weak.length ? 'Qo’shimcha mashq tavsiya etiladi: <b>' + esc(weak.join(', ')) + '</b>.' : 'Barcha mavzular yaxshi o’zlashtirilgan.') + '</div></div>';
+  }).join('') + '</body></html>';
+}
+function openReport(R, list) {
+  var w = window.open('', '_blank'); if (!w) { toast('Brauzer yangi oynani blokladi. Ruxsat bering.', 1); return; }
+  w.document.open(); w.document.write(reportHtml(R, list)); w.document.close(); setTimeout(function () { try { w.focus(); w.print(); } catch (_) {} }, 500);
+}
+function reportBox() {
+  call('mock.report', { mockId: M.id }).then(function (R) {
+    if (!R.count) return;
+    $('#tab').insertAdjacentHTML('beforeend', '<div class="card" id="rb"><div class="row"><h3 style="margin:0">Hisobotlar</h3><span class="sp"></span><button class="btn s" id="xc">' + ic('down') + ' Excel (CSV)</button><button class="btn s" id="xp">' + ic('print') + ' Hammasi (PDF)</button></div>' +
+      '<table style="margin-top:10px"><thead><tr><th>Ism</th><th>Ball</th><th>O’rin</th><th></th></tr></thead><tbody>' + R.students.map(function (s, i) { return '<tr><td>' + esc(s.name) + '</td><td>' + s.percent + '%</td><td>' + s.rank + ' / ' + R.count + '</td><td><button class="btn s" data-rp="' + i + '">Ota-ona hisoboti</button></td></tr>'; }).join('') + '</tbody></table></div>');
+    $('#xc').onclick = function () { exportCsv(R); }; $('#xp').onclick = function () { openReport(R, R.students); };
+    $$('[data-rp]').forEach(function (b) { b.onclick = function () { openReport(R, [R.students[+b.dataset.rp]]); }; });
+  }).catch(function () {});
+}
 
 function gradeBox() {
   call('mock.attempts', { mockId: M.id }).then(function (L) {
@@ -335,7 +431,7 @@ function exam() {
   examLogin();
 }
 function examLogin() {
-  h('<div class="center"><div class="card narrow"><div class="logo">OZ<i>AQ</i></div><p class="mut">Mock testga kirish</p><form id="ef" novalidate><label>Login</label><input id="el" autocapitalize="off" autocomplete="username"><label>Parol</label><input id="ep" type="password" autocomplete="current-password"><div class="err" id="ee"></div><button class="btn w" id="eb" type="submit">Kirish</button></form><p style="margin-top:14px"><a href="#login">O’qituvchi kirishi</a></p></div></div>');
+  h('<div class="center"><div class="card narrow"><div class="row"><span class="logo">OZ<i>AQ</i></span><span class="sp"></span>' + langSel() + '</div><p class="mut">Mock testga kirish</p><form id="ef" novalidate><label>Login</label><input id="el" autocapitalize="off" autocomplete="username"><label>Parol</label><input id="ep" type="password" autocomplete="current-password"><div class="err" id="ee"></div><button class="btn w" id="eb" type="submit">Kirish</button></form><p style="margin-top:14px"><a href="#login">O’qituvchi kirishi</a></p></div></div>');
   $('#ef').onsubmit = function (e) {
     e.preventDefault(); var l = $('#el').value.trim(), p = $('#ep').value; if (!l || !p) { $('#ee').textContent = 'Login va parolni kiriting.'; return; }
     $('#eb').disabled = true;
@@ -353,14 +449,14 @@ function startExam(quiet) {
   }).catch(function (e) { if (!quiet) toast(e.message, 1); if (/topshirilgan|tugadi|faol emas/i.test(e.message)) { O.clear(1); } examLogin(); if (!quiet) $('#ee').textContent = e.message; });
 }
 function drawExam() {
-  h('<header class="bar"><span class="logo">OZ<i>AQ</i></span><span class="sp"></span><span class="timer" id="tm"></span><button class="btn" id="fin">Topshirish</button></header><div class="exb"><aside id="nv"></aside><section id="qv"></section></div>');
-  $('#fin').onclick = function () { var un = X.qs.filter(function (q) { return !has(q.id); }).length; if (confirm(un ? 'Javobsiz savollar: ' + un + '. Baribir topshirasizmi?' : 'Testni topshirasizmi?')) submit(); };
+  h('<header class="bar"><span class="brand"><span class="mark"></span><span class="logo">OZ<i>AQ</i></span></span><span class="sp"></span>' + langSel() + '<span class="timer">' + ic('clock') + '<span id="tm"></span></span><button class="btn" id="fin">Topshirish</button></header><div class="prog"><i id="pg"></i></div><div class="exb"><aside id="nv"></aside><section id="qv"></section></div>');
+  $('#fin').onclick = function () { var un = X.qs.filter(function (q) { return !has(q.id); }).length; if (confirm(tr(un ? 'Javobsiz savollar: ' + un + '. Baribir topshirasizmi?' : 'Testni topshirasizmi?'))) submit(); };
   showQ(0); tm(); TI = setInterval(tm, 1000);
 }
 function has(id) { var a = X.ans[id]; return !(a === undefined || a === null || a === '' || (Array.isArray(a) && !a.length)); }
 function tm() {
   var s = Math.max(0, Math.round((X.end - Date.now()) / 1000)), e = $('#tm'); if (!e) return;
-  e.textContent = Math.floor(s / 60) + ':' + ('0' + s % 60).slice(-2); e.className = 'timer' + (s < 300 ? ' low' : '');
+  e.textContent = Math.floor(s / 60) + ':' + ('0' + s % 60).slice(-2); e.parentNode.className = 'timer' + (s < 300 ? ' low' : '');
   if (s % 10 === 0 && s) flush(); if (!s) submit(true);
 }
 function tally() { var q = X.qs[X.i]; if (q) X.ms[q.id] = (X.ms[q.id] || 0) + (Date.now() - X.t0); X.t0 = Date.now(); }
@@ -388,7 +484,7 @@ function showQ(i) {
   };
   nav();
 }
-function nav() { $('#nv').innerHTML = X.qs.map(function (q, i) { return '<button data-i="' + i + '" class="' + (has(q.id) ? 'done ' : '') + (i === X.i ? 'cur' : '') + '">' + (i + 1) + '</button>'; }).join(''); $$('#nv button').forEach(function (b) { b.onclick = function () { flush(); showQ(+b.dataset.i); }; }); }
+function nav() { var dn = X.qs.filter(function (q) { return has(q.id); }).length; if ($('#pg')) $('#pg').style.width = (dn / X.qs.length * 100) + '%'; $('#nv').innerHTML = X.qs.map(function (q, i) { return '<button data-i="' + i + '" class="' + (has(q.id) ? 'done ' : '') + (i === X.i ? 'cur' : '') + '">' + (i + 1) + '</button>'; }).join(''); $$('#nv button').forEach(function (b) { b.onclick = function () { flush(); showQ(+b.dataset.i); }; }); }
 function submit(auto) {
   if (X.sending) return; X.sending = true; clearInterval(TI); tally();
   O.call('exam.submit', { items: items() }, 1).then(function (r) {
